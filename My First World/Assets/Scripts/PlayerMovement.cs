@@ -9,6 +9,10 @@ public class PlayerMovement : MonoBehaviour
     public float movementspeed;
     private float horizontalmovement;
 
+    //for checking if character is facing right or left
+    public bool isfacingright = true;
+    private SpriteRenderer playersprite;
+
     //for jumping & groundcheck
     public float jumpheight;
     //private bool isgrounded; //to check if player is grounded
@@ -20,19 +24,34 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        playersprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
         //for horizontal movement
-        horizontalmovement = Input.GetAxisRaw("Horizontal");
+        horizontalmovement = Input.GetAxis("Horizontal");
         body.velocity = new Vector2(horizontalmovement * movementspeed, body.velocity.y);
 
-        if((Input.GetKeyUp(KeyCode.A) == true || Input.GetKeyUp(KeyCode.D) == true ) && isgrounded() == true) //to make character not bounce when going up slope
+        //if want to switch to GetAxisRaw
+        /*if ((Input.GetKeyUp(KeyCode.A) == true || Input.GetKeyUp(KeyCode.D) == true) && isgrounded() == true) //to make character not bounce when going up slope
         {
             body.velocity = new Vector2(0, 0);
+        }*/
+
+        //Direction character is facing check n flipping player sprite
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            isfacingright = false;
+            playersprite.flipX = true;
         }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            isfacingright = true;
+            playersprite.flipX = false;
+        }
+        
 
         //for jumping
         /*isgrounded = isgrounded();*/
@@ -40,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
         {
             body.velocity = new Vector2(body.velocity.x, jumpheight);
         }
+        //so that would not bouce up slopes
         if (horizontalmovement == 0 && isgrounded() == true)
         {
             body.gravityScale = 0;
@@ -56,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else return false;
     }
-    /*public void OnDrawGizmos() // to for groundcheck/isgrounded
+    /*public void OnDrawGizmos() // to visualize groundcheck/isgrounded
     {
         Gizmos.DrawWireCube(transform.position - transform.up * castdistance, boxsize);
     }*/
