@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D body;
     // for horizontal movement
     public float movementspeed;
-    private float horizontalmovement;
+    public float horizontalmovement;
 
     //for checking if character is facing right or left
     public bool isfacingright = true;

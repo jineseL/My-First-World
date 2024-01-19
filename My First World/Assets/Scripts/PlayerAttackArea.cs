@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class AttackArea : MonoBehaviour
 {
-    /*public int attackdamage;
+    public int attackDamage;
     // Start is called before the first frame update
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerStay2D(Collider2D collider)
     {
         if (collider.CompareTag("Enemies"))
         {
-            hit(collider);
+            //hit(collider, attackdamage);
+            collider.GetComponent<EnemyBehaviour>().damage(attackDamage);
         }
     }
-    public void hit(Collider2D enemy)
+    /*public void hit(Collider2D enemy, int damage)
     {
         enemy.GetComponent<EnemyBehaviour>().health -= attackdamage;
         enemy.GetComponent<EnemyBehaviour>().damage();
