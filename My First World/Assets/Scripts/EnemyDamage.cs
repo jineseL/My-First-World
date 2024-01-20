@@ -13,7 +13,8 @@ public class EnemyBehaviour : MonoBehaviour
 
 
     //for knock back affect when enemy is hit
-    public GameObject player;
+    [SerializeField]
+    private GameObject player;
     public float knockbackforce;
     private Rigidbody2D body;
     // Start is called before the first frame update
@@ -21,6 +22,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         invTime = InvDuration;
         body = GetComponent<Rigidbody2D>();
+        player = GameObject.Find("Player");
 
     }
 

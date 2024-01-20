@@ -15,10 +15,11 @@ public class PlayerMovement : MonoBehaviour
 
     //for jumping & groundcheck
     public float jumpheight;
-    //private bool isgrounded; //to check if player is grounded
+    //private bool canjump; //to prevent continous jumping
     public Vector2 boxsize; // for the size of the box to be use in boxcasting
     public float castdistance; //for the cast distance from the centre position of the gameobject 
     public LayerMask layer; // for the layer you want to detect, in this case will be all platform 
+    public float gravity;
 
 
     void Start()
@@ -55,16 +56,19 @@ public class PlayerMovement : MonoBehaviour
 
         //for jumping
         /*isgrounded = isgrounded();*/
-        if (Input.GetButtonDown("Jump") == true && isgrounded() == true)
+        if (Input.GetButtonDown("Jump") == true && isgrounded() == true /*&& canjump ==true*/)
         {
+            /*canjump = false;*/
             body.velocity = new Vector2(body.velocity.x, jumpheight);
+            //body.AddForce(transform.up * jumpheight);
         }
+        
         //so that would not bouce up slopes
         if (horizontalmovement == 0 && isgrounded() == true)
         {
             body.gravityScale = 0;
         }
-        else body.gravityScale = 2;//lol
+        else body.gravityScale = gravity;
     }
 
     //function for checking if player is grounded
@@ -72,9 +76,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Physics2D.BoxCast(transform.position, boxsize, 0, -transform.up, castdistance, layer))
         {
+            /*canjump = true;*/
             return true;
         }
-        else return false;
+        else
+        {
+            /*canjump = false;*/
+            return false;
+        }
     }
     /*public void OnDrawGizmos() // to visualize groundcheck/isgrounded
     {
