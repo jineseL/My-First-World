@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuickSand : MonoBehaviour
+public class QuickSand : MonoBehaviour//quicksand platform
 {
     private GameObject player;
     private PlayerMovement playerMovementscript;
@@ -22,6 +22,7 @@ public class QuickSand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //to check if player is pressing space
         if(canjump == true)
         {
             if (Input.GetButtonDown("Jump") == true)
@@ -30,6 +31,8 @@ public class QuickSand : MonoBehaviour
             }
         }
     }
+
+    //if player is in th equick sand, set player Y velocity to fallspeed
     private void OnTriggerStay2D(Collider2D collider)
     {
         if(collider.CompareTag("Player"))
@@ -42,6 +45,8 @@ public class QuickSand : MonoBehaviour
 
         }
     }
+
+    //to create a new jump function just for the quicksand platform due to quicksand not having the same layer
     private void jump()
     {
         body.velocity = new Vector2(body.velocity.x, jumpspeed);
