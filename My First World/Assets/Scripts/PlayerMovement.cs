@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D body;
     // for horizontal movement
-    public float movementspeed;
+    public static float movementspeed = 5;
     public float horizontalmovement;
 
     //for checking if character is facing right or left
@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public float gravity;
 
     //for double jumping
-    public bool canDoubleJump = false;
+    public static bool canDoubleJump;
     public bool secondJump = false;
 
     void Start()
@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
                 //body.AddForce(transform.up * jumpheight);
             }
         }
-        else
+        else//for double jumping
         {
             if (secondJump == false)
             {

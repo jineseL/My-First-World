@@ -13,12 +13,18 @@ public class LogicManagerforDialogue : MonoBehaviour
     public Button button1;
     public Button button2;
     private GameObject player;
+    
     private void Start()
     {
         //FindObjectOfType<DialogueManager>().startDialogue(dialogue);
         button1.gameObject.SetActive(false);
         button2.gameObject.SetActive(false);
-        player = GameObject.Find("/Player");
+        player = FindObjectOfType<GameObject>(false);
+    }
+    private void Awake()
+    {
+        button1.onClick.AddListener(button1click);
+        button2.onClick.AddListener(button2click);
     }
 
     // Update is called once per frame
@@ -33,7 +39,7 @@ public class LogicManagerforDialogue : MonoBehaviour
 
             }
         }
-        button1.onClick.AddListener(button1click);
+        
     }
 
     //avtivate buttons to be clickable, fade in fade out todo
@@ -51,9 +57,16 @@ public class LogicManagerforDialogue : MonoBehaviour
     }
     public void button1click()
     {
+        
+        PlayerMovement.canDoubleJump = true;
         SceneManager.LoadScene(("BaseLevel"));
-        /*player.GetComponent<PlayerMovement>().canDoubleJump = true;
-        SceneManager.LoadScene(("BaseLevel"));*/
+        
+        
 
+    }
+    public void button2click()
+    {
+        PlayerMovement.movementspeed += 5;
+        SceneManager.LoadScene(("BaseLevel"));
     }
 }
