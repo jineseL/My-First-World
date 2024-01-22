@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 { 
-    //i honestly dk much of what im doing here
+    
     public Text nametext;
     public Text DialogueText;
     public float textspeed;
@@ -12,11 +12,15 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
     private Queue<string> Names;
     private Queue<string> sentences;
+
+    public GameObject logicmanager;
     void Start()
     {
         sentences = new Queue<string>();
         Names = new Queue<string>();
     }
+
+    // STARTING DIALOGUE
     public void startDialogue(Dialogue dialogue)
     {
         animator.SetBool("Isopen", true);
@@ -48,11 +52,13 @@ public class DialogueManager : MonoBehaviour
         //StopAllCoroutines();
         StartCoroutine(TypeName(name));
     }*/
+
+    //SHOWING THE NEXT SENTENCE
     public void DisplayNextNameAndSentence()
     {
         if (Names.Count == 0)
         {
-            EndDialogue();
+            EndDialogueWithOptions();
             return;
         }
         string name = Names.Dequeue();
@@ -67,6 +73,7 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(TypeSentence(sentence));
     }
 
+    //FOR LETTERS TO APPEAR ONE AT A TIME, EDIT TEXTSPEED TO CHANGE SPEED, SENTENCE IS FOR SENTENCE AND NAME IS FOR NAME
     IEnumerator TypeSentence (string sentence)
     {
         DialogueText.text = "";
@@ -85,9 +92,12 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(textspeed);
         }
     }
-    public void EndDialogue()
+
+    //ENDING THE DIALOGUE FOR NOW ITS JUST TEXTBOX GOING DOWN
+    public void EndDialogueWithOptions()
     {
         animator.SetBool("Isopen", false);
+        logicmanager.GetComponent<LogicManagerforDialogue>().ActivateButtons();
     }
 
     

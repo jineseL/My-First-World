@@ -21,6 +21,9 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask layer; // for the layer you want to detect, in this case will be all platform 
     public float gravity;
 
+    //for double jumping
+    public bool canDoubleJump = false;
+    public bool secondJump = false;
 
     void Start()
     {
@@ -52,16 +55,39 @@ public class PlayerMovement : MonoBehaviour
             isfacingright = true;
             playersprite.flipX = false;
         }
-        
+
 
         //for jumping
         /*isgrounded = isgrounded();*/
-        if (Input.GetButtonDown("Jump") == true && isgrounded() == true /*&& canjump ==true*/)
+        if (canDoubleJump == false)
         {
-            /*canjump = false;*/
-            body.velocity = new Vector2(body.velocity.x, jumpheight);
-            //body.AddForce(transform.up * jumpheight);
+            if (Input.GetButtonDown("Jump") == true && isgrounded() == true /*&& canjump ==true*/)
+            {
+                /*canjump = false;*/
+                body.velocity = new Vector2(body.velocity.x, jumpheight);
+                //body.AddForce(transform.up * jumpheight);
+            }
         }
+        else
+        {
+            if (secondJump == false)
+            {
+                if (Input.GetButtonDown("Jump") == true && isgrounded() == true /*&& canjump ==true*/)
+                {
+                    body.velocity = new Vector2(body.velocity.x, jumpheight);
+                    secondJump = true;
+                }
+            }
+            else
+            {
+                if (Input.GetButtonDown("Jump"))
+                {
+                    body.velocity = new Vector2(body.velocity.x, jumpheight);
+                    secondJump = false;
+                }
+            }
+        }
+            
         
         //so that would not bouce up slopes
         if (horizontalmovement == 0 && isgrounded() == true)
