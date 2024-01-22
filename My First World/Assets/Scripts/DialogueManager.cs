@@ -8,6 +8,7 @@ public class DialogueManager : MonoBehaviour
     public Text nametext;
     public Text DialogueText;
     public float textspeed;
+    public int AmountofDialogue;
 
     public Animator animator;
     private Queue<string> Names;
@@ -58,8 +59,17 @@ public class DialogueManager : MonoBehaviour
     {
         if (Names.Count == 0)
         {
-            EndDialogueWithOptions();
-            return;
+            if (AmountofDialogue != 0)
+            {
+                AmountofDialogue -= 1;
+                EndDialogueWithOptions();
+                return;
+            }
+            else
+            {
+                EndDialogue();
+                return;
+            }
         }
         string name = Names.Dequeue();
         if (sentences.Count == 0)
@@ -99,6 +109,10 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("Isopen", false);
         logicmanager.GetComponent<LogicManagerforDialogue>().ActivateButtons();
     }
-
+    public void EndDialogue()
+    {
+        animator.SetBool("Isopen", false);
+        logicmanager.GetComponent<LogicManagerforDialogue>().ReturnToPlatform();
+    }
     
 }

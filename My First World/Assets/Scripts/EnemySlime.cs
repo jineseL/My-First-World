@@ -9,8 +9,10 @@ public class EnemySlime : MonoBehaviour
     
     private bool facingRight = true;
     public Transform Groundcheck;
+    public Transform Wallcheck;
 
     RaycastHit2D hit;
+    RaycastHit2D hit2;
     public LayerMask groundlayers;
     void Start()
     {
@@ -19,14 +21,9 @@ public class EnemySlime : MonoBehaviour
     }
     private void Update()
     {
-            hit = Physics2D.Raycast(Groundcheck.position, -transform.up, 1f, groundlayers);
-    }
-
-
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        if (hit.collider != false)
+            hit = Physics2D.Raycast(Groundcheck.position, -transform.up, 0.3f, groundlayers);
+            hit2 = Physics2D.Raycast(Wallcheck.position, transform.right, 0.3f, groundlayers);
+        if (hit.collider == true && hit2.collider == false)
         {
             if (facingRight == true)
             {
@@ -43,5 +40,27 @@ public class EnemySlime : MonoBehaviour
             transform.localScale = new Vector3(-transform.localScale.x, 1f, 1f);
         }
     }
+
+
+    // Update is called once per frame
+    /*void FixedUpdate()
+    {
+        if (hit.collider != false || hit2.collider != false)
+        {
+            if (facingRight == true)
+            {
+                SlimeBody.velocity = new Vector2(movespeed, SlimeBody.velocity.y);
+            }
+            else
+            {
+                SlimeBody.velocity = new Vector2(-movespeed, SlimeBody.velocity.y);
+            }
+        }
+        else
+        {
+            facingRight = !facingRight;
+            transform.localScale = new Vector3(-transform.localScale.x, 1f, 1f);
+        }
+    }*/
     
 }

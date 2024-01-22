@@ -10,6 +10,7 @@ public class LogicManagerforDialogue : MonoBehaviour
     // Start is called before the first frame update
     private bool clickonce =false;
     public GameObject dialogue;
+    public GameObject dialogue2;
     public Button button1;
     public Button button2;
     private GameObject player;
@@ -47,6 +48,8 @@ public class LogicManagerforDialogue : MonoBehaviour
     {
         button1.gameObject.SetActive(true);
         button2.gameObject.SetActive(true);
+
+        //for fading in buttons if want to do that in the future
         /*float alphanumber = 255f;
         while (alphanumber >= 225f)
         {
@@ -55,18 +58,35 @@ public class LogicManagerforDialogue : MonoBehaviour
         button1.image.color = new Color(34f, 34f, 34f, alphanumber);*/
 
     }
+    public void DeactivateButtons()
+    {
+        button1.gameObject.SetActive(false);
+        button2.gameObject.SetActive(false);
+    }
+
+    //to edit what each button do, edit here
     public void button1click()
     {
         
         PlayerMovement.canDoubleJump = true;
-        SceneManager.LoadScene(("BaseLevel"));
+        if (dialogue2)
+        {
+            dialogue2.GetComponent<DialogueTrigger>().TriggerDialogue();
+            DeactivateButtons();
+        }
         
-        
-
     }
     public void button2click()
     {
         PlayerMovement.movementspeed += 5;
+        if (dialogue2)
+        {
+            dialogue2.GetComponent<DialogueTrigger>().TriggerDialogue();
+            DeactivateButtons();
+        }
+    }
+    public void ReturnToPlatform()
+    {
         SceneManager.LoadScene(("BaseLevel"));
     }
 }
