@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         playersprite = GetComponent<SpriteRenderer>();
+        isfacingright = true;
     }
 
     // Update is called once per frame

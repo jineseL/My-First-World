@@ -17,14 +17,28 @@ public class EnemyBehaviour : MonoBehaviour
     private GameObject player;
     public float knockbackforce;
     private Rigidbody2D body;
-    
+    public float enemytype;
+
+
+    private EnemySlime referencescript;
+    private EnemyCup referencescript2;
+
+
     // Start is called before the first frame update
     void Start()
     {
         invTime = InvDuration;
         body = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player");
-        
+
+        if (enemytype == 1)
+        {
+            referencescript = GetComponent<EnemySlime>();
+        }
+        if(enemytype == 2)
+        {
+            referencescript2 = GetComponent<EnemyCup>();
+        }
     }
 
     // Update is called once per frame
@@ -48,8 +62,22 @@ public class EnemyBehaviour : MonoBehaviour
             isInv = true;
             Vector2 direction = (gameObject.transform.position - player.transform.position).normalized;
             Vector2 knockback = direction * knockbackforce;
+
+            //to choose which enemy to stop, lol
+            if (enemytype == 1)
+            {
+                referencescript.knockBack = true; // to stop enemy from moving 
+                body.velocity = new Vector2(0, body.velocity.y);
+            }
+
+
+            if (enemytype == 2)
+            {
+                referencescript2.knockBack = true;
+            }
+
+
             
-           
             body.AddForce(knockback, ForceMode2D.Impulse);
         }
         
