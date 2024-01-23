@@ -17,13 +17,14 @@ public class EnemyBehaviour : MonoBehaviour
     private GameObject player;
     public float knockbackforce;
     private Rigidbody2D body;
+    
     // Start is called before the first frame update
     void Start()
     {
         invTime = InvDuration;
         body = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player");
-
+        
     }
 
     // Update is called once per frame
@@ -47,6 +48,8 @@ public class EnemyBehaviour : MonoBehaviour
             isInv = true;
             Vector2 direction = (gameObject.transform.position - player.transform.position).normalized;
             Vector2 knockback = direction * knockbackforce;
+            
+           
             body.AddForce(knockback, ForceMode2D.Impulse);
         }
         
