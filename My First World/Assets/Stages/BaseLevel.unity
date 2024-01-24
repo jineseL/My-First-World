@@ -1285,8 +1285,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f9ed517c87b2d43839ab51c76f6042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 0.1
-  jumpforce: 0.5
+  movespeed: 2
+  jumpforce: 2
   Groundcheck: {fileID: 7160387623789827394}
   Wallcheck: {fileID: 7050781108823632883}
   groundlayers:
@@ -1294,6 +1294,7 @@ MonoBehaviour:
     m_Bits: 128
   knockbacktimer: 1
   knockBack: 0
+  jumpcooldown: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

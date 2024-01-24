@@ -14,44 +14,82 @@ public class EnemyCup : MonoBehaviour
 
 
     //for checking if slime is at the edge or hitting a wall, know when to turn back
-    RaycastHit2D hit;
+    //RaycastHit2D hit;
     //RaycastHit2D hit2;
     public LayerMask groundlayers;
 
-    //for checking if slime is knockback
+    //for checking if cup is knockback
 
     public float knockbacktimer;
     private float timer;
     public bool knockBack;
+
+    //for cooldown for jumping
+    public float jumpcooldown;
+    private float jumptimer;
+    //public bool isintheair;
+    
     void Start()
     {
         cupBody = GetComponent<Rigidbody2D>();
         timer = knockbacktimer;
+        jumptimer = jumpcooldown;
         //Groundcheck = GetComponentInChildren<Transform>();
     }
     private void Update()
     {
-        hit = Physics2D.Raycast(Groundcheck.position, -transform.up, 0.3f, groundlayers);
+        //hit = Physics2D.Raycast(Groundcheck.position, -transform.up, 0.3f, groundlayers);
         //hit2 = Physics2D.Raycast(Wallcheck.position, transform.right, 0.3f, groundlayers);
+        
 
         if (knockBack == false)
         {
-
-            if (hit.collider == true)
+            
+            if (isgroundedatedge() == true)
             {
-                if (facingRight == true)
+                if (isgrounded() == true)
                 {
-                    jumpright();
+                    //isintheair = true;
+                    if (facingRight == true)
+                    {
+
+                        if (jumptimer > 0)
+                        {
+
+                            jumptimer -= Time.deltaTime;
+
+                        }
+                        else
+                        {
+                            jumptimer = jumpcooldown;
+                            jumpright();
+                        }
+                    }
+                    else
+                    {
+
+                        if (jumptimer > 0)
+                        {
+
+                            jumptimer -= Time.deltaTime;
+
+                        }
+                        else
+                        {
+                            jumptimer = jumpcooldown;
+                            jumpleft();
+                        }
+                    }
                 }
-                else
-                {
-                    jumpleft();
-                }
+                
             }
             else
             {
-                facingRight = !facingRight;
-                transform.localScale = new Vector3(-transform.localScale.x, 1f, 1f);
+                if (isintheair() == false)
+                {
+                    facingRight = !facingRight;
+                    transform.localScale = new Vector3(-transform.localScale.x, 1f, 1f);
+                }
             }
         }
         else
@@ -79,6 +117,30 @@ public class EnemyCup : MonoBehaviour
     {
         cupBody.AddForce(transform.up * jumpforce, ForceMode2D.Impulse);
         cupBody.AddForce(-transform.right * movespeed, ForceMode2D.Impulse);
+    }
+    public bool isgroundedatedge()
+    {
+        if (Physics2D.Raycast(Groundcheck.position, -transform.up, 0.3f, groundlayers) == true)
+        {
+            return true;
+        }
+        else return false;
+    }
+    public bool isgrounded()
+    {
+        if (Physics2D.Raycast(Groundcheck.position, -transform.up, 0.3f, groundlayers) == true)
+        {
+            return true;
+        }
+        else return false;
+    }
+    public bool isintheair()
+    {
+        if (isgrounded() == true)
+        {
+            return false;
+        }
+        else return true;
     }
 
 
