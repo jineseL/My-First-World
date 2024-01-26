@@ -22,6 +22,7 @@ public class EnemyBehaviour : MonoBehaviour
 
     private EnemySlime referencescript;
     private EnemyCup referencescript2;
+    private EnemyBird referencescript3;
 
 
     // Start is called before the first frame update
@@ -36,6 +37,10 @@ public class EnemyBehaviour : MonoBehaviour
             referencescript = GetComponent<EnemySlime>();
         }
         if(enemytype == 2)
+        {
+            referencescript2 = GetComponent<EnemyCup>();
+        }
+        if(enemytype == 3)
         {
             referencescript2 = GetComponent<EnemyCup>();
         }
@@ -74,6 +79,12 @@ public class EnemyBehaviour : MonoBehaviour
             if (enemytype == 2)
             {
                 referencescript2.knockBack = true;
+                //body.velocity = new Vector2(0, body.velocity.y);
+            }
+
+            if(enemytype == 3)
+            {
+
             }
 
 

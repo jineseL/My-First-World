@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 8672544640266143722}
   - component: {fileID: 867791831556831084}
   - component: {fileID: 1305710148938654344}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Slime
   m_TagString: Enemies
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -259,5 +259,8 @@ MonoBehaviour:
   groundlayers:
     serializedVersion: 2
     m_Bits: 128
+  enemylayerl:
+    serializedVersion: 2
+    m_Bits: 1024
   knockbacktimer: 1
   knockBack: 0
