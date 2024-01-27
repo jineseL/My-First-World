@@ -41,20 +41,17 @@ public class EnemyCup : MonoBehaviour
         cupBody = GetComponent<Rigidbody2D>();
         timer = knockbacktimer;
         jumptimer = jumpcooldown;
+        Physics2D.IgnoreLayerCollision(10, 10, true);
         //Groundcheck = GetComponentInChildren<Transform>();
     }
     private void Update()
     {
-        //hit = Physics2D.Raycast(Groundcheck.position, -transform.up, 0.3f, groundlayers);
-        //hit2 = Physics2D.Raycast(Wallcheck.position, transform.right, 0.3f, groundlayers);
-        
-
         if (knockBack == false)
         {
             
             if (isgroundedatthecentre() == true)
             {
-                if (isgroundedattheedge() == true && wallcheck() ==false && enemycheck() == false)
+                if (isgroundedattheedge() == true && wallcheck() ==false /*&& enemycheck() == false*/)
                 {
 
                     if (facingRight == true)
@@ -160,14 +157,14 @@ public class EnemyCup : MonoBehaviour
         }
         else return false;
     }
-    public bool enemycheck()
+/*    public bool enemycheck()
     {
         if (Physics2D.Raycast(Wallcheck.position, transform.right, 0.05f, enemylayers) == true)
         {
             return true;
         }
         else return false;
-    }
+    }*/
     
 
 

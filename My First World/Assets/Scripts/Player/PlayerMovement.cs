@@ -25,11 +25,18 @@ public class PlayerMovement : MonoBehaviour
     public static bool canDoubleJump;
     public bool secondJump = false;
 
+    //for wind effect
+    public bool windEffect; //to activate on the dialouge
+    private bool windRight = true; //to switch the wind direction
+    private float windTimer = 0;
+    public float windforce;
+    public float windDuration; // wind duration to blow at 1 direction
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         playersprite = GetComponent<SpriteRenderer>();
         isfacingright = true;
+        //windEffect = true;
     }
 
     // Update is called once per frame
@@ -37,7 +44,51 @@ public class PlayerMovement : MonoBehaviour
     {
         //for horizontal movement
         horizontalmovement = Input.GetAxis("Horizontal");
-        body.velocity = new Vector2(horizontalmovement * movementspeed, body.velocity.y);
+        if (windEffect == false)
+        {
+            body.velocity = new Vector2(horizontalmovement * movementspeed, body.velocity.y);
+        }
+
+        if (windEffect == true) //windeffect
+        {
+            if (windRight == true)
+            {
+                if (horizontalmovement >= 0)
+                {
+
+                    body.velocity = new Vector2(horizontalmovement * movementspeed - windforce, body.velocity.y);
+                }
+                else body.velocity = new Vector2(horizontalmovement * movementspeed + windforce, body.velocity.y);
+                if (windTimer < windDuration)
+                {
+                    windTimer += Time.deltaTime;
+                }
+                else
+                {
+                    windRight = false;
+                    windTimer = 0;
+                }
+            }
+            else
+            {
+                if (horizontalmovement <= 0)
+                {
+                    body.velocity = new Vector2(horizontalmovement * movementspeed + windforce, body.velocity.y);
+                }
+                else body.velocity = new Vector2(horizontalmovement * movementspeed - windforce, body.velocity.y);
+                if (windTimer < windDuration)
+                {
+                    windTimer += Time.deltaTime;
+                }
+                else
+                {
+                    windRight = true;
+                    windTimer = 0;
+                }
+            }
+
+        }
+
 
         //if want to switch to GetAxisRaw
         /*if ((Input.GetKeyUp(KeyCode.A) == true || Input.GetKeyUp(KeyCode.D) == true) && isgrounded() == true) //to make character not bounce when going up slope
@@ -96,6 +147,48 @@ public class PlayerMovement : MonoBehaviour
             body.gravityScale = 0;
         }
         else body.gravityScale = gravity;
+    }
+    private void FixedUpdate()
+    {
+        if (windEffect == true) //windeffect
+        {
+            if (windRight == true)
+            {
+                if (horizontalmovement >= 0)
+                {
+                    
+                    body.AddForce(-transform.right);
+                }
+                else movementspeed += 2f;
+                if (windTimer < windDuration)
+                {
+                    windTimer += Time.deltaTime;
+                }
+                else
+                {
+                    windRight = false;
+                    windTimer = 0;
+                }
+            }
+            else
+            {
+                if (horizontalmovement <= 0)
+                {
+                    movementspeed -= 2f;
+                }
+                else movementspeed += 2f;
+                if (windTimer < windDuration)
+                {
+                    windTimer += Time.deltaTime;
+                }
+                else
+                {
+                    windRight = true;
+                    windTimer = 0;
+                }
+            }
+
+        }
     }
 
     //function for checking if player is grounded
