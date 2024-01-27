@@ -42,7 +42,7 @@ public class EnemyBehaviour : MonoBehaviour
         }
         if(enemytype == 3)
         {
-            referencescript2 = GetComponent<EnemyCup>();
+            referencescript3 = GetComponent<EnemyBird>();
         }
     }
 
@@ -84,7 +84,7 @@ public class EnemyBehaviour : MonoBehaviour
 
             if(enemytype == 3)
             {
-
+                referencescript3.knockBack = true;
             }
 
 

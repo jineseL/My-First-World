@@ -7,6 +7,8 @@ public class EnemyBird : MonoBehaviour
     [SerializeField]
     private GameObject player;
     private Rigidbody2D birdbody;
+
+    public float maxspeed;
     //knockback 
     public float knockbacktimer;
     private float timer;
@@ -23,19 +25,28 @@ public class EnemyBird : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if(birdbody.velocity.x > 2)
+        if (birdbody.velocity.x > maxspeed)
         {
-            birdbody.velocity = new Vector2(2f, birdbody.velocity.y);
+            birdbody.velocity = new Vector2(maxspeed, birdbody.velocity.y);
         }
-        if (birdbody.velocity.y > 2)
+        if (birdbody.velocity.x < -maxspeed)
         {
-            birdbody.velocity = new Vector2(birdbody.velocity.x, 2f);
-        }*/
-        birdbody.AddForce(-transform.right);
+            birdbody.velocity = new Vector2(-maxspeed, birdbody.velocity.y);
+        }
+        if (birdbody.velocity.y > maxspeed)
+        {
+            birdbody.velocity = new Vector2(birdbody.velocity.x, maxspeed);
+        }
+        if (birdbody.velocity.y < -maxspeed)
+        {
+            birdbody.velocity = new Vector2(birdbody.velocity.x, -maxspeed);
+        }
+
+        //birdbody.AddForce(transform.right);
         if (knockBack == false)
         {
             //movement script here
-            float distance = Vector3.Distance(player.transform.position, transform.position);
+            //float distance = Vector3.Distance(player.transform.position, transform.position);
             if (transform.position.x > player.transform.position.x)
             {
                 birdbody.AddForce(-transform.right);
@@ -50,13 +61,9 @@ public class EnemyBird : MonoBehaviour
                 //birdbody.AddForce(transform.up);
             }
             else birdbody.AddForce(transform.up);
-
-
-
         }
         else
         {
-
             if (timer > 0)
             {
                 timer -= Time.deltaTime;
