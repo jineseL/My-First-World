@@ -44,50 +44,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //for horizontal movement
         horizontalmovement = Input.GetAxis("Horizontal");
-        if (windEffect == false)
-        {
-            body.velocity = new Vector2(horizontalmovement * movementspeed, body.velocity.y);
-        }
-
-        if (windEffect == true) //windeffect
-        {
-            if (windRight == true)
-            {
-                if (horizontalmovement >= 0)
-                {
-
-                    body.velocity = new Vector2(horizontalmovement * movementspeed - windforce, body.velocity.y);
-                }
-                else body.velocity = new Vector2(horizontalmovement * movementspeed + windforce, body.velocity.y);
-                if (windTimer < windDuration)
-                {
-                    windTimer += Time.deltaTime;
-                }
-                else
-                {
-                    windRight = false;
-                    windTimer = 0;
-                }
-            }
-            else
-            {
-                if (horizontalmovement <= 0)
-                {
-                    body.velocity = new Vector2(horizontalmovement * movementspeed + windforce, body.velocity.y);
-                }
-                else body.velocity = new Vector2(horizontalmovement * movementspeed - windforce, body.velocity.y);
-                if (windTimer < windDuration)
-                {
-                    windTimer += Time.deltaTime;
-                }
-                else
-                {
-                    windRight = true;
-                    windTimer = 0;
-                }
-            }
-
-        }
+       
 
 
         //if want to switch to GetAxisRaw
@@ -150,16 +107,22 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (windEffect == false)
+        {
+            body.velocity = new Vector2(horizontalmovement * movementspeed, body.velocity.y);
+        }
+
         if (windEffect == true) //windeffect
         {
             if (windRight == true)
             {
                 if (horizontalmovement >= 0)
                 {
-                    
-                    body.AddForce(-transform.right);
+
+                    body.velocity = new Vector2(horizontalmovement * movementspeed - windforce, body.velocity.y);
+
                 }
-                else movementspeed += 2f;
+                else body.velocity = new Vector2(horizontalmovement * movementspeed + windforce, body.velocity.y);
                 if (windTimer < windDuration)
                 {
                     windTimer += Time.deltaTime;
@@ -174,9 +137,9 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (horizontalmovement <= 0)
                 {
-                    movementspeed -= 2f;
+                    body.velocity = new Vector2(horizontalmovement * movementspeed + windforce, body.velocity.y);
                 }
-                else movementspeed += 2f;
+                else body.velocity = new Vector2(horizontalmovement * movementspeed - windforce, body.velocity.y);
                 if (windTimer < windDuration)
                 {
                     windTimer += Time.deltaTime;
