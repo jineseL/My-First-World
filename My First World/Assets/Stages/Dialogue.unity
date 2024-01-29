@@ -454,7 +454,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button 1
+  m_Text: Double Jump
 --- !u!222 &501246584
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1520,7 +1520,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button 2
+  m_Text: Faster Speed
 --- !u!222 &1989186974
 CanvasRenderer:
   m_ObjectHideFlags: 0
