@@ -209,7 +209,7 @@ MonoBehaviour:
   InvDuration: 1
   player: {fileID: 0}
   knockbackforce: 2
-  enemytype: 1
+  enemytype: 4
 --- !u!114 &3393355647745326475
 MonoBehaviour:
   m_ObjectHideFlags: 0

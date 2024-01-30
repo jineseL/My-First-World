@@ -23,6 +23,7 @@ public class EnemyBehaviour : MonoBehaviour
     private EnemySlime referencescript;
     private EnemyCup referencescript2;
     private EnemyBird referencescript3;
+    private EnemySlimePartol referencescript4;
 
 
     // Start is called before the first frame update
@@ -36,14 +37,19 @@ public class EnemyBehaviour : MonoBehaviour
         {
             referencescript = GetComponent<EnemySlime>();
         }
-        if(enemytype == 2)
+        else if(enemytype == 2)
         {
             referencescript2 = GetComponent<EnemyCup>();
         }
-        if(enemytype == 3)
+        else if(enemytype == 3)
         {
             referencescript3 = GetComponent<EnemyBird>();
         }
+        else if(enemytype == 4)
+        {
+            referencescript4 = GetComponent<EnemySlimePartol>();
+        }
+
     }
 
     // Update is called once per frame
@@ -87,8 +93,11 @@ public class EnemyBehaviour : MonoBehaviour
                 referencescript3.knockBack = true;
             }
 
-
-            
+            if(enemytype == 4)
+            {
+                referencescript4.knockBack = true;
+                body.velocity = new Vector2(0, body.velocity.y);
+            }
             body.AddForce(knockback, ForceMode2D.Impulse);
         }
         

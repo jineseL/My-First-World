@@ -7,12 +7,22 @@ public class Timer : MonoBehaviour
 {
     [SerializeField]
     TextMeshProUGUI timertext;
+    [SerializeField]
     float timer;
-    
-    // Update is called once per frame
+    public GameObject player;
     void Update()
     {
-        timer += Time.deltaTime;
-        timertext.text = timer.ToString();
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            int minutes = Mathf.FloorToInt(timer / 60);
+            int seconds = Mathf.FloorToInt(timer % 60);
+            timertext.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
+        else
+        {
+            player.GetComponent<PlayerHealth>().death();
+            timertext.text = string.Format("{0:00}:{1:00}", 0, 0);
+        }
     }
 }

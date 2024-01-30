@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     // for horizontal movement
     public static float movementspeed = 5;
     public float horizontalmovement;
+    public static bool canmove;
 
     //for checking if character is facing right or left
     public bool isfacingright = true;
@@ -26,25 +27,38 @@ public class PlayerMovement : MonoBehaviour
     public bool secondJump = false;
 
     //for wind effect
-    public bool windEffect; //to activate on the dialouge
+    public static bool windEffect; //to activate on the dialouge
     private bool windRight = true; //to switch the wind direction
+    private enum windstate
+    {
+        windRight,
+        windNeutral,
+        windLeft,
+    }
     private float windTimer = 0;
     public float windforce;
+    public float windforceaddition;
+    public float windforcewhenstandingstill;
     public float windDuration; // wind duration to blow at 1 direction
+    windstate wind = windstate.windRight;
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         playersprite = GetComponent<SpriteRenderer>();
         isfacingright = true;
-        //windEffect = true;
+        canmove = true;
+        //windEffect = false;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         //for horizontal movement
-        horizontalmovement = Input.GetAxis("Horizontal");
-       
+        
+            horizontalmovement = Input.GetAxis("Horizontal");
+
+
 
 
         //if want to switch to GetAxisRaw
@@ -54,45 +68,51 @@ public class PlayerMovement : MonoBehaviour
         }*/
 
         //Direction character is facing check n flipping player sprite
-        if (Input.GetKeyDown(KeyCode.A))
+        if (PlayerHealth.timefreeze == false)
         {
-            isfacingright = false;
-            playersprite.flipX = true;
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            isfacingright = true;
-            playersprite.flipX = false;
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                isfacingright = false;
+                playersprite.flipX = true;
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                isfacingright = true;
+                playersprite.flipX = false;
+            }
         }
 
 
         //for jumping
         /*isgrounded = isgrounded();*/
-        if (canDoubleJump == false)
+        if (canmove)
         {
-            if (Input.GetButtonDown("Jump") == true && isgrounded() == true /*&& canjump ==true*/)
-            {
-                /*canjump = false;*/
-                body.velocity = new Vector2(body.velocity.x, jumpheight);
-                //body.AddForce(transform.up * jumpheight);
-            }
-        }
-        else//for double jumping
-        {
-            if (secondJump == false)
+            if (canDoubleJump == false)
             {
                 if (Input.GetButtonDown("Jump") == true && isgrounded() == true /*&& canjump ==true*/)
                 {
+                    /*canjump = false;*/
                     body.velocity = new Vector2(body.velocity.x, jumpheight);
-                    secondJump = true;
+                    //body.AddForce(transform.up * jumpheight);
                 }
             }
-            else
+            else//for double jumping
             {
-                if (Input.GetButtonDown("Jump"))
+                if (secondJump == false)
                 {
-                    body.velocity = new Vector2(body.velocity.x, jumpheight);
-                    secondJump = false;
+                    if (Input.GetButtonDown("Jump") == true && isgrounded() == true /*&& canjump ==true*/)
+                    {
+                        body.velocity = new Vector2(body.velocity.x, jumpheight);
+                        secondJump = true;
+                    }
+                }
+                else
+                {
+                    if (Input.GetButtonDown("Jump"))
+                    {
+                        body.velocity = new Vector2(body.velocity.x, jumpheight);
+                        secondJump = false;
+                    }
                 }
             }
         }
@@ -107,50 +127,74 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (windEffect == false)
+        if (canmove)
         {
-            body.velocity = new Vector2(horizontalmovement * movementspeed, body.velocity.y);
-        }
-
-        if (windEffect == true) //windeffect
-        {
-            if (windRight == true)
+            if (windEffect == false)
             {
-                if (horizontalmovement >= 0)
+                body.velocity = new Vector2(horizontalmovement * movementspeed, body.velocity.y);
+            }
+
+            if (windEffect == true) //windeffect
+            {
+                if (wind == windstate.windRight)
                 {
+                    if (horizontalmovement == 0)
+                    {
 
-                    body.velocity = new Vector2(horizontalmovement * movementspeed - windforce, body.velocity.y);
+                        body.velocity = new Vector2(-windforcewhenstandingstill, body.velocity.y);
 
+                    }
+                    else if (horizontalmovement > 0)
+                        body.velocity = new Vector2(horizontalmovement * movementspeed - windforce, body.velocity.y);
+                    else body.velocity = new Vector2(horizontalmovement * movementspeed - windforceaddition, body.velocity.y);
+                    if (windTimer < windDuration)
+                    {
+                        windTimer += Time.deltaTime;
+                    }
+                    else
+                    {
+                        windRight = true;
+                        wind += 1;
+                        windTimer = 0;
+                    }
                 }
-                else body.velocity = new Vector2(horizontalmovement * movementspeed + windforce, body.velocity.y);
-                if (windTimer < windDuration)
+                else if (wind == windstate.windLeft)
                 {
-                    windTimer += Time.deltaTime;
+                    if (horizontalmovement == 0)
+                    {
+                        body.velocity = new Vector2(windforcewhenstandingstill, body.velocity.y);
+                    }
+                    else if
+                        (horizontalmovement > 0) body.velocity = new Vector2(horizontalmovement * movementspeed + windforceaddition, body.velocity.y);
+                    else body.velocity = new Vector2(horizontalmovement * movementspeed + windforce, body.velocity.y);
+                    if (windTimer < windDuration)
+                    {
+                        windTimer += Time.deltaTime;
+                    }
+                    else
+                    {
+                        windRight = false;
+                        wind -= 1;
+                        windTimer = 0;
+                    }
                 }
                 else
                 {
-                    windRight = false;
-                    windTimer = 0;
+                    body.velocity = new Vector2(horizontalmovement * movementspeed, body.velocity.y);
+                    if (windTimer < windDuration)
+                    {
+                        windTimer += Time.deltaTime;
+                    }
+                    else
+                    {
+                        if (windRight == true)
+                            wind += 1;
+                        else wind -= 1;
+                        windTimer = 0;
+                    }
                 }
-            }
-            else
-            {
-                if (horizontalmovement <= 0)
-                {
-                    body.velocity = new Vector2(horizontalmovement * movementspeed + windforce, body.velocity.y);
-                }
-                else body.velocity = new Vector2(horizontalmovement * movementspeed - windforce, body.velocity.y);
-                if (windTimer < windDuration)
-                {
-                    windTimer += Time.deltaTime;
-                }
-                else
-                {
-                    windRight = true;
-                    windTimer = 0;
-                }
-            }
 
+            }
         }
     }
 
