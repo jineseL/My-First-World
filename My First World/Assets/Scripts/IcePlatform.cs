@@ -19,7 +19,7 @@ public class IcePlatform : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
         //adding force to player constantly when player is on the platform

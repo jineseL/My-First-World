@@ -13,6 +13,10 @@ public class EnemyBird : MonoBehaviour
     public float knockbacktimer;
     private float timer;
     public bool knockBack;
+    private PlayerHealth referencescript;
+
+    private bool playerup;
+    private bool playerleft;
 
 
     // Start is called before the first frame update
@@ -20,10 +24,49 @@ public class EnemyBird : MonoBehaviour
     {
         player = GameObject.Find("Player");
         birdbody = GetComponent<Rigidbody2D>();
+        referencescript = player.GetComponent<PlayerHealth>();
     }
 
     // Update is called once per frame
     void Update()
+    {
+       
+
+        //birdbody.AddForce(transform.right);
+        if (knockBack == false)
+        {
+            //movement script here
+            //float distance = Vector3.Distance(player.transform.position, transform.position);
+            if (transform.position.x > player.transform.position.x)
+            {
+                playerleft = true;
+                //birdbody.AddForce(transform.up);
+            }
+            else playerleft = false;
+
+
+            if (transform.position.y > player.transform.position.y)
+            {
+                playerup = false;
+            }
+            else  playerup = true;
+        }
+        else
+        {
+            if (timer > 0)
+            {
+                timer -= Time.deltaTime;
+
+            }
+            else //if (timer <= 0)
+            {
+                timer = knockbacktimer;
+                knockBack = false;
+            }
+        }
+        
+    }
+    private void FixedUpdate()
     {
         if (birdbody.velocity.x > maxspeed)
         {
@@ -41,38 +84,25 @@ public class EnemyBird : MonoBehaviour
         {
             birdbody.velocity = new Vector2(birdbody.velocity.x, -maxspeed);
         }
-
-        //birdbody.AddForce(transform.right);
-        if (knockBack == false)
+        if(playerleft == true)
         {
-            //movement script here
-            //float distance = Vector3.Distance(player.transform.position, transform.position);
-            if (transform.position.x > player.transform.position.x)
-            {
-                birdbody.AddForce(-transform.right);
-                //birdbody.AddForce(transform.up);
-            }
-            else birdbody.AddForce(transform.right);
-
-
-            if (transform.position.y > player.transform.position.y)
-            {
-                birdbody.AddForce(-transform.up);
-                //birdbody.AddForce(transform.up);
-            }
-            else birdbody.AddForce(transform.up);
+            birdbody.AddForce(-transform.right*10);
         }
-        else
+        else birdbody.AddForce(transform.right*10);
+        if (playerup == true)
         {
-            if (timer > 0)
+            birdbody.AddForce(transform.up*10);
+        }
+        else birdbody.AddForce(-transform.up*10);
+    }
+    private void OnTriggerStay2D(Collider2D collider)
+    {
+        if (referencescript.isinv == false)
+        {
+            if (collider.CompareTag("Player"))
             {
-                timer -= Time.deltaTime;
+                referencescript.damage(gameObject.transform.position);
 
-            }
-            else //if (timer <= 0)
-            {
-                timer = knockbacktimer;
-                knockBack = false;
             }
         }
     }

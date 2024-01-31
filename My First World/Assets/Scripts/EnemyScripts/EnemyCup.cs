@@ -115,11 +115,13 @@ public class EnemyCup : MonoBehaviour
     }
     private void jumpright()
     {
+        //cupBody.velocity = new Vector2(0, 0);
         cupBody.AddForce(transform.up * jumpforce, ForceMode2D.Impulse);
         cupBody.AddForce(transform.right * movespeed, ForceMode2D.Impulse);
     }
     private void jumpleft()
     {
+        //cupBody.velocity = new Vector2(0, 0);
         cupBody.AddForce(transform.up * jumpforce, ForceMode2D.Impulse);
         cupBody.AddForce(-transform.right * movespeed, ForceMode2D.Impulse);
     }

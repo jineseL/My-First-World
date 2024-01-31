@@ -34,6 +34,7 @@ public class EnemySlimePartol : MonoBehaviour
         timer = knockbacktimer;
 
         Physics2D.IgnoreLayerCollision(10, 10, true);
+        
         //Groundcheck = GetComponentInChildren<Transform>();
     }
     private void Update()

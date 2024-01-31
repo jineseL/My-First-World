@@ -9,7 +9,7 @@ public class EnemyBehaviour : MonoBehaviour
     //for Invincible affect on enemies
     public float InvDuration;
     private float invTime;
-    private bool isInv = false;
+    public bool isInv = false;
 
 
     //for knock back affect when enemy is hit

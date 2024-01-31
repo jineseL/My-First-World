@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
     //inv timer
     private float invtimer;
     public float invduration;
-    private bool isinv;
+    public bool isinv;
 
     //for knockback
     private float timer;
@@ -25,20 +25,24 @@ public class PlayerHealth : MonoBehaviour
     public static bool timefreeze;
     public float unscaledtimerduration;
 
+    
+
     void Start()
     {
         PlayerBody = GetComponent<Rigidbody2D>();
-        this.fixedDeltaTime = Time.fixedDeltaTime;
+        this.fixedDeltaTime = Time.fixedDeltaTime; 
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (timefreeze == true)
         {
             freezescreen();
         }
-        if (isinv == true)
+        if (isinv == true )
         {
             invTimer();
             
@@ -66,6 +70,7 @@ public class PlayerHealth : MonoBehaviour
             }
         }
     }
+    
     public void damage(Vector3 position)
     {
         health -= 1;
@@ -101,7 +106,7 @@ public class PlayerHealth : MonoBehaviour
     {
         
         invtimer += Time.deltaTime;
-
+        Physics2D.IgnoreLayerCollision(6, 10, true);
         gameObject.transform.GetComponent<SpriteRenderer>().color = Color.red;
         
         
@@ -109,6 +114,7 @@ public class PlayerHealth : MonoBehaviour
         {
             gameObject.transform.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, 255f);
             invtimer = 0;
+            Physics2D.IgnoreLayerCollision(6, 10, false);
             isinv = false;
         }
     }
