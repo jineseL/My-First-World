@@ -13,6 +13,11 @@ public class AttackArea : MonoBehaviour
             //hit(collider, attackdamage);
             collider.GetComponent<EnemyBehaviour>().damage(attackDamage);
         }
+        if (collider.CompareTag("Boss"))
+        {
+            //hit(collider, attackdamage);
+            collider.GetComponent<BossScript>().damage(attackDamage);
+        }
     }
     /*public void hit(Collider2D enemy, int damage)
     {
