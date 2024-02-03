@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (canDoubleJump == false)
             {
-                if (Input.GetButtonDown("Jump") == true && isgrounded() == true /*&& canjump ==true*/)
+                if (Input.GetButton("Jump") == true && isgrounded() == true /*&& canjump ==true*/)
                 {
                     /*canjump = false;*/
                     body.velocity = new Vector2(body.velocity.x, jumpheight);
@@ -100,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (secondJump == false)
                 {
-                    if (Input.GetButtonDown("Jump") == true && isgrounded() == true /*&& canjump ==true*/)
+                    if (Input.GetButton("Jump") == true && isgrounded() == true /*&& canjump ==true*/)
                     {
                         body.velocity = new Vector2(body.velocity.x, jumpheight);
                         secondJump = true;

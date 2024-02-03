@@ -103,4 +103,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallspeed: 0
   speedReduction: -2
-  jumpspeed: 7
+  jumpspeed: 10

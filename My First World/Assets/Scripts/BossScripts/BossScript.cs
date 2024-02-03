@@ -5,6 +5,10 @@ using UnityEngine;
 public class BossScript : MonoBehaviour
 {
     public int BossHealth;
+    private bool isinv;
+
+    private float timer;
+    public float invTimer;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +22,27 @@ public class BossScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if(isinv == true)
+        {
+            if (timer < invTimer)
+            {
+                timer += Time.deltaTime;
+            }
+            else
+            {
+                isinv = false;
+                timer = 0;
+            }
+        }
 
     }
     public void damage(int damagetaken)
     {
-        BossHealth -= damagetaken;
+        if (isinv == false)
+        {
+            BossHealth -= damagetaken;
+            isinv = true;
+        }
     }
     
 }
