@@ -39,7 +39,7 @@ public class PokeMoveScript : MonoBehaviour
             //moving.enabled = !moving.enabled;
             direction = player.transform.position - transform.position;
             angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            Debug.Log("right {0}"+angle);
+            
             if (timer < shoottiming)
             {
                 timer += Time.deltaTime;
