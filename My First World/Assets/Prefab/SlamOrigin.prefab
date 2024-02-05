@@ -106,7 +106,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ee4cd5600326bac4aa9d7a4f986be307, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 239eda6292c7d644bbb738402ca9d81d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583dfd40985c1d24293e62a87509ab63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indicatorblinkingduration: 0.5
 --- !u!1 &8182181178160253324
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eddc4107d286db44384332f694e3f28d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackduration: 2
+  trackduration: 5
   tracking: 0
   slamming: 0
   slamspeed: 8
@@ -360,6 +361,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.34933913, y: -4.5383754}
-  m_Size: {x: 14.629449, y: 0.79947007}
+  m_Offset: {x: 0.48417664, y: -4.5383754}
+  m_Size: {x: 7.733799, y: 0.79947007}
   m_Direction: 1

@@ -23,6 +23,9 @@ public class SlamMoveScript : MonoBehaviour
     //for slamming
     public bool slamming;
     public float slamspeed;
+
+    private float slamtimer;
+    private float slamdestroy = 3;
     void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -61,6 +64,14 @@ public class SlamMoveScript : MonoBehaviour
         if(slamming == true)
         {
             body.velocity = -transform.up * slamspeed;
+            if(slamtimer < slamdestroy)
+            {
+                slamtimer += Time.deltaTime;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
     public void track()
@@ -72,7 +83,11 @@ public class SlamMoveScript : MonoBehaviour
     {
         if (collider.CompareTag("BossTopPlatform"))
         {
-            Destroy(gameObject.transform.parent.gameObject);
+            Destroy(gameObject);
+            //collider.GetComponent<Transform>().gameObject.SetActive(false);
+            collider.enabled = false;
+            collider.GetComponent<SpriteRenderer>().enabled = false;
+
         }
     }
 
