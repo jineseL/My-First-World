@@ -974,7 +974,7 @@ MonoBehaviour:
   isfacingright: 0
   jumpheight: 10
   boxsize: {x: 0.5, y: 0.08}
-  castdistance: 0.77
+  castdistance: 0.83
   layer:
     serializedVersion: 2
     m_Bits: 128

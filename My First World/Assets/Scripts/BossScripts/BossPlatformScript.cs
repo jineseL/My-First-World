@@ -15,10 +15,10 @@ public class BossPlatformScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.GetComponent<SpriteRenderer>().enabled == false)
+        if (gameObject.GetComponent<BoxCollider2D>().enabled == false)
         {
-            Debug.Log("hi");
-            if(timer < destroyedduration)
+            //gameObject.GetComponent<Animator>().SetBool("PlatformBoom", true);
+            if (timer < destroyedduration)
             {
                 timer += Time.deltaTime;
             }
@@ -26,6 +26,7 @@ public class BossPlatformScript : MonoBehaviour
             {
                 timer = 0;
                 GetComponent<BoxCollider2D>().enabled = true;
+                gameObject.GetComponent<Animator>().SetBool("PlatformBoom", false);
                 GetComponent<SpriteRenderer>().enabled = true;
             }
         }

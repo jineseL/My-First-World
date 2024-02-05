@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     //for jumping & groundcheck
     public float jumpheight;
+    private float jumping;
     //private bool canjump; //to prevent continous jumping
     public Vector2 boxsize; // for the size of the box to be use in boxcasting
     public float castdistance; //for the cast distance from the centre position of the gameobject 
@@ -89,18 +90,24 @@ public class PlayerMovement : MonoBehaviour
         {
             if (canDoubleJump == false)
             {
-                if (Input.GetButton("Jump") == true && isgrounded() == true /*&& canjump ==true*/)
+                if (Input.GetButtonDown("Jump") == true && isgrounded() == true /*&& canjump ==true*/)
                 {
                     /*canjump = false;*/
-                    body.velocity = new Vector2(body.velocity.x, jumpheight);
-                    //body.AddForce(transform.up * jumpheight);
+                    //body.velocity = new Vector2(body.velocity.x, jumpheight);
+                    if (Input.GetButton("Jump") == true)
+                    {
+                        
+                        jumping++;
+                        body.velocity = new Vector2(body.velocity.x, jumping);
+                    }
                 }
+                
             }
             else//for double jumping
             {
                 if (secondJump == false)
                 {
-                    if (Input.GetButton("Jump") == true && isgrounded() == true /*&& canjump ==true*/)
+                    if (Input.GetButtonDown("Jump") == true && isgrounded() == true /*&& canjump ==true*/)
                     {
                         body.velocity = new Vector2(body.velocity.x, jumpheight);
                         secondJump = true;
@@ -116,7 +123,10 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
-            
+        if (jumping >= jumpheight)
+        {
+            jumping = 0;
+        }
         
         //so that would not bouce up slopes
         if (horizontalmovement == 0 && isgrounded() == true)
