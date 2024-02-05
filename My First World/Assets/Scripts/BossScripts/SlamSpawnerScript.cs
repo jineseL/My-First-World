@@ -31,10 +31,14 @@ public class SlamSpawnerScript : MonoBehaviour
             timer = 0;
         }
     }
+    /*private void FixedUpdate()
+    {
+        transform.position = new Vector3(transform.position.x, GameCamera.transform.position.y + 7f, transform.position.z);
+    }*/
     void spawnslam()
     {
         /*float leftest = transform.position.x - offset;
         float rightest = transform.position.x + offset;*/
-        Instantiate(slam, new Vector3(transform.position.x,GameCamera.transform.position.y+7f , transform.position.z), transform.rotation);
+        Instantiate(slam, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
     }
 }

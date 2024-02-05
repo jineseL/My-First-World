@@ -8,11 +8,12 @@ public class SlamMoveScript : MonoBehaviour
     private GameObject player;
     private Rigidbody2D body;
     private Animator animator;
+    private Transform parenttransform;
 
     //timer for tracking
     private float tracktimer;
     public float trackduration;
-    private bool tracking;
+    public bool tracking;
 
     //for tracking
     private Vector3 offset = new Vector3(0f, 0f, -10f);
@@ -20,7 +21,7 @@ public class SlamMoveScript : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
 
     //for slamming
-    private bool slamming;
+    public bool slamming;
     public float slamspeed;
     void Start()
     {
@@ -28,6 +29,7 @@ public class SlamMoveScript : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         animator = GetComponentInParent<Animator>();
         GameCamera = GameObject.FindWithTag("MainCamera");
+        parenttransform = GetComponentInParent<Transform>();
     }
 
     // Update is called once per frame
@@ -46,6 +48,7 @@ public class SlamMoveScript : MonoBehaviour
                 slamming = true;
             }
         }
+
     }
     private void FixedUpdate()
     {
@@ -53,7 +56,7 @@ public class SlamMoveScript : MonoBehaviour
         {
             Vector3 targetposition = player.transform.position + offset;
             transform.position = Vector3.SmoothDamp(transform.position, targetposition, ref velocity, smoothtime);
-            transform.position = new Vector3(transform.position.x, GameCamera.transform.position.y + 5, 0);
+            transform.position = new Vector3(transform.position.x, GameCamera.transform.position.y + 8, 0);
         }
         if(slamming == true)
         {

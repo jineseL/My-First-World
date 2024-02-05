@@ -68,7 +68,6 @@ public class PlayerHealth : MonoBehaviour
             {
                 damage(collider.transform.position);
             }
-            
         }
     }
     
