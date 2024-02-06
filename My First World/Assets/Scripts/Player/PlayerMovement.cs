@@ -17,6 +17,10 @@ public class PlayerMovement : MonoBehaviour
     //for jumping & groundcheck
     public float jumpheight;
     private float jumping;
+    private bool spacecanbepress;
+    private float jumptimer;
+    private float jumpduration=0.3f;
+
     //private bool canjump; //to prevent continous jumping
     public Vector2 boxsize; // for the size of the box to be use in boxcasting
     public float castdistance; //for the cast distance from the centre position of the gameobject 
@@ -24,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     public float gravity;
 
     //for double jumping
-    public static bool canDoubleJump;
+    public static bool canDoubleJump=false;
     public bool secondJump = false;
 
     //for wind effect
@@ -92,14 +96,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (Input.GetButtonDown("Jump") == true && isgrounded() == true /*&& canjump ==true*/)
                 {
+                    spacecanbepress = true;
                     /*canjump = false;*/
                     //body.velocity = new Vector2(body.velocity.x, jumpheight);
-                    if (Input.GetButton("Jump") == true)
-                    {
-                        
-                        jumping++;
-                        body.velocity = new Vector2(body.velocity.x, jumping);
-                    }
+                    
                 }
                 
             }
@@ -109,7 +109,8 @@ public class PlayerMovement : MonoBehaviour
                 {
                     if (Input.GetButtonDown("Jump") == true && isgrounded() == true /*&& canjump ==true*/)
                     {
-                        body.velocity = new Vector2(body.velocity.x, jumpheight);
+                        /*body.velocity = new Vector2(body.velocity.x, jumpheight);*/
+                        spacecanbepress = true;
                         secondJump = true;
                     }
                 }
@@ -120,12 +121,41 @@ public class PlayerMovement : MonoBehaviour
                         body.velocity = new Vector2(body.velocity.x, jumpheight);
                         secondJump = false;
                     }
+
+                    /*if (isgrounded() == true)
+                    {
+                        secondJump = false;
+                    }*/
+                }
+                
+                
+            }
+
+        }
+        if(spacecanbepress == true)
+        {
+            if (Input.GetButton("Jump") == true)
+            {
+                
+                if (jumptimer < jumpduration)
+                {
+                    jumptimer += Time.deltaTime;
+                    body.velocity = new Vector2(body.velocity.x, jumpheight);
+                }
+                else
+                {
+                    jumptimer = 0;
+                    body.velocity = new Vector2(body.velocity.x, -1);
+                    spacecanbepress = false;
+
                 }
             }
-        }
-        if (jumping >= jumpheight)
-        {
-            jumping = 0;
+            else
+            {
+                jumptimer = 0;
+                body.velocity = new Vector2(body.velocity.x, -1);
+                spacecanbepress = false;
+            }
         }
         
         //so that would not bouce up slopes
@@ -226,4 +256,14 @@ public class PlayerMovement : MonoBehaviour
     {
         Gizmos.DrawWireCube(transform.position - transform.up * castdistance, boxsize);
     }*/
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Platform")|| collision.CompareTag("BossTopPlat"))
+        {
+            if(canDoubleJump == true)
+            {
+                secondJump = false;
+            }
+        }
+    }
 }
