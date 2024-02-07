@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public ParticleSystem dust;
+
     private Rigidbody2D body;
     // for horizontal movement
     public float movementspeed;
@@ -58,6 +60,8 @@ public class PlayerMovement : MonoBehaviour
         /*isgrounded = isgrounded();*/
         if (Input.GetButtonDown("Jump") == true && isgrounded() == true /*&& canjump ==true*/)
         {
+            CreateDust();
+
             /*canjump = false;*/
             body.velocity = new Vector2(body.velocity.x, jumpheight);
             //body.AddForce(transform.up * jumpheight);
@@ -89,4 +93,8 @@ public class PlayerMovement : MonoBehaviour
     {
         Gizmos.DrawWireCube(transform.position - transform.up * castdistance, boxsize);
     }*/
+    void CreateDust()
+    {
+        dust.Play();
+    }
 }
