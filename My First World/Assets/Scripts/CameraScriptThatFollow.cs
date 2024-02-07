@@ -26,13 +26,14 @@ public class CameraScript : MonoBehaviour
 
         gamecamera = GetComponent<Camera>();
         BackgroundBound = BackGround.GetComponent<SpriteRenderer>();
-
+        Debug.Log(gamecamera.orthographicSize);
         float vertextent = gamecamera.orthographicSize;
-        float horzextent = vertextent * Screen.width / Screen.height;
-        /*leftBorder = gameObject.transform.GetChild(0);
-        TopBorder = gameObject.transform.GetChild(1);
-        BottomBorder = gameObject.transform.GetChild(2);
-        RightBorder = gameObject.transform.GetChild(3);*/
+        float horzextent = (float)(vertextent * gamecamera.aspect);
+
+        leftBorder = (float)(horzextent + BackgroundBound.bounds.min.x);
+        TopBorder = (float)(BackgroundBound.bounds.max.y - vertextent);
+        BottomBorder = (float)(vertextent + BackgroundBound.bounds.min.y );
+        RightBorder = (float)( BackgroundBound.bounds.max.x- horzextent);
     }
     // Update is called once per frame
     private void FixedUpdate()
@@ -65,7 +66,11 @@ public class CameraScript : MonoBehaviour
         }*/
         
             Vector3 targetposition = target.position + offset;
-            transform.position = Vector3.SmoothDamp(transform.position, targetposition, ref velocity, smoothtime);
+        targetposition.x = Mathf.Clamp(targetposition.x, leftBorder, RightBorder);
+        targetposition.y = Mathf.Clamp(targetposition.y, BottomBorder, TopBorder);
+
+        transform.position = Vector3.SmoothDamp(transform.position, targetposition, ref velocity, smoothtime);
+
             
         
     }
