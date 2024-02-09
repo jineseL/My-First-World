@@ -258,7 +258,7 @@ public class PlayerMovement : MonoBehaviour
     }*/
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Platform")|| collision.CompareTag("BossTopPlat"))
+        if (collision.CompareTag("Platform")|| collision.CompareTag("BossTopPlatform"))
         {
             if(canDoubleJump == true)
             {
