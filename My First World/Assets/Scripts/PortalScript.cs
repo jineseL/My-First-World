@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PortalScript : MonoBehaviour
 {
-    
+    public Dialogue[] dialogue;
+    public GameObject dialoguecanvas;
     void Start()
     {
         
@@ -20,7 +21,13 @@ public class PortalScript : MonoBehaviour
     {
         if (collider.CompareTag("Player"))
         {
-            SceneManager.LoadScene(("Dialogue"));
+            //SceneManager.LoadScene(("Dialogue"));
+            Time.timeScale = 0;
+            FindObjectOfType<Canvas>().enabled = false;
+            //FindObjectOfType<DialogueCanvas>(true).enabled = true;
+            dialoguecanvas.SetActive(true);
+
+            FindObjectOfType<DialogueManagerScript>().StartDialogue(dialogue);
         }
     }
 }
