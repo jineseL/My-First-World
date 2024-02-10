@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     public bool secondJump = false;
 
     //for wind effect
-    public bool windEffect; //to activate on the dialouge
+    public static bool windEffect; //to activate on the dialouge
     private bool windRight = true; //to switch the wind direction
     private enum windstate
     {

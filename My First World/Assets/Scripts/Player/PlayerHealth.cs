@@ -25,13 +25,16 @@ public class PlayerHealth : MonoBehaviour
     public static bool timefreeze;
     public float unscaledtimerduration;
 
+    //logic manager
+    private LogicManagerScript logicscriptreference;
+
     
 
     void Start()
     {
         PlayerBody = GetComponent<Rigidbody2D>();
-        this.fixedDeltaTime = Time.fixedDeltaTime; 
-        
+        this.fixedDeltaTime = Time.fixedDeltaTime;
+        logicscriptreference = GameObject.Find("LogicManager").GetComponent<LogicManagerScript>();
     }
 
     // Update is called once per frame
@@ -73,6 +76,7 @@ public class PlayerHealth : MonoBehaviour
     
     public void damage(Vector3 position)
     {
+        logicscriptreference.minushealth();
         health -= 1;
         if(health == 0)
         {
