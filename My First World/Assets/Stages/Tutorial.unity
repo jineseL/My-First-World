@@ -696,7 +696,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &207513758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1998,6 +1998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dialoguetext: {fileID: 421504524}
+  dialoguecanvas: {fileID: 207513757}
   McDarken: {fileID: 1151773744}
   BossDarken: {fileID: 565694258}
   McName: {fileID: 902104018}

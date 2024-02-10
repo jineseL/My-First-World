@@ -69,7 +69,7 @@ public class DialogueManagerScript : MonoBehaviour
     public Text Dialoguetext;
     private Queue<string> sentences; // first in first out data structure 
     private Queue<Dialogue> dialogues;
-    private GameObject dialoguecanvas;
+    public GameObject dialoguecanvas;
     public GameObject McDarken;
     public GameObject BossDarken;
     public GameObject McName;
@@ -84,7 +84,7 @@ public class DialogueManagerScript : MonoBehaviour
     public Animator animator;
     void Start()
     {
-        dialoguecanvas = GameObject.Find("Dialogue Canvas");
+        //dialoguecanvas = GameObject.Find("Dialogue Canvas");
         sentences = new Queue<string>();
         dialogues = new Queue<Dialogue>();
         
