@@ -9,10 +9,12 @@ public class BossScript : MonoBehaviour
 
     private float timer;
     public float invTimer;
+
+    public HealthBarScript healthbar;
     // Start is called before the first frame update
     void Start()
     {
-        
+        healthbar.SetMaxHealth(BossHealth);
     }
 
     // Update is called once per frame
@@ -40,6 +42,7 @@ public class BossScript : MonoBehaviour
     {
         if (isinv == false)
         {
+            healthbar.Sethealth(BossHealth);
             BossHealth -= damagetaken;
             isinv = true;
         }
