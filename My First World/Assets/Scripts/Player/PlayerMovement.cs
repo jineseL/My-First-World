@@ -46,12 +46,15 @@ public class PlayerMovement : MonoBehaviour
     public float windforcewhenstandingstill;
     public float windDuration; // wind duration to blow at 1 direction
     windstate wind = windstate.windRight;
+
+    private Animator animator;
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         playersprite = GetComponent<SpriteRenderer>();
         isfacingright = true;
         canmove = true;
+        animator = GetComponent<Animator>();
         //windEffect = false;
         
     }
@@ -60,9 +63,9 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         //for horizontal movement
-        
+        animator.SetFloat("IsFalling", body.velocity.y);
             horizontalmovement = Input.GetAxis("Horizontal");
-
+        animator.SetBool("GotHit", !canmove);
 
 
 
@@ -96,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (Input.GetButtonDown("Jump") == true && isgrounded() == true /*&& canjump ==true*/)
                 {
+                    animator.SetBool("IsJumping", true);
                     spacecanbepress = true;
                     /*canjump = false;*/
                     //body.velocity = new Vector2(body.velocity.x, jumpheight);
@@ -110,6 +114,7 @@ public class PlayerMovement : MonoBehaviour
                     if (Input.GetButtonDown("Jump") == true && isgrounded() == true /*&& canjump ==true*/)
                     {
                         /*body.velocity = new Vector2(body.velocity.x, jumpheight);*/
+                        animator.SetBool("IsJumping", true);
                         spacecanbepress = true;
                         secondJump = true;
                     }
@@ -118,6 +123,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     if (Input.GetButtonDown("Jump"))
                     {
+                        animator.SetBool("IsJumping", true);
                         body.velocity = new Vector2(body.velocity.x, jumpheight);
                         secondJump = false;
                     }
@@ -144,6 +150,7 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else
                 {
+                    animator.SetBool("IsJumping", false);
                     jumptimer = 0;
                     body.velocity = new Vector2(body.velocity.x, -1);
                     spacecanbepress = false;
@@ -152,6 +159,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
+                animator.SetBool("IsJumping", false);
                 jumptimer = 0;
                 body.velocity = new Vector2(body.velocity.x, -1);
                 spacecanbepress = false;
@@ -171,6 +179,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (windEffect == false)
             {
+                animator.SetFloat("Speed", Mathf.Abs(horizontalmovement));
                 body.velocity = new Vector2(horizontalmovement * movementspeed, body.velocity.y);
             }
 
