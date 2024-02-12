@@ -207,7 +207,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
-  InvDuration: 1
+  InvDuration: 0.4
+  isInv: 0
   player: {fileID: 0}
   knockbackforce: 2
   enemytype: 2
@@ -234,7 +235,7 @@ MonoBehaviour:
   enemylayers:
     serializedVersion: 2
     m_Bits: 1024
-  knockbacktimer: 1
+  knockbacktimer: 0.4
   knockBack: 0
   jumpcooldown: 0.5
   boxsize: {x: 0.95, y: 0.06}

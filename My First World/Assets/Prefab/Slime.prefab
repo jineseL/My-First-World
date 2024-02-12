@@ -237,9 +237,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
-  InvDuration: 1
+  InvDuration: 0.4
+  isInv: 0
   player: {fileID: 0}
-  knockbackforce: 2
+  knockbackforce: 4
   enemytype: 1
 --- !u!114 &1305710148938654344
 MonoBehaviour:
@@ -262,5 +263,5 @@ MonoBehaviour:
   enemylayerl:
     serializedVersion: 2
     m_Bits: 1024
-  knockbacktimer: 1
+  knockbacktimer: 0.4
   knockBack: 0

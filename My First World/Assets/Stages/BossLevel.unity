@@ -1909,6 +1909,7 @@ MonoBehaviour:
   heart3: {fileID: 1210424857}
   heart4: {fileID: 554632974}
   heart5: {fileID: 2026329058}
+  rainspawner: {fileID: 1695388806}
 --- !u!4 &1368550412
 Transform:
   m_ObjectHideFlags: 0
@@ -2612,6 +2613,54 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1658780860}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1695388806
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1695388808}
+  - component: {fileID: 1695388807}
+  m_Layer: 10
+  m_Name: RainBallSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1695388807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695388806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2c883fb2d7a364fbc683aaeab4edae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rainyball: {fileID: 1717867940519017467, guid: 539c1245188e75d4f8c7528674c8665a, type: 3}
+  offset: 5
+  abovecameradistance: 5
+  spawnrate: 1
+--- !u!4 &1695388808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695388806}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.29, y: 2.71, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1724855627
 PrefabInstance:
@@ -3381,3 +3430,4 @@ SceneRoots:
   - {fileID: 2093267646}
   - {fileID: 183227286}
   - {fileID: 1660498703}
+  - {fileID: 1695388808}

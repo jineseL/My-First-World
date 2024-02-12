@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -102,9 +103,19 @@ public class PlayerHealth : MonoBehaviour
         //PlayerMovement.canmove = true;
 
     }
+    public void damagewithoutknockback()
+    {
+        logicscriptreference.minushealth();
+        health -= 1;
+        if (health == 0)
+        {
+            death();
+        }
+        isinv = true;
+    }
     public void death()
     {
-        Destroy(gameObject);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     private void invTimer()
     {

@@ -10,9 +10,24 @@ public class LogicManagerScript : MonoBehaviour
     public Image heart3;
     public Image heart4;
     public Image heart5;
+    public GameObject rainspawner;
+    public static bool RainspawnerEnable;
+
+    private void Awake()
+    {
+        if (RainspawnerEnable == true)
+        {
+            rainspawner.SetActive(true);
+        }
+        else
+        {
+            rainspawner.SetActive(false);
+        }
+    }
 
     void Start()
     {
+        
         
     }
 
