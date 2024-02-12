@@ -2,69 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManagerScript : MonoBehaviour
 {
-    /*public Text Dialoguetext;
-    private Queue<string> sentences; // first in first out data structure 
-
-    public Animator animator;
-    void Start()
-    {
-        sentences = new Queue<string>();
-    }
-
-    public void StartDialogue(Dialogue[] dialogue)
-    {
-
-        animator.SetBool("Isopen", true);
-        sentences.Clear();
-        for (int i = 0; i < dialogue.Length; i++)
-        {
-            foreach (string sentence in dialogue[i].sentences)
-            {
-                sentences.Enqueue(sentence);
-            }
-            
-            Displaynextsentence();
-        }
-        *//*foreach(string sentence in dialogue.sentences)
-        {
-            sentences.Enqueue(sentence);
-        }
-        Displaynextsentence();*//*
-    }
-    public void Displaynextsentence()
-    {
-        //Debug.Log("HI");
-        *//*if(dialogue.name != "hi")
-        {
-            Debug.Log("hi");
-        }*//*
-        if(sentences.Count == 0)
-        {
-            EndDialogue();
-            return;
-        }
-        string sentence = sentences.Dequeue();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
-        //Dialoguetext.text = sentence;
-    }
-    IEnumerator TypeSentence(string sentence)
-    {
-        Dialoguetext.text = "";
-        foreach(char letter in sentence.ToCharArray())
-        {
-            Dialoguetext.text += letter;
-            yield return new WaitForSecondsRealtime(0.05f);
-        }
-    }
-    public void EndDialogue()
-    {
-        animator.SetBool("Isopen", false);
-        //Debug.Log("end of dialogue");
-    }*/
+    
 
     public Text Dialoguetext;
     private Queue<string> sentences; // first in first out data structure 
@@ -78,7 +20,10 @@ public class DialogueManagerScript : MonoBehaviour
     public GameObject BossLighten;
     public GameObject option1;
     public GameObject option2;
-    
+    public GameObject option3;
+    public GameObject option4;
+
+    private int choiceschoosen = 0;
 
 
     public Animator animator;
@@ -133,9 +78,19 @@ public class DialogueManagerScript : MonoBehaviour
         }
         if (dialogueinsentencetoshow.options == true)
         {
-            option1.SetActive(true);
-            option2.SetActive(true);
+            if (choiceschoosen == 0)
+            {
+                
+                option1.SetActive(true);
+                option2.SetActive(true);
+            }
 
+            if(choiceschoosen == 1)
+            {
+                option3.SetActive(true);
+                option4.SetActive(true);
+            }
+            //choiceschoosen++;
         }
         else
         {
@@ -182,14 +137,58 @@ public class DialogueManagerScript : MonoBehaviour
     {
         animator.SetBool("Isopen", false);
         dialoguecanvas.SetActive(false);
-
-        //Debug.Log("end of dialogue");
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    //buttons coding
     public void enablewind()
     {
         PlayerMovement.windEffect = true;
         disablebutton();
     }
+    public void enablerain()
+    {
+        LogicManagerScript.RainspawnerEnable = true;
+        disablebutton();
+    }
+
+    public void enabledoublejump()
+    {
+        PlayerMovement.canDoubleJump = true;
+        disablebutton();
+        choiceschoosen++;
+    }
+    public void enablefasterspeed()
+    {
+        PlayerMovement.movementspeed += 3;
+        disablebutton();
+        choiceschoosen++;
+    }
+    public void disableelements()
+    {
+        LogicManagerScript.RainspawnerEnable = false;
+        PlayerMovement.windEffect = false;
+        disablebutton();
+    }
+
+    //delete after alpha
+    public void stayonthelevel()
+    {
+        animator.SetBool("Isopen", false);
+        dialoguecanvas.SetActive(false);
+        Time.timeScale = 1;
+        disablebutton();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
+    }
+    public void nothing()
+    {
+        disablebutton();
+    }
+
+
+
 
     //options have to be enable after MC talking for it to make sense so options have to be true on the boss dialogue After a mc Dialogue
     public void disablebutton()
@@ -198,5 +197,7 @@ public class DialogueManagerScript : MonoBehaviour
         Displaynextsentence();
         option1.SetActive(false);
         option2.SetActive(false);
+        option3.SetActive(false);
+        option4.SetActive(false);
     }
 }

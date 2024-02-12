@@ -10,9 +10,11 @@ public class Attack : MonoBehaviour
     private bool attacking = false;
     public float attackSpeed; // more like attac duration actually
     private float timer;
+    private Animator m_Animator;
     void Start()
     {
         //to set both attack area inactive 
+        m_Animator = GetComponentInParent<Animator>();
         attackAreaRight.SetActive(attacking);
         attackAreaLeft.SetActive(attacking);
     }
@@ -23,6 +25,7 @@ public class Attack : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0)) //only activate attack area when left click is press
         {
             Attacking();
+            m_Animator.SetTrigger("Punch");
         }
         if (attacking)
         {

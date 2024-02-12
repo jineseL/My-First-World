@@ -66,6 +66,10 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("IsFalling", body.velocity.y);
             horizontalmovement = Input.GetAxis("Horizontal");
         animator.SetBool("GotHit", !canmove);
+        if (body.velocity.y < -1)
+        {
+            animator.SetBool("IsJumping", false);
+        }
 
 
 

@@ -55,10 +55,7 @@ public class EnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(health == 0)
-        {
-            Destroy(gameObject);
-        }
+        
         if (isInv == true)
         {
             invTimer();
@@ -70,6 +67,10 @@ public class EnemyBehaviour : MonoBehaviour
         if (isInv == false)
         {
             health -= damageTaken;
+            if (health == 0)
+            {
+                Destroy(gameObject);
+            }
             isInv = true;
             Vector2 direction = (gameObject.transform.position - player.transform.position).normalized;
             Vector2 knockback = direction * knockbackforce;
