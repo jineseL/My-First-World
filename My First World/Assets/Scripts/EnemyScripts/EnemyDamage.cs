@@ -13,7 +13,7 @@ public class EnemyBehaviour : MonoBehaviour
 
 
     //for knock back affect when enemy is hit
-    [SerializeField]
+    
     private GameObject player;
     public float knockbackforce;
     private Rigidbody2D body;

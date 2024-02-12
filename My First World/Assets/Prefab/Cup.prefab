@@ -209,7 +209,6 @@ MonoBehaviour:
   health: 20
   InvDuration: 0.4
   isInv: 0
-  player: {fileID: 0}
   knockbackforce: 2
   enemytype: 2
 --- !u!114 &1962811123543429685
@@ -224,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74f9ed517c87b2d43839ab51c76f6042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movespeed: 0.5
+  movespeed: 0.8
   jumpforce: 7
   Groundcheck: {fileID: 1886187914642854112}
   Wallcheck: {fileID: 8572148117234386533}
@@ -237,7 +236,7 @@ MonoBehaviour:
     m_Bits: 1024
   knockbacktimer: 0.4
   knockBack: 0
-  jumpcooldown: 0.5
+  jumpcooldown: 0.3
   boxsize: {x: 0.95, y: 0.06}
   castdistance: 0.52
 --- !u!1 &7720837713667264783
