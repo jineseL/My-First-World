@@ -14,15 +14,15 @@ public class PlayerHealth : MonoBehaviour
     //inv timer
     private float invtimer;
     public float invduration;
-    public bool isinv;
+    public bool isinv = false;
 
     //for knockback
-    private float timer;
+    private float timer = 0;
     public float knockbackduration;
 
     //timescale
-    private float fixedDeltaTime;
-    private float unscaledtimer;
+    private float fixedDeltaTime = 0;
+    private float unscaledtimer = 0;
     public static bool timefreeze;
     public float unscaledtimerduration;
 
@@ -33,6 +33,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("hi");    
         PlayerBody = GetComponent<Rigidbody2D>();
         this.fixedDeltaTime = Time.fixedDeltaTime;
         logicscriptreference = GameObject.Find("LogicManager").GetComponent<LogicManagerScript>();
@@ -77,12 +78,12 @@ public class PlayerHealth : MonoBehaviour
     
     public void damage(Vector3 position)
     {
-        logicscriptreference.minushealth();
         health -= 1;
-        if(health == 0)
+        if (health == 0)
         {
             death();
         }
+        logicscriptreference.minushealth();
         timefreeze = true;
         isinv = true;
         Vector2 direction = (gameObject.transform.position - position).normalized;

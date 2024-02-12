@@ -24,9 +24,10 @@ public class BossPlatformScript : MonoBehaviour
             }
             else
             {
-                timer = 0;
+                
                 GetComponent<BoxCollider2D>().enabled = true;
                 gameObject.GetComponent<Animator>().SetBool("PlatformBoom", false);
+                timer = 0;
                 GetComponent<SpriteRenderer>().enabled = true;
             }
         }
