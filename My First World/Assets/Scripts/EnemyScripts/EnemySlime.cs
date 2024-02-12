@@ -35,7 +35,7 @@ public class EnemySlime : MonoBehaviour
     }
     private void Update()
     {
-            hit = Physics2D.Raycast(Groundcheck.position, -transform.up, 0.3f, groundlayers);
+            hit = Physics2D.Raycast(Groundcheck.position, -transform.up, 0.5f, groundlayers);
             hit2 = Physics2D.Raycast(Wallcheck.position, transform.right, 0.3f, groundlayers);
         //hit3 = Physics2D.Raycast(Wallcheck.position, transform.right, 0.05f, enemylayerl);
         //Physics2D.IgnoreLayerCollision(10, 10,true);
