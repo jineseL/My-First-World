@@ -33,7 +33,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("hi");    
+         
         PlayerBody = GetComponent<Rigidbody2D>();
         this.fixedDeltaTime = Time.fixedDeltaTime;
         logicscriptreference = GameObject.Find("LogicManager").GetComponent<LogicManagerScript>();
@@ -67,10 +67,13 @@ public class PlayerHealth : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collider)
     {
+        
         if (isinv == false)
         {
+            //Debug.Log("hi");
             if (collider.gameObject.CompareTag("Enemies"))
             {
+                /*Debug.Log("hi");*/
                 damage(collider.transform.position);
             }
         }
@@ -82,6 +85,7 @@ public class PlayerHealth : MonoBehaviour
         if (health == 0)
         {
             death();
+            return;
         }
         logicscriptreference.minushealth();
         timefreeze = true;
@@ -117,6 +121,7 @@ public class PlayerHealth : MonoBehaviour
     public void death()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        return;
     }
     private void invTimer()
     {

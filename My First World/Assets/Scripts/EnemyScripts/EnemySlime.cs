@@ -24,11 +24,12 @@ public class EnemySlime : MonoBehaviour
     public float knockbacktimer;
     private float timer;
     public bool knockBack;
+    private Animator m_Animator;
     void Start()
     {
         SlimeBody = GetComponent<Rigidbody2D>();
         timer = knockbacktimer;
-        
+        m_Animator = GetComponent<Animator>();
         Physics2D.IgnoreLayerCollision(10, 10, true);
         //Groundcheck = GetComponentInChildren<Transform>();
     }
@@ -70,12 +71,13 @@ public class EnemySlime : MonoBehaviour
             if (timer > 0)
             {
                 timer -= Time.deltaTime;
-
+                m_Animator.SetBool("GotHit", true);
             }
             else //if (timer <= 0)
             {
                 timer = knockbacktimer;
                 knockBack = false;
+                m_Animator.SetBool("GotHit", false);
             }
         }
     }
