@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyBird : MonoBehaviour
 {
-    [SerializeField]
+    
     private GameObject player;
     private Rigidbody2D birdbody;
 
