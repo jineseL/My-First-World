@@ -613,6 +613,67 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9090467103248504528, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
   m_PrefabInstance: {fileID: 2234263902348330789}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &228549746
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2678710561787541511, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4231488934362395099, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
+      propertyPath: m_Name
+      value: Platform (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463139475816927256, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -23.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463139475816927256, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463139475816927256, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463139475816927256, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463139475816927256, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463139475816927256, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463139475816927256, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463139475816927256, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463139475816927256, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463139475816927256, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
 --- !u!1 &275156531
 GameObject:
   m_ObjectHideFlags: 0
@@ -2715,7 +2776,7 @@ MonoBehaviour:
   dialogue:
   - name: Jing
     sentences:
-    - READ ME PLEASE DONT SKIP VERY IMPORTANT!
+    - READ ME, PLEASE DONT SKIP VERY IMPORTANT!
     - Welcome to my Alpha. My name is Shizi
     - Press R to restart to tutorial stage and Press T to restart the Level
     - Left click to attack
@@ -2725,7 +2786,7 @@ MonoBehaviour:
     sentences:
     - Hi my name is Jing
     - I am the boss
-    - We still do not have a story yet but it will be implemented after Alpha
+    - Story is still in progress
     - This is just a place holder
     options: 1
   - name: Jing
@@ -5480,3 +5541,4 @@ SceneRoots:
   - {fileID: 550233887}
   - {fileID: 1464972451}
   - {fileID: 420020506}
+  - {fileID: 228549746}
