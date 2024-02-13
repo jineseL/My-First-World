@@ -115,6 +115,7 @@ public class PlayerHealth : MonoBehaviour
         if (health == 0)
         {
             death();
+            return;
         }
         isinv = true;
     }
