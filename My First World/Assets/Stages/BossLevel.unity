@@ -1309,7 +1309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27871c90c4a54154fae3b0894e1ef4de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BossHealth: 150
+  BossHealth: 130
   invTimer: 0.5
   healthbar: {fileID: 1044271941}
 --- !u!1 &728464651
