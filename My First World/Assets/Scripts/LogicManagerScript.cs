@@ -12,6 +12,7 @@ public class LogicManagerScript : MonoBehaviour
     public Image heart5;
     public GameObject rainspawner;
     public static bool RainspawnerEnable;
+    
 
     private void Awake()
     {
@@ -27,7 +28,6 @@ public class LogicManagerScript : MonoBehaviour
 
     void Start()
     {
-        
         
     }
 

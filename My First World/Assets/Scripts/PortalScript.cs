@@ -15,7 +15,19 @@ public class PortalScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            PlayerMovement.windEffect = false;
+            PlayerMovement.canDoubleJump = false;
+            PlayerMovement.movementspeed = 5;
+            LogicManagerScript.RainspawnerEnable = false;
+            SceneManager.LoadScene("Tutorial");
+            
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {

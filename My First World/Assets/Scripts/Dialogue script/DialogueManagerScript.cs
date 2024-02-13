@@ -130,7 +130,7 @@ public class DialogueManagerScript : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             Dialoguetext.text += letter;
-            yield return new WaitForSecondsRealtime(0.05f);
+            yield return new WaitForSecondsRealtime(0.03f);
         }
     }
     public void EndDialogue()

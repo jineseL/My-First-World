@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -46,8 +47,14 @@ public class PlayerMovement : MonoBehaviour
     public float windforcewhenstandingstill;
     public float windDuration; // wind duration to blow at 1 direction
     windstate wind = windstate.windRight;
+    //for alpha wind indicator should switch to partical effect after alpha
+    public Image WindArrowLeft;
+    public Image WindArrowDown;
+    public Image WindArrowRight;
 
     private Animator animator;
+
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -70,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("IsJumping", false);
         }
-
+        
 
 
         //if want to switch to GetAxisRaw
@@ -192,11 +199,13 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (wind == windstate.windRight)
                 {
+                    WindArrowRight.enabled = true;
+                    WindArrowLeft.enabled = false;
+                    WindArrowDown.enabled = false;
+
                     if (horizontalmovement == 0)
                     {
-
                         body.velocity = new Vector2(-windforcewhenstandingstill, body.velocity.y);
-
                     }
                     else if (horizontalmovement > 0)
                         body.velocity = new Vector2(horizontalmovement * movementspeed - windforce, body.velocity.y);
@@ -214,6 +223,10 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else if (wind == windstate.windLeft)
                 {
+                    WindArrowRight.enabled = false;
+                    WindArrowLeft.enabled = true;
+                    WindArrowDown.enabled = false;
+
                     if (horizontalmovement == 0)
                     {
                         body.velocity = new Vector2(windforcewhenstandingstill, body.velocity.y);
@@ -234,6 +247,10 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else
                 {
+                    WindArrowRight.enabled = false;
+                    WindArrowLeft.enabled = false;
+                    WindArrowDown.enabled = true;
+
                     body.velocity = new Vector2(horizontalmovement * movementspeed, body.velocity.y);
                     if (windTimer < windDuration)
                     {
