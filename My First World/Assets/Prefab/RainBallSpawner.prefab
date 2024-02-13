@@ -47,4 +47,4 @@ MonoBehaviour:
   rainyball: {fileID: 1717867940519017467, guid: 539c1245188e75d4f8c7528674c8665a, type: 3}
   offset: 4
   abovecameradistance: 5
-  spawnrate: 0.3
+  spawnrate: 0.8

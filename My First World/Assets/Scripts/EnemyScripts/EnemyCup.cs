@@ -153,7 +153,7 @@ public class EnemyCup : MonoBehaviour
 
     public bool wallcheck()
     {
-        if (Physics2D.Raycast(Wallcheck.position, transform.right, 0.1f, groundlayers) == true)
+        if (Physics2D.Raycast(Wallcheck.position, transform.right, 0.2f, groundlayers) == true)
         {
             return true;
         }
