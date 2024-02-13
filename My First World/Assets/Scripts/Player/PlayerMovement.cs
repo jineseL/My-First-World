@@ -181,9 +181,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canmove)
         {
+            animator.SetFloat("Speed", Mathf.Abs(horizontalmovement));
             if (windEffect == false)
             {
-                animator.SetFloat("Speed", Mathf.Abs(horizontalmovement));
+                //animator.SetFloat("Speed", Mathf.Abs(horizontalmovement));
                 body.velocity = new Vector2(horizontalmovement * movementspeed, body.velocity.y);
             }
 
