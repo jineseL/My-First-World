@@ -32,7 +32,7 @@ public class DialogueManagerScript : MonoBehaviour
         //dialoguecanvas = GameObject.Find("Dialogue Canvas");
         sentences = new Queue<string>();
         dialogues = new Queue<Dialogue>();
-        
+        choiceschoosen = 0;
     }
 
     public void StartDialogue(Dialogue[] dialogue)
