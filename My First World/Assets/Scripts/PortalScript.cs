@@ -22,11 +22,12 @@ public class PortalScript : MonoBehaviour
             PlayerMovement.movementspeed = 5;
             LogicManagerScript.RainspawnerEnable = false;
             SceneManager.LoadScene("Tutorial");
-            
+            return;
         }
         if (Input.GetKeyDown(KeyCode.T))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            return;
         }
     }
     private void OnTriggerEnter2D(Collider2D collider)
