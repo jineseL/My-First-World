@@ -2629,22 +2629,22 @@ MonoBehaviour:
   - name: Jing
     sentences:
     - Hi my name is jing
-    - I am a lion
-    - Happy Cny
+    - Welcome to my Alpha
+    - This are the elements you can choose for the next stage
     options: 0
   - name: Shiz
     sentences:
     - Hi my name is Shiz
-    - This is a test
-    - A test on my mental
-    - God has abandon us
+    - I am the boss
+    - We still do not have a story yet but it will be implemented after Alpha
+    - This is just a place holder
     options: 1
   - name: Jing
     sentences:
-    - But we will Enjoy it
-    - no
-    - ok
-    - end of convo here
+    - I hope you enjoy our game
+    - I work quite hard on it
+    - 'Thank you '
+    - Good luck and have fun
     options: 0
   dialoguecanvas: {fileID: 207513757}
 --- !u!58 &1436856575

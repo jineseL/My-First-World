@@ -3741,7 +3741,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.9, y: 0.3, z: -10}
+  m_LocalPosition: {x: -10.9, y: -2.32, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10642,11 +10642,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 254095464574904687, guid: 346bdc17d18dd304da16b2f0eedc893d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.7
+      value: -16.15
       objectReference: {fileID: 0}
     - target: {fileID: 254095464574904687, guid: 346bdc17d18dd304da16b2f0eedc893d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.8
+      value: -2.31
       objectReference: {fileID: 0}
     - target: {fileID: 254095464574904687, guid: 346bdc17d18dd304da16b2f0eedc893d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11289,7 +11289,7 @@ MonoBehaviour:
   - name: Jing
     sentences:
     - This is all for the alpha
-    - But i have already coded most of the different elements
+    - Ii have already coded most of the different elements
     - Which will be added in the subsequent levels after Alpha
     - Will you choose between faster speed or double jump
     options: 0
@@ -11301,7 +11301,7 @@ MonoBehaviour:
     options: 1
   - name: Jing
     sentences:
-    - '(Alpha only) '
+    - 'Alpha only options '
     - Do you want to go to boss fight or try this stage again
     options: 0
   - name: Shiz
