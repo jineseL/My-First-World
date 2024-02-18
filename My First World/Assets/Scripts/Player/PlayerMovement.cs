@@ -163,7 +163,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     animator.SetBool("IsJumping", false);
                     jumptimer = 0;
-                    body.velocity = new Vector2(body.velocity.x, -1);
+                    body.velocity = new Vector2(body.velocity.x, -0);
                     spacecanbepress = false;
 
                 }
@@ -172,7 +172,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 animator.SetBool("IsJumping", false);
                 jumptimer = 0;
-                body.velocity = new Vector2(body.velocity.x, -1);
+                body.velocity = new Vector2(body.velocity.x, -0);
                 spacecanbepress = false;
             }
         }
