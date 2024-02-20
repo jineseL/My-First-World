@@ -14,6 +14,7 @@ public class LogicManagerScript : MonoBehaviour
     public static bool RainspawnerEnable;
     
 
+
     private void Awake()
     {
         if (RainspawnerEnable == true)

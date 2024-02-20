@@ -262,6 +262,9 @@ MonoBehaviour:
   windforceaddition: 2
   windforcewhenstandingstill: 1
   windDuration: 3
+  WindArrowLeft: {fileID: 0}
+  WindArrowDown: {fileID: 0}
+  WindArrowRight: {fileID: 0}
 --- !u!114 &6032086341295984387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,7 +279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackAreaRight: {fileID: 8802091764516895693}
   attackAreaLeft: {fileID: 2444116710177274070}
-  attackSpeed: 0.7
+  attackSpeed: 0.3
 --- !u!114 &2609897577714433439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,7 +297,8 @@ MonoBehaviour:
   invduration: 0.8
   isinv: 0
   knockbackduration: 0.15
-  unscaledtimerduration: 0.1
+  unscaledtimerduration: 0.15
+  checkpointreach: 0
 --- !u!61 &158028110237449256
 BoxCollider2D:
   m_ObjectHideFlags: 0

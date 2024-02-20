@@ -24,7 +24,8 @@ public class CameraScript : MonoBehaviour
     {
         
 
-        gamecamera = GetComponent<Camera>();
+        //gamecamera = GetComponent<Camera>();
+        gamecamera = GetComponentInChildren<Camera>();
         BackgroundBound = BackGround.GetComponent<SpriteRenderer>();
         
         float vertextent = gamecamera.orthographicSize;

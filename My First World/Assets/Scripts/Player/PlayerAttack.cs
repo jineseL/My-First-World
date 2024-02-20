@@ -22,14 +22,17 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0)) //only activate attack area when left click is press
+        if (Input.GetKeyDown(KeyCode.L)) //only activate attack area when left click is press
         {
-            Attacking();
-            m_Animator.SetTrigger("Punch");
+            if (timer <= attackSpeed)
+            {
+                Attacking();
+                m_Animator.SetTrigger("Punch");
+            }
         }
         if (attacking)
         {
-            
+            Physics2D.IgnoreLayerCollision(6, 10, false);
             timer += Time.deltaTime;
             if(timer>= attackSpeed)
             {

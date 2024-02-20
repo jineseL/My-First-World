@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    //for player to get damage by enemies, for now player is 1 Hp so instance death
+    
     public int health;
     private Rigidbody2D PlayerBody;
     
@@ -29,11 +29,21 @@ public class PlayerHealth : MonoBehaviour
     //logic manager
     private LogicManagerScript logicscriptreference;
 
-    
+    //camera shake
+    private GameObject gamecamera;
+    private Animator gamecameraanimator;
+
+    //checkpoint
+    public bool checkpointreach;
+
 
     void Start()
     {
-         
+        checkpointreach = false;
+        isinv = false;
+        Physics2D.IgnoreLayerCollision(6, 10, false);
+        gamecamera = GameObject.Find("Main Camera");
+        gamecameraanimator = gamecamera.GetComponent<Animator>();
         PlayerBody = GetComponent<Rigidbody2D>();
         this.fixedDeltaTime = Time.fixedDeltaTime;
         logicscriptreference = GameObject.Find("LogicManager").GetComponent<LogicManagerScript>();
@@ -87,6 +97,7 @@ public class PlayerHealth : MonoBehaviour
             death();
             return;
         }
+        gamecameraanimator.SetTrigger("Damage");
         logicscriptreference.minushealth();
         timefreeze = true;
         isinv = true;
@@ -121,8 +132,13 @@ public class PlayerHealth : MonoBehaviour
     }
     public void death()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        return;
+        if (checkpointreach == false)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+            return;
+        }
+        
     }
     private void invTimer()
     {

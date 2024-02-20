@@ -7,9 +7,11 @@ public class PortalScript : MonoBehaviour
 {
     public Dialogue[] dialogue;
     public GameObject dialoguecanvas;
+    private PlayerHealth playerhealthscriptreference;
     void Start()
     {
         
+        playerhealthscriptreference = GameObject.Find("Player").GetComponent<PlayerHealth>();
     }
 
     // Update is called once per frame
@@ -39,6 +41,8 @@ public class PortalScript : MonoBehaviour
             FindObjectOfType<Canvas>().enabled = false;
             //FindObjectOfType<DialogueCanvas>(true).enabled = true;
             dialoguecanvas.SetActive(true);
+            //playerhealthscriptreference.invtimer = 0;
+            //playerhealthscriptreference.isinv = false;
 
             FindObjectOfType<DialogueManagerScript>().StartDialogue(dialogue);
         }
