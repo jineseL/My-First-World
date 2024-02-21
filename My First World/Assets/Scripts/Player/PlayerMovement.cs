@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D body;
     // for horizontal movement
-    public static float movementspeed = 5;
+    public static float movementspeed = 5; // original is 5 put 8 to test faster speed
     public float horizontalmovement;
     public static bool canmove;
 
