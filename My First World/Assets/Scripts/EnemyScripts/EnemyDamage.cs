@@ -44,6 +44,7 @@ public class EnemyBehaviour : MonoBehaviour
         else if(enemytype == 3)
         {
             referencescript3 = GetComponent<EnemyBird>();
+            //knockbackforce += 3;
         }
         else if(enemytype == 4)
         {
