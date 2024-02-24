@@ -26,6 +26,14 @@ public class PlayerMovement : MonoBehaviour
     public float castdistanceforheadbump;
     public Vector2 boxsizeforheadbump;
 
+    //Coyote Time
+    private float cyotetetime = 0.15f;
+    private float cyotetetimeCounter;
+
+    //jump buffering
+    private float jumpbuffertimer = 0.1f;
+    private float jumpbuffercounter;
+
     //private bool canjump; //to prevent continous jumping
     public Vector2 boxsize; // for the size of the box to be use in boxcasting
     public float castdistance; //for the cast distance from the centre position of the gameobject 
@@ -82,14 +90,25 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("IsJumping", false);
         }
-        
 
-
-        //if want to switch to GetAxisRaw
-        /*if ((Input.GetKeyUp(KeyCode.A) == true || Input.GetKeyUp(KeyCode.D) == true) && isgrounded() == true) //to make character not bounce when going up slope
+        //for cyotetetime
+        if (isgrounded() == true)
         {
-            body.velocity = new Vector2(0, 0);
-        }*/
+            cyotetetimeCounter = cyotetetime;
+        }
+        else
+        {
+            cyotetetimeCounter -= Time.deltaTime;
+        }
+
+        //for jump buffering
+        if (Input.GetButtonDown("Jump"))
+        {
+            jumpbuffercounter = jumpbuffertimer;
+        }
+        else jumpbuffercounter -= Time.deltaTime;
+
+
 
         //Direction character is facing check n flipping player sprite
         if (PlayerHealth.timefreeze == false)
@@ -123,7 +142,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (canDoubleJump == false)
             {
-                if (Input.GetButtonDown("Jump") == true && isgrounded() == true /*&& canjump ==true*/)
+                if (jumpbuffercounter > 0f && cyotetetimeCounter >0f /*&& canjump ==true*/)
                 {
                     animator.SetBool("IsJumping", true);
                     spacecanbepress = true;
@@ -137,7 +156,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (secondJump == false)
                 {
-                    if (Input.GetButtonDown("Jump") == true && isgrounded() == true && isheadbump()==false)
+                    if (jumpbuffercounter >0f && cyotetetimeCounter > 0f && isheadbump()==false)
                     {
                         /*body.velocity = new Vector2(body.velocity.x, jumpheight);*/
                         animator.SetBool("IsJumping", true);
@@ -171,6 +190,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if(spacecanbepress == true)//this is for hollow knight jumping effect
         {
+            jumpbuffercounter = 0f;
             if (Input.GetButton("Jump") == true)
             {
                 
@@ -183,6 +203,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     animator.SetBool("IsJumping", false);
                     jumptimer = 0;
+                    cyotetetimeCounter = 0f;
                     body.velocity = new Vector2(body.velocity.x, -0);
                     spacecanbepress = false;
 
@@ -210,6 +231,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (canmove)
         {
+            //wind effect
             animator.SetFloat("Speed", Mathf.Abs(horizontalmovement));
             if (windEffect == false)
             {

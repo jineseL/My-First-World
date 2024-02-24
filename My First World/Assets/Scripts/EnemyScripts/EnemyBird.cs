@@ -15,6 +15,7 @@ public class EnemyBird : MonoBehaviour
     private float timer;
     public bool knockBack;
     private PlayerHealth referencescript;
+    public float birdspeed; //must be more than 1
 
     private bool playerup;
     private bool playerleft;
@@ -85,7 +86,7 @@ public class EnemyBird : MonoBehaviour
     {
         if (currentspeed < maxspeed)
         {
-            currentspeed += Time.deltaTime;
+            currentspeed += Time.deltaTime* birdspeed;
         }
 
         if (birdbody.velocity.x > currentspeed)

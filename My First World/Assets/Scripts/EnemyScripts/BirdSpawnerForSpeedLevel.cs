@@ -12,7 +12,7 @@ public class BirdSpawnerForSpeedLevel : MonoBehaviour
     public GameObject player;
 
     private GameObject[] birds = new GameObject[5]; // this number should be the same as birdcount
-    public int BirdCount=5;
+    public int BirdCount=3;
     void Start()
     {
         //Instantiate(Bird, new Vector3(childtransform.position.x, childtransform.position.y, 0), transform.rotation);

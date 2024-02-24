@@ -8,6 +8,7 @@ public class CheckPointScript : MonoBehaviour
     private GameObject player;
     private PlayerHealth playerhealthscriptreference;
     private LogicManagerScript logicscriptreference;
+    public GameObject children;
     void Start()
     {
         player = GameObject.Find("Player");
@@ -22,7 +23,7 @@ public class CheckPointScript : MonoBehaviour
         {
             if (playerhealthscriptreference.checkpointreach == true)
             {
-                player.transform.position = transform.position;
+                player.transform.position = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);
                 playerhealthscriptreference.health = 5;
                 logicscriptreference.heart1.enabled = true;
                 logicscriptreference.heart2.enabled = true;
@@ -36,5 +37,7 @@ public class CheckPointScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         playerhealthscriptreference.checkpointreach = true;
+        //GetComponent<SpriteRenderer>().enabled = false;
+        children.GetComponent<SpriteRenderer>().enabled = true;
     }
 }
