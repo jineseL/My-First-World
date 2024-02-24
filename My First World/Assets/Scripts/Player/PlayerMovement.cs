@@ -21,6 +21,10 @@ public class PlayerMovement : MonoBehaviour
     private bool spacecanbepress;
     private float jumptimer;
     private float jumpduration=0.3f;
+    private bool falloffledgejump; //jumping after falling off a ledge
+    private bool headbump; //player head hit ceiling
+    public float castdistanceforheadbump;
+    public Vector2 boxsizeforheadbump;
 
     //private bool canjump; //to prevent continous jumping
     public Vector2 boxsize; // for the size of the box to be use in boxcasting
@@ -69,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         //for horizontal movement
         animator.SetFloat("IsFalling", body.velocity.y);
             horizontalmovement = Input.GetAxis("Horizontal");
@@ -89,20 +94,30 @@ public class PlayerMovement : MonoBehaviour
         //Direction character is facing check n flipping player sprite
         if (PlayerHealth.timefreeze == false)
         {
-            if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKey(KeyCode.A))
             {
                 isfacingright = false;
                 playersprite.flipX = true;
             }
-            if (Input.GetKeyDown(KeyCode.D))
+            else if(Input.GetKey(KeyCode.D))
             {
                 isfacingright = true;
                 playersprite.flipX = false;
             }
+            /*if (body.velocity.x < 0)
+            {
+                isfacingright = false;
+                playersprite.flipX = true;
+            }
+            if (body.velocity.x > 0)
+            {
+                isfacingright = true;
+                playersprite.flipX = false;
+            }*/
         }
 
 
-        //for jumping
+        //for jumping, controlling when to allow player to jump
         /*isgrounded = isgrounded();*/
         if (canmove)
         {
@@ -122,7 +137,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (secondJump == false)
                 {
-                    if (Input.GetButtonDown("Jump") == true && isgrounded() == true /*&& canjump ==true*/)
+                    if (Input.GetButtonDown("Jump") == true && isgrounded() == true && isheadbump()==false)
                     {
                         /*body.velocity = new Vector2(body.velocity.x, jumpheight);*/
                         animator.SetBool("IsJumping", true);
@@ -132,29 +147,36 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else
                 {
-                    if (Input.GetButtonDown("Jump"))
+                    if (Input.GetButtonDown("Jump") && isheadbump() ==false)
                     {
                         animator.SetBool("IsJumping", true);
                         body.velocity = new Vector2(body.velocity.x, jumpheight);
                         secondJump = false;
-                    }
+                    }   
+                }
+                if (isgrounded() == true)
+                {
+                    falloffledgejump = true;
+                }
+                if (Input.GetButtonDown("Jump") && isgrounded() == false && falloffledgejump==true && isheadbump() ==false)
+                {
+                    animator.SetBool("IsJumping", true);
+                    body.velocity = new Vector2(body.velocity.x, jumpheight);
+                    falloffledgejump = false;
 
-                    /*if (isgrounded() == true)
-                    {
-                        secondJump = false;
-                    }*/
+                    
                 }
                 
                 
             }
 
         }
-        if(spacecanbepress == true)
+        if(spacecanbepress == true)//this is for hollow knight jumping effect
         {
             if (Input.GetButton("Jump") == true)
             {
                 
-                if (jumptimer < jumpduration)
+                if (jumptimer < jumpduration && isheadbump() == false)
                 {
                     jumptimer += Time.deltaTime;
                     body.velocity = new Vector2(body.velocity.x, jumpheight);
@@ -183,6 +205,8 @@ public class PlayerMovement : MonoBehaviour
             body.gravityScale = 0;
         }
         else body.gravityScale = gravity;
+
+        
     }
     private void FixedUpdate()
     {
@@ -283,9 +307,22 @@ public class PlayerMovement : MonoBehaviour
             return false;
         }
     }
+    public bool isheadbump()
+    {
+        if (Physics2D.BoxCast(transform.position, boxsizeforheadbump, 0, transform.up, castdistanceforheadbump, layer))
+        {
+
+            return true;
+        }
+        else 
+        {
+            
+            return false; 
+        }
+    }
     /*public void OnDrawGizmos() // to visualize groundcheck/isgrounded
     {
-        Gizmos.DrawWireCube(transform.position - transform.up * castdistance, boxsize);
+        Gizmos.DrawWireCube(transform.position + transform.up * castdistanceforheadbump, boxsizeforheadbump);
     }*/
     private void OnTriggerEnter2D(Collider2D collision)
     {
