@@ -162,9 +162,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     animator.SetBool("IsJumping", true);
                     body.velocity = new Vector2(body.velocity.x, jumpheight);
-                    falloffledgejump = false;
-
-                    
+                    falloffledgejump = false;  
                 }
                 
                 

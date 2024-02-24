@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 776851052051063080}
   - component: {fileID: 5086348172239506396}
   - component: {fileID: 9175529821237724193}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: BirdSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 979416779538602496}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: SpawnLocation
   m_TagString: Untagged
   m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
