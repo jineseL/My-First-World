@@ -3927,11 +3927,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 254095464574904687, guid: 346bdc17d18dd304da16b2f0eedc893d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 202.8
+      value: -17.3
       objectReference: {fileID: 0}
     - target: {fileID: 254095464574904687, guid: 346bdc17d18dd304da16b2f0eedc893d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 30.8
+      value: 3.7
       objectReference: {fileID: 0}
     - target: {fileID: 254095464574904687, guid: 346bdc17d18dd304da16b2f0eedc893d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4589,31 +4589,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc64b0d515999649ad5f3e9268ef59e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-  - name: Jing
-    sentences:
-    - This is all for the alpha
-    - Most other elements are already coded in but due to lack of time, it cant be
-      implemented
-    - Will be added in the subsequent levels after Alpha
-    - Will you choose between faster speed or double jump
-    options: 0
-  - name: Shiz
-    sentences:
-    - BUT
-    - YOU STILL HAVE TO FIGHT ME
-    - Get to the top and hit my face to damage me
-    options: 1
-  - name: Jing
-    sentences:
-    - (Alpha only options)
-    - Do you want to go to boss fight or try this stage again
-    options: 0
-  - name: Shiz
-    sentences:
-    - Good Luck :)
-    options: 1
-  dialoguecanvas: {fileID: 1292557545}
+  dialogue: []
+  dialoguecanvas: {fileID: 0}
 --- !u!58 &1436856575
 CircleCollider2D:
   m_ObjectHideFlags: 0
