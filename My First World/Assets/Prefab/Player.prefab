@@ -251,6 +251,8 @@ MonoBehaviour:
   horizontalmovement: 0
   isfacingright: 0
   jumpheight: 10
+  castdistanceforheadbump: 0.75
+  boxsizeforheadbump: {x: 0.88, y: 0.08}
   boxsize: {x: 0.5, y: 0.08}
   castdistance: 0.83
   layer:
