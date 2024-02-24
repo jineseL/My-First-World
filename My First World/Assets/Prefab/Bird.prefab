@@ -192,3 +192,4 @@ MonoBehaviour:
   maxspeed: 5
   knockbacktimer: 0.6
   knockBack: 0
+  slowspeedduration: 2

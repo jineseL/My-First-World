@@ -9,6 +9,7 @@ public class EnemyBird : MonoBehaviour
     private Rigidbody2D birdbody;
 
     public float maxspeed;
+    private float currentspeed = 0;
     //knockback 
     public float knockbacktimer;
     private float timer;
@@ -18,6 +19,8 @@ public class EnemyBird : MonoBehaviour
     private bool playerup;
     private bool playerleft;
 
+    /*private float speedtimer;
+    public float slowspeedduration;*/
 
     // Start is called before the first frame update
     void Start()
@@ -30,8 +33,20 @@ public class EnemyBird : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        //for timer
+        /*if(speedtimer < slowspeedduration)
+        {
+            speedtimer += Time.deltaTime;
+            maxspeed = 2;
+        }
+        else
+        {
+            maxspeed = 5;
+        }*/
 
+        
+
+        
         //birdbody.AddForce(transform.right);
         if (knockBack == false)
         {
@@ -68,21 +83,26 @@ public class EnemyBird : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (birdbody.velocity.x > maxspeed)
+        if (currentspeed < maxspeed)
         {
-            birdbody.velocity = new Vector2(maxspeed, birdbody.velocity.y);
+            currentspeed += Time.deltaTime;
         }
-        if (birdbody.velocity.x < -maxspeed)
+
+        if (birdbody.velocity.x > currentspeed)
         {
-            birdbody.velocity = new Vector2(-maxspeed, birdbody.velocity.y);
+            birdbody.velocity = new Vector2(currentspeed, birdbody.velocity.y);
         }
-        if (birdbody.velocity.y > maxspeed)
+        if (birdbody.velocity.x < -currentspeed)
         {
-            birdbody.velocity = new Vector2(birdbody.velocity.x, maxspeed);
+            birdbody.velocity = new Vector2(-currentspeed, birdbody.velocity.y);
         }
-        if (birdbody.velocity.y < -maxspeed)
+        if (birdbody.velocity.y > currentspeed)
         {
-            birdbody.velocity = new Vector2(birdbody.velocity.x, -maxspeed);
+            birdbody.velocity = new Vector2(birdbody.velocity.x, currentspeed);
+        }
+        if (birdbody.velocity.y < -currentspeed)
+        {
+            birdbody.velocity = new Vector2(birdbody.velocity.x, -currentspeed);
         }
         if(playerleft == true)
         {

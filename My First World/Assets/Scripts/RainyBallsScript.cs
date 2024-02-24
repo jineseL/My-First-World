@@ -6,6 +6,9 @@ public class RainyBallsScript : MonoBehaviour
 {
     public float rainaccleration;
     private Rigidbody2D body;
+
+    private float timer;
+    private float rainballdespawntimer = 3;
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
@@ -14,7 +17,11 @@ public class RainyBallsScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(timer < rainballdespawntimer)
+        {
+            timer += Time.deltaTime;
+        }
+        else Destroy(gameObject);
     }
     private void FixedUpdate()
     {
@@ -30,9 +37,9 @@ public class RainyBallsScript : MonoBehaviour
             collider.GetComponent<PlayerHealth>().damage(transform.position);
             Destroy(gameObject);
         }
-        if (collider.CompareTag("Platform"))
+        /*if (collider.CompareTag("Platform"))
         {
             Destroy(gameObject);
-        }
+        }*/
     }
 }
