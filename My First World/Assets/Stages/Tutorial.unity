@@ -2673,25 +2673,25 @@ MonoBehaviour:
   dialogue:
   - name: Jing
     sentences:
-    - 'READ ME, PLEASE DONT SKIP VERY
+    - Welcome to my playtest. My name is Shizi
+    - 'Press R to restart to tutorial stage, Press T to
 
-      IMPORTANT!'
-    - Welcome to my Alpha. My name is Shizi
-    - Press R to restart to tutorial stage and Press T to restart the Level
-    - Left click to attack
-    - This are the elements you can choose for the next stage
+      restart the Level
+      and press L to attack'
+    - 'This are the elements you can choose for the
+
+      next stage'
     options: 0
   - name: Shiz
     sentences:
     - Hi my name is Jing
     - I am the boss
     - Story is still in progress
-    - This is just a place holder
     options: 1
   - name: Jing
     sentences:
     - I hope you enjoy our game
-    - I work quite hard on it
+    - We work quite hard on it
     - Thank you, good luck and have fun
     - Remeber to press R to try the different elements :)
     options: 0

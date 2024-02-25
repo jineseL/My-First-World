@@ -22,7 +22,7 @@ public class DialogueManagerScript : MonoBehaviour
     public GameObject option2;
     public GameObject option3;
     public GameObject option4;
-
+    private int choicenumber;
     private int choiceschoosen = 0;
 
 
@@ -30,6 +30,7 @@ public class DialogueManagerScript : MonoBehaviour
     void Start()
     {
         //dialoguecanvas = GameObject.Find("Dialogue Canvas");
+        choicenumber = 1;
         sentences = new Queue<string>();
         dialogues = new Queue<Dialogue>();
         choiceschoosen = 0;
@@ -138,7 +139,7 @@ public class DialogueManagerScript : MonoBehaviour
         animator.SetBool("Isopen", false);
         dialoguecanvas.SetActive(false);
         Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + choicenumber);
     }
 
     //buttons coding
@@ -157,13 +158,14 @@ public class DialogueManagerScript : MonoBehaviour
     {
         PlayerMovement.canDoubleJump = true;
         disablebutton();
-        choiceschoosen++;
+        //choiceschoosen++;
     }
     public void enablefasterspeed()
     {
         PlayerMovement.movementspeed += 3;
         disablebutton();
-        choiceschoosen++;
+        choicenumber += 1;
+        //choiceschoosen++;
     }
     public void disableelements()
     {
