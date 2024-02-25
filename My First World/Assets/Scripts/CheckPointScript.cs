@@ -34,10 +34,13 @@ public class CheckPointScript : MonoBehaviour
         }
         
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        playerhealthscriptreference.checkpointreach = true;
-        //GetComponent<SpriteRenderer>().enabled = false;
-        children.GetComponent<SpriteRenderer>().enabled = true;
+        if (collider.CompareTag("Player"))
+        {
+            playerhealthscriptreference.checkpointreach = true;
+            //GetComponent<SpriteRenderer>().enabled = false;
+            children.GetComponent<SpriteRenderer>().enabled = true;
+        }
     }
 }
