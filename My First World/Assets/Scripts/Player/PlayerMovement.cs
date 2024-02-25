@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
         isfacingright = true;
         canmove = true;
         animator = GetComponent<Animator>();
-        //windEffect = false;
+        //windEffect = true;
         
     }
 
