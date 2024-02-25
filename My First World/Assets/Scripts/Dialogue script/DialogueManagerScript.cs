@@ -171,7 +171,7 @@ public class DialogueManagerScript : MonoBehaviour
     {
         LogicManagerScript.RainspawnerEnable = false;
         PlayerMovement.windEffect = false;
-        disablebutton();
+        //disablebutton();
     }
 
     //delete after alpha
