@@ -11,8 +11,8 @@ public class BirdSpawnerForSpeedLevel : MonoBehaviour
     public float spawnrate;
     public GameObject player;
 
-    private GameObject[] birds = new GameObject[5]; // this number should be the same as birdcount
-    public int BirdCount=3;
+    private GameObject[] birds = new GameObject[3]; // this number should be the same as birdcount
+    //public int BirdCount=3;
     void Start()
     {
         //Instantiate(Bird, new Vector3(childtransform.position.x, childtransform.position.y, 0), transform.rotation);
@@ -29,7 +29,7 @@ public class BirdSpawnerForSpeedLevel : MonoBehaviour
         else
         {
             timer = 0;
-            for (int i = 0; i < BirdCount; i++)
+            for (int i = 0; i < birds.Length; i++)
             {
                 if (birds[i] == null)
                 {
