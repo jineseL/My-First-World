@@ -5091,111 +5091,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &540103601
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 540103604}
-  - component: {fileID: 540103603}
-  - component: {fileID: 540103602}
-  m_Layer: 0
-  m_Name: Portal
-  m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &540103602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540103601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cc64b0d515999649ad5f3e9268ef59e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-  - name: Jing
-    sentences:
-    - This is all for the alpha
-    - Most other elements are already coded in but due to lack of time, it cant be
-      implemented
-    - Will be added in the subsequent levels after Alpha
-    - Will you choose between faster speed or double jump
-    options: 0
-  - name: Shiz
-    sentences:
-    - BUT
-    - YOU STILL HAVE TO FIGHT ME
-    - Get to the top and hit my face to damage me
-    options: 1
-  - name: Jing
-    sentences:
-    - (Alpha only options)
-    - Do you want to go to boss fight or try this stage again
-    options: 0
-  - name: Shiz
-    sentences:
-    - Good Luck :)
-    options: 1
-  dialoguecanvas: {fileID: 0}
---- !u!58 &540103603
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540103601}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!4 &540103604
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540103601}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.6499996, y: 125.590004, z: 4.4650474}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &567746537
 GameObject:
   m_ObjectHideFlags: 0
@@ -8055,8 +7950,8 @@ MonoBehaviour:
   dialoguecanvas: {fileID: 1292557545}
   McDarken: {fileID: 939828983}
   BossDarken: {fileID: 2075165145}
-  McName: {fileID: 939828983}
-  BossName: {fileID: 1343207506}
+  McName: {fileID: 1343207506}
+  BossName: {fileID: 1922643401}
   McLighten: {fileID: 726386200}
   BossLighten: {fileID: 483125127}
   option1: {fileID: 1709825981}
@@ -10467,6 +10362,100 @@ Transform:
   - {fileID: 1615618792}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.661}
+--- !u!1 &1207182367
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1207182370}
+  - component: {fileID: 1207182369}
+  - component: {fileID: 1207182368}
+  m_Layer: 0
+  m_Name: Portal
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1207182368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207182367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc64b0d515999649ad5f3e9268ef59e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - name: Jing
+    sentences:
+    - the Final stage we have is the boss fight
+    options: 0
+  - name: Shiz
+    sentences:
+    - 'But lucky for you, its in my theatre, so the wind
+
+      and rain won''t affect
+      you'
+    - You can't possibly hope to defeat me :Evil face
+    options: 0
+  dialoguecanvas: {fileID: 1292557545}
+--- !u!58 &1207182369
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207182367}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!4 &1207182370
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207182367}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.88, y: 127.67, z: 4.4650474}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1209574339
 GameObject:
   m_ObjectHideFlags: 0
@@ -11863,11 +11852,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 254095464574904687, guid: 346bdc17d18dd304da16b2f0eedc893d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.7
+      value: -15.11
       objectReference: {fileID: 0}
     - target: {fileID: 254095464574904687, guid: 346bdc17d18dd304da16b2f0eedc893d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 0.63
       objectReference: {fileID: 0}
     - target: {fileID: 254095464574904687, guid: 346bdc17d18dd304da16b2f0eedc893d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18299,12 +18288,40 @@ PrefabInstance:
       value: enabledoublejump
       objectReference: {fileID: 0}
     - target: {fileID: 2045828860015109728, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045828860015109728, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045828860015109728, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 796607405}
     - target: {fileID: 2045828860015109728, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 796607405}
+    - target: {fileID: 2045828860015109728, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045828860015109728, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Displaynextsentence
+      value: Displaynextsentencefordoublejump
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045828860015109728, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: disableelements
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045828860015109728, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DialogueManagerScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2045828860015109728, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2231717088515818193, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
       propertyPath: m_Text
@@ -18459,6 +18476,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+--- !u!1 &1922643401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2881808575777717761, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_PrefabInstance: {fileID: 1922643400}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1934832126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20418,8 +20440,8 @@ SceneRoots:
   - {fileID: 1649203924}
   - {fileID: 1500904071}
   - {fileID: 374666300}
+  - {fileID: 1207182370}
   - {fileID: 1400679853}
-  - {fileID: 540103604}
   - {fileID: 354277684}
   - {fileID: 573828033}
   - {fileID: 1922643400}

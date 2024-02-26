@@ -9,6 +9,7 @@ public class BossScript : MonoBehaviour
 
     private float timer;
     public float invTimer;
+    public GameObject victoryscreen;
 
     public HealthBarScript healthbar;
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public class BossScript : MonoBehaviour
         if(BossHealth == 0)
         {
             Destroy(gameObject);
+            victory();
         }
         if(isinv == true)
         {
@@ -46,6 +48,11 @@ public class BossScript : MonoBehaviour
             BossHealth -= damagetaken;
             isinv = true;
         }
+    }
+    public void victory()
+    {
+        Time.timeScale = 0;
+        victoryscreen.SetActive(true);
     }
     
 }
