@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D body;
     // for horizontal movement
-    public static float movementspeed = 5; // original is 5 put 8 to test faster speed
+    public static float movementspeed = 8; // original is 5 put 8 to test faster speed
     public float horizontalmovement;
     public static bool canmove;
 
@@ -17,12 +17,13 @@ public class PlayerMovement : MonoBehaviour
 
     //for jumping & groundcheck
     public float jumpheight;
-    private float jumping;
+    
+    //private float jumping;
     private bool spacecanbepress;
     private float jumptimer;
     private float jumpduration=0.3f;
     private bool falloffledgejump; //jumping after falling off a ledge
-    private bool headbump; //player head hit ceiling
+    //private bool headbump; //player head hit ceiling
     public float castdistanceforheadbump;
     public Vector2 boxsizeforheadbump;
 
