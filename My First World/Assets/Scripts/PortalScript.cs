@@ -19,6 +19,7 @@ public class PortalScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+            Time.timeScale = 1;
             PlayerMovement.windEffect = false;
             PlayerMovement.canDoubleJump = false;
             PlayerMovement.movementspeed = 5;

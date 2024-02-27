@@ -123,6 +123,66 @@ public class DialogueManagerScript : MonoBehaviour
         //Dialoguetext.text = sentence;
     }
 
+    public void Displaynextsentencefordoublejump()
+    {
+
+        if (sentences.Count == 0)
+        {
+            choicenumber += 1;
+            EndDialogue();
+            return;
+        }
+        if (/*dialogueinsentencetoshow == null ||*/ sentencecounter == 0)
+        {
+            dialogueinsentencetoshow = dialogues.Dequeue();
+            sentencecounter = dialogueinsentencetoshow.sentences.Length;
+        }
+        if (dialogueinsentencetoshow.options == true)
+        {
+            if (choiceschoosen == 0)
+            {
+
+                option1.SetActive(true);
+                option2.SetActive(true);
+            }
+
+            if (choiceschoosen == 1)
+            {
+                option3.SetActive(true);
+                option4.SetActive(true);
+            }
+            //choiceschoosen++;
+        }
+        else
+        {
+            if (dialogueinsentencetoshow.name == "Jing")
+            {
+                McLighten.GetComponent<Image>().enabled = true;
+                McName.GetComponent<Image>().enabled = true;
+                BossDarken.GetComponent<Image>().enabled = true;
+                McDarken.GetComponent<Image>().enabled = false;
+                BossLighten.GetComponent<Image>().enabled = false;
+                BossName.GetComponent<Image>().enabled = false;
+
+            }
+            else
+            {
+                McLighten.GetComponent<Image>().enabled = false;
+                McName.GetComponent<Image>().enabled = false;
+                BossDarken.GetComponent<Image>().enabled = false;
+                McDarken.GetComponent<Image>().enabled = true;
+                BossLighten.GetComponent<Image>().enabled = true;
+                BossName.GetComponent<Image>().enabled = true;
+            }
+            string sentence = sentences.Dequeue();
+            sentencecounter -= 1;
+            StopAllCoroutines();
+            StartCoroutine(TypeSentence(sentence));
+        }
+
+        //Dialoguetext.text = sentence;
+    }
+
 
 
     IEnumerator TypeSentence(string sentence)
