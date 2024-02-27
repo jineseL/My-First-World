@@ -11,6 +11,8 @@ public class Attack : MonoBehaviour
     public float attackSpeed; // more like attac duration actually
     private float timer;
     private Animator m_Animator;
+    public float actualattackspeed;
+    private float attackspeedtimer;
     void Start()
     {
         //to set both attack area inactive 
@@ -22,12 +24,21 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (attackspeedtimer < actualattackspeed)
+        {
+            attackspeedtimer += Time.deltaTime;
+        }
+        
         if (Input.GetKeyDown(KeyCode.L)) //only activate attack area when left click is press
         {
-            if (timer <= attackSpeed)
+            if (attackspeedtimer >= actualattackspeed)
             {
-                Attacking();
-                m_Animator.SetTrigger("Punch");
+                if (timer <= attackSpeed)
+                {
+                    attackspeedtimer = 0;
+                    Attacking();
+                    m_Animator.SetTrigger("Punch");
+                }
             }
         }
         if (attacking)
@@ -47,14 +58,15 @@ public class Attack : MonoBehaviour
     private void Attacking()
     {
         attacking = true;
-        if (gameObject.transform.GetComponent<PlayerMovement>().isfacingright == true)
+        attackAreaRight.SetActive(attacking);
+        /*if (gameObject.transform.GetComponent<PlayerMovement>().isfacingright == true)
         {
             attackAreaRight.SetActive(attacking);
         }
         else if(gameObject.transform.GetComponent<PlayerMovement>().isfacingright == false)
         {
             attackAreaLeft.SetActive(attacking);
-        }
+        }*/
 
     }
 }

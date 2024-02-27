@@ -7,13 +7,14 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D body;
     // for horizontal movement
-    public static float movementspeed = 8; // original is 5 put 8 to test faster speed
+    public static float movementspeed = 5; // original is 5 put 8 to test faster speed
     public float horizontalmovement;
     public static bool canmove;
 
     //for checking if character is facing right or left
     public bool isfacingright = true;
-    private SpriteRenderer playersprite;
+    //public static bool canturn=true; if u wan to allow turning while attack 
+    //private SpriteRenderer playersprite;
 
     //for jumping & groundcheck
     public float jumpheight;
@@ -42,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     public float gravity;
 
     //for double jumping
-    public static bool canDoubleJump=true;
+    public static bool canDoubleJump=false;
     public bool secondJump = false;
 
     //for wind effect
@@ -71,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        playersprite = GetComponent<SpriteRenderer>();
+        //playersprite = GetComponent<SpriteRenderer>();
         isfacingright = true;
         canmove = true;
         animator = GetComponent<Animator>();
@@ -116,13 +117,23 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.A))
             {
+                if (isfacingright == true)
+                {
+                    isfacingright = false;
+                    transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                }
                 isfacingright = false;
-                playersprite.flipX = true;
+                //playersprite.flipX = true;
             }
             else if(Input.GetKey(KeyCode.D))
             {
+                if (isfacingright == false)
+                {
+                    isfacingright = true;
+                    transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                }
                 isfacingright = true;
-                playersprite.flipX = false;
+                //playersprite.flipX = false;
             }
             /*if (body.velocity.x < 0)
             {
