@@ -29,9 +29,9 @@ public class RainyBallsScript : MonoBehaviour
 
         transform.position = new Vector3(transform.position.x ,transform.position.y,transform.position.z);*/
         body.gravityScale += rainaccleration;
-        if(body.gravityScale > 2.8f)
+        if(body.gravityScale > 2.0f)
         {
-            body.gravityScale = 2.8f;
+            body.gravityScale = 2.0f;
         }
     }
     private void OnTriggerEnter2D(Collider2D collider)

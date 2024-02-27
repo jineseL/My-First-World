@@ -29,6 +29,7 @@ public class PortalScript : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.T))
         {
+            Time.timeScale = 1;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             return;
         }
