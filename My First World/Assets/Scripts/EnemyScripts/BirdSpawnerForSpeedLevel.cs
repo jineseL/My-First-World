@@ -11,7 +11,7 @@ public class BirdSpawnerForSpeedLevel : MonoBehaviour
     public float spawnrate;
     public GameObject player;
 
-    private GameObject[] birds = new GameObject[3]; // this number should be the same as birdcount
+    private GameObject[] birds = new GameObject[2]; // this number should be the same as birdcount
     //public int BirdCount=3;
     void Start()
     {

@@ -3078,6 +3078,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6930218022152363255, guid: 8f732591ce68fe446bb58b187dd8cf9f, type: 3}
+      propertyPath: spawnrate
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8216698781887321565, guid: 8f732591ce68fe446bb58b187dd8cf9f, type: 3}
       propertyPath: m_Name
       value: RainBallSpawner
