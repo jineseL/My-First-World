@@ -8,6 +8,7 @@ TagManager:
   - Boss
   - BossTopPlatform
   - Platform
+  - BirdSpawner
   layers:
   - Default
   - TransparentFX

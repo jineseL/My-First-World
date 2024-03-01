@@ -26,14 +26,16 @@ public class DeathZone : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        
         if (checker == false)
         {
             if (collider.CompareTag("Player"))
             {
                 collider.GetComponent<PlayerHealth>().damagewithoutknockback();
                 checker = true;
+                collider.GetComponent<Transform>().position = new Vector3(respawnpoint.position.x, respawnpoint.position.y, respawnpoint.position.z);
             }
-            collider.GetComponent<Transform>().position = new Vector3(respawnpoint.position.x, respawnpoint.position.y, respawnpoint.position.z);
+            
         }
     }
 }

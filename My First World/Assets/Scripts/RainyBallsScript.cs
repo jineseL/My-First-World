@@ -9,9 +9,12 @@ public class RainyBallsScript : MonoBehaviour
 
     private float timer;
     private float rainballdespawntimer = 3;
+    
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        
+        
     }
 
     // Update is called once per frame
@@ -22,6 +25,7 @@ public class RainyBallsScript : MonoBehaviour
             timer += Time.deltaTime;
         }
         else Destroy(gameObject);
+        
     }
     private void FixedUpdate()
     {

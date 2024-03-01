@@ -92,7 +92,7 @@ public class PlayerHealth : MonoBehaviour
     public void damage(Vector3 position)
     {
         health -= 1;
-        if (health == 0)
+        if (health <= 0)
         {
             death();
             return;

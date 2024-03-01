@@ -5,7 +5,7 @@ using UnityEngine;
 public class BirdTriggerSpawner : MonoBehaviour
 {
     public GameObject Bird;
-    private bool haspawn;
+    public bool haspawn;
     public Transform childtransform;
     void Start()
     {

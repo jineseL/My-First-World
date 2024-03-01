@@ -46,5 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rainyball: {fileID: 1717867940519017467, guid: 539c1245188e75d4f8c7528674c8665a, type: 3}
   offset: 4
-  abovecameradistance: 6
+  abovecameradistance: 8
   spawnrate: 0.8

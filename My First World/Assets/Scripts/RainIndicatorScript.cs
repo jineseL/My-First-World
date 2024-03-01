@@ -4,39 +4,34 @@ using UnityEngine;
 
 public class RainIndicatorScript : MonoBehaviour
 {
-    private GameObject player;
+    private GameObject cameraX;
     public GameObject indicator;
 
     Renderer rd;
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
+        cameraX = GameObject.Find("CameraFollow");
         rd = GetComponent<Renderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (rd.isVisible == false)
+        if (gameObject.transform.position.y > cameraX.transform.position.y + 4)
         {
             if (indicator.activeSelf == false)
             {
                 indicator.SetActive(true);
             }
 
-            Vector2 direction = player.transform.position - transform.position;
-            RaycastHit2D ray = Physics2D.Raycast(transform.position, direction);
-            if(ray.collider != null)
+            indicator.transform.position = new Vector3(gameObject.transform.position.x, cameraX.transform.position.y + 4, gameObject.transform.position.z);
+        }
+        else
+        {
+            if (indicator.activeSelf == true)
             {
-                indicator.transform.position = ray.point;
-            }
-            else
-            {
-                if(indicator.activeSelf == true)
-                {
-                    indicator.SetActive(true);
-                }
+                indicator.SetActive(false);
             }
         }
     }
