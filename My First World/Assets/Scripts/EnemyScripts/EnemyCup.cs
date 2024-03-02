@@ -34,18 +34,28 @@ public class EnemyCup : MonoBehaviour
     //for groundcheck boxcast
     public Vector2 boxsize; // for the size of the box to be use in boxcasting
     public float castdistance; //for the cast distance from the centre position of the gameobject 
+
     
 
+    //animator
+    private Animator m_Animator;
     void Start()
     {
         cupBody = GetComponent<Rigidbody2D>();
         timer = knockbacktimer;
         jumptimer = jumpcooldown;
         Physics2D.IgnoreLayerCollision(10, 10, true);
+        m_Animator = GetComponent<Animator>();
         //Groundcheck = GetComponentInChildren<Transform>();
     }
     private void Update()
     {
+        m_Animator.SetFloat("VelocityY", cupBody.velocity.y);
+        if(isgroundedattheedge() == true || isgroundedatthecentre() ==true)
+        {
+            m_Animator.SetBool("Landed", true);
+        }
+        else m_Animator.SetBool("Landed", false);
         if (knockBack == false)
         {
             
@@ -66,7 +76,8 @@ public class EnemyCup : MonoBehaviour
                         else
                         {
                             jumptimer = jumpcooldown;
-                            jumpright();
+                            m_Animator.SetTrigger("ChargingUp");
+                            //jumpright();
                         }
                     }
                     else
@@ -81,7 +92,8 @@ public class EnemyCup : MonoBehaviour
                         else
                         {
                             jumptimer = jumpcooldown;
-                            jumpleft();
+                            m_Animator.SetTrigger("ChargingUp");
+                            //jumpleft();
                         }
                     }
 
@@ -103,15 +115,31 @@ public class EnemyCup : MonoBehaviour
             if (timer > 0)
             {
                 timer -= Time.deltaTime;
-
+                m_Animator.SetBool("GotHit", true);
             }
             else //if (timer <= 0)
             {
                 timer = knockbacktimer;
                 knockBack = false;
+                m_Animator.SetBool("GotHit", false);
             }
         }
 
+    }
+    private void jump()
+    {
+        
+        
+            if (facingRight == true)
+            {
+                jumpright();
+            }
+            else
+            {
+                jumpleft();
+            }
+            
+        
     }
     private void jumpright()
     {

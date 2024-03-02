@@ -87,6 +87,7 @@ public class EnemyBehaviour : MonoBehaviour
             if (enemytype == 2)
             {
                 referencescript2.knockBack = true;
+                body.velocity = new Vector2(0, body.velocity.y);
                 //body.velocity = new Vector2(0, body.velocity.y);
             }
 

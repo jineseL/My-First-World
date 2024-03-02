@@ -1,86 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2444116710177274070
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5680317789378096061}
-  - component: {fileID: 8600775527798972723}
-  - component: {fileID: 7295217612763227549}
-  m_Layer: 6
-  m_Name: AttackAreaLeft
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5680317789378096061
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2444116710177274070}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.6, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 254095464574904687}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &8600775527798972723
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2444116710177274070}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 2.243162, y: -0.42647105}
-  serializedVersion: 2
-  m_Radius: 5.693532
---- !u!114 &7295217612763227549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2444116710177274070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 762a4702b54421d40be0837593ef7d77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackDamage: 5
 --- !u!1 &4719063905571424450
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,7 +184,7 @@ GameObject:
   - component: {fileID: 6032086341295984387}
   - component: {fileID: 2609897577714433439}
   - component: {fileID: 158028110237449256}
-  - component: {fileID: 5355963680913004588}
+  - component: {fileID: -2779372081298253142}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -287,7 +206,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 89609954120399924}
-  - {fileID: 5680317789378096061}
   - {fileID: 1401901486165509954}
   - {fileID: 7011598219137035165}
   m_Father: {fileID: 0}
@@ -332,7 +250,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: a6ec3b6a43f520c448d9b3ee8627178e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -419,6 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalmovement: 0
+  caninput: 0
   isfacingright: 0
   jumpheight: 10
   castdistanceforheadbump: 0.75
@@ -450,7 +369,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackAreaRight: {fileID: 8802091764516895693}
-  attackAreaLeft: {fileID: 2444116710177274070}
   attackSpeed: 0.167
   actualattackspeed: 0.3
 --- !u!114 &2609897577714433439
@@ -467,7 +385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   knockbackforce: 15
-  invduration: 0.8
+  invduration: 1.5
   isinv: 0
   knockbackduration: 0.15
   unscaledtimerduration: 0.15
@@ -517,7 +435,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5503473, y: 0.88388824}
   m_EdgeRadius: 0
---- !u!95 &5355963680913004588
+--- !u!95 &-2779372081298253142
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     
-    public int health;
+    public int health =5;
     private Rigidbody2D PlayerBody;
     
     public float knockbackforce;
@@ -32,13 +32,18 @@ public class PlayerHealth : MonoBehaviour
     //camera shake
     private GameObject gamecamera;
     private Animator gamecameraanimator;
+    private Animator Manim;
 
     //checkpoint
     public bool checkpointreach;
 
+    public bool isdead;
+
 
     void Start()
     {
+        Manim = GetComponent<Animator>();
+        isdead = false;
         checkpointreach = false;
         isinv = false;
         Physics2D.IgnoreLayerCollision(6, 10, false);
@@ -52,7 +57,11 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(isdead == true)
+        {
+            Physics2D.IgnoreLayerCollision(6, 10, true);
+        }
+        else Physics2D.IgnoreLayerCollision(6, 10, false);
         if (timefreeze == true)
         {
             freezescreen();
@@ -92,13 +101,15 @@ public class PlayerHealth : MonoBehaviour
     public void damage(Vector3 position)
     {
         health -= 1;
+        logicscriptreference.minushealth();
         if (health <= 0)
         {
-            death();
+            isdead = true;
+            deathanim();
             return;
         }
         gamecameraanimator.SetTrigger("Damage");
-        logicscriptreference.minushealth();
+        
         timefreeze = true;
         isinv = true;
         Vector2 direction = (gameObject.transform.position - position).normalized;
@@ -123,12 +134,21 @@ public class PlayerHealth : MonoBehaviour
     {
         logicscriptreference.minushealth();
         health -= 1;
-        if (health == 0)
+        if (health <= 0)
         {
-            death();
+            isdead = true;
+            deathanim();
             return;
         }
         isinv = true;
+    }
+    public void deathanim()
+    {
+        //PlayerBody.isKinematic = true;
+        //Physics2D.IgnoreLayerCollision(6, 10, true);
+        PlayerBody.velocity = new Vector2(0, 0);
+        gameObject.GetComponent<PlayerMovement>().caninput = false;
+        Manim.SetTrigger("Death");
     }
     public void death()
     {
@@ -136,6 +156,16 @@ public class PlayerHealth : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
+            return;
+        }
+        else
+        {
+
+            isdead = false;
+            Manim.SetTrigger("Respawn");
+            //PlayerBody.isKinematic = false;
+            gameObject.GetComponent<PlayerMovement>().caninput = true;
+            GameObject.Find("CheckPoint").GetComponent<CheckPointScript>().rebornfromcheckpoint();
             return;
         }
         
