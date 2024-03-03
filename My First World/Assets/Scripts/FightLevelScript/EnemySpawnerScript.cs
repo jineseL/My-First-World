@@ -11,8 +11,11 @@ public class EnemySpawnerScript : MonoBehaviour
     public int wavecounter;
     private int previous;
     private int current;
+
+    public bool completed;
     void Start()
     {
+        completed = false;
         wavecounter = 0;
         timer = 0;
         previous = 7;
@@ -39,7 +42,7 @@ public class EnemySpawnerScript : MonoBehaviour
             }*/
             if(wavecounter >= numberOfWave)
             {
-                Destroy(gameObject);
+                completed = true;
             }
             timer = 0;
         }

@@ -39,11 +39,12 @@ public class PlayerHealth : MonoBehaviour
 
     public bool isdead;
 
-
+    private bool dying;
     void Start()
     {
         Manim = GetComponent<Animator>();
         isdead = false;
+        dying = false;
         checkpointreach = false;
         isinv = false;
         Physics2D.IgnoreLayerCollision(6, 10, false);
@@ -62,6 +63,11 @@ public class PlayerHealth : MonoBehaviour
             Physics2D.IgnoreLayerCollision(6, 10, true);
         }
         else Physics2D.IgnoreLayerCollision(6, 10, false);
+
+        if(dying == true)
+        {
+            PlayerBody.velocity = new Vector2(0, 0);
+        }
         if (timefreeze == true)
         {
             freezescreen();
@@ -146,12 +152,14 @@ public class PlayerHealth : MonoBehaviour
     {
         //PlayerBody.isKinematic = true;
         //Physics2D.IgnoreLayerCollision(6, 10, true);
-        PlayerBody.velocity = new Vector2(0, 0);
+        //PlayerBody.velocity = new Vector2(0, 0);
+        dying = true;
         gameObject.GetComponent<PlayerMovement>().caninput = false;
         Manim.SetTrigger("Death");
     }
     public void death()
     {
+        dying = false;
         if (checkpointreach == false)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);

@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Stages/SpeedLevel.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Stages/IceLevel.unity
+    guid: d52453edf4051b8448b34577ab400d7e
+  - enabled: 1
     path: Assets/Stages/BossLevel.unity
     guid: 691ef39435affb54485fbe431fdb3b2d
   m_configObjects: {}

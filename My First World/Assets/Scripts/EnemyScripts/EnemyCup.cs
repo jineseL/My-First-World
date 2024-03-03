@@ -64,8 +64,8 @@ public class EnemyCup : MonoBehaviour
                 if (isgroundedattheedge() == true && wallcheck() ==false /*&& enemycheck() == false*/)
                 {
 
-                    if (facingRight == true)
-                    {
+                    /*if (facingRight == true)
+                    {*/
 
                         if (jumptimer > 0)
                         {
@@ -79,7 +79,7 @@ public class EnemyCup : MonoBehaviour
                             m_Animator.SetTrigger("ChargingUp");
                             //jumpright();
                         }
-                    }
+                    /*}
                     else
                     {
 
@@ -95,7 +95,7 @@ public class EnemyCup : MonoBehaviour
                             m_Animator.SetTrigger("ChargingUp");
                             //jumpleft();
                         }
-                    }
+                    }*/
 
                 }
                 else

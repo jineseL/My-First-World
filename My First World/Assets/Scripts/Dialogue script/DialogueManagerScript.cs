@@ -123,7 +123,7 @@ public class DialogueManagerScript : MonoBehaviour
         //Dialoguetext.text = sentence;
     }
 
-    public void Displaynextsentencefordoublejump()
+    /*public void Displaynextsentencefordoublejump()
     {
 
         if (sentences.Count == 0)
@@ -132,7 +132,7 @@ public class DialogueManagerScript : MonoBehaviour
             EndDialogue();
             return;
         }
-        if (/*dialogueinsentencetoshow == null ||*/ sentencecounter == 0)
+        if (*//*dialogueinsentencetoshow == null ||*//* sentencecounter == 0)
         {
             dialogueinsentencetoshow = dialogues.Dequeue();
             sentencecounter = dialogueinsentencetoshow.sentences.Length;
@@ -181,7 +181,7 @@ public class DialogueManagerScript : MonoBehaviour
         }
 
         //Dialoguetext.text = sentence;
-    }
+    }*/
 
 
 
@@ -227,6 +227,8 @@ public class DialogueManagerScript : MonoBehaviour
         choicenumber += 1;
         //choiceschoosen++;
     }
+
+    
     public void disableelements()
     {
         LogicManagerScript.RainspawnerEnable = false;
