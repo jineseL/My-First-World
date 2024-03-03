@@ -86,7 +86,8 @@ public class SlamMoveScript : MonoBehaviour
             Destroy(gameObject);
             //collider.GetComponent<Transform>().gameObject.SetActive(false);
             //collider.GetComponent<Animator>().SetBool("PlatformBoom", true);
-            collider.enabled = false;
+            //collider.enabled = false;
+            collider.gameObject.GetComponent<Animator>().SetBool("PlatformBoom", true);
             //collider.GetComponent<SpriteRenderer>().enabled = false;
 
         }

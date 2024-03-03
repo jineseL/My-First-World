@@ -9,28 +9,64 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2678710561787541511, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a49813127f1ea814fb92e8209ac1ed90, type: 3}
+    - target: {fileID: 2678710561787541511, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
       propertyPath: m_Color.b
-      value: 0.90943396
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2678710561787541511, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
       propertyPath: m_Color.g
-      value: 0.86738735
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2678710561787541511, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
       propertyPath: m_Color.r
-      value: 0.25223923
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678710561787541511, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
+      propertyPath: m_SortingOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973953573932897492, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
+      propertyPath: m_Size.x
+      value: 7.1697645
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973953573932897492, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
+      propertyPath: m_Size.y
+      value: 0.6967597
       objectReference: {fileID: 0}
     - target: {fileID: 3973953573932897492, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
       propertyPath: m_Material
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973953573932897492, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0014824867
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973953573932897492, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.02301152
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973953573932897492, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 7.1576567
+      objectReference: {fileID: 0}
+    - target: {fileID: 3973953573932897492, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.69200003
       objectReference: {fileID: 0}
     - target: {fileID: 4231488934362395099, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
       propertyPath: m_Name
       value: Ice Platform Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7463139475816927256, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6730656
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463139475816927256, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.12
+      value: 62.7488
       objectReference: {fileID: 0}
     - target: {fileID: 7463139475816927256, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
       propertyPath: m_LocalPosition.y
@@ -93,5 +129,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c66b9afd56169e74ebea39950ae19a99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  slideforce: 100
+  slideForce: 250
+  slideovertime: 3

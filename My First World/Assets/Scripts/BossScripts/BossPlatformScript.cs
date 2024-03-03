@@ -6,6 +6,8 @@ public class BossPlatformScript : MonoBehaviour
 {
     private float timer;
     public float destroyedduration;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,9 +17,11 @@ public class BossPlatformScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.GetComponent<BoxCollider2D>().enabled == false)
+        if (gameObject.GetComponent<Animator>().GetBool("PlatformBoom"))
         {
-            gameObject.GetComponent<Animator>().SetBool("PlatformBoom", true);
+            //gameObject.GetComponent<Animator>().SetBool("PlatformBoom", true);
+
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
             if (timer < destroyedduration)
             {
                 timer += Time.deltaTime;
@@ -25,14 +29,18 @@ public class BossPlatformScript : MonoBehaviour
             else
             {
                 
-                GetComponent<BoxCollider2D>().enabled = true;
+                //GetComponent<BoxCollider2D>().enabled = true;
                 gameObject.GetComponent<Animator>().SetBool("PlatformBoom", false);
                 timer = 0;
                 GetComponent<SpriteRenderer>().enabled = true;
             }
         }
-        
-
-        
     }
+
+    private void rebuildcollider()
+    {
+        gameObject.GetComponent<Animator>().SetTrigger("RebuildComplete");
+        GetComponent<BoxCollider2D>().enabled = true;
+    }
+
 }
