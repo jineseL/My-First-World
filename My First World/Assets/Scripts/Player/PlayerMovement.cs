@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     public float gravity;
 
     //for double jumping
-    public static bool canDoubleJump=false;
+    public static bool canDoubleJump=true;
     public bool secondJump = false;
 
     //for wind effect
