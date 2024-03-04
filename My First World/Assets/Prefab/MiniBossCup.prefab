@@ -101,7 +101,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 99999
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -148,7 +148,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06039031, y: -0.22878969}
+  m_Offset: {x: 0.05819744, y: -0.22878969}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -159,7 +159,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1207806, y: 1.4575794}
+  m_Size: {x: 0.9497348, y: 1.4575794}
   m_EdgeRadius: 0
 --- !u!114 &6116035252871671740
 MonoBehaviour:
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a36030c8fe78884f905fd4cc18a7a8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 90
   InvDuration: 0.4
   isInv: 0
   knockbackforce: 2
@@ -215,11 +215,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   jumpcooldown: 2
-  boxsize: {x: 2.08, y: 0.22}
-  castdistance: 2.39
+  boxsize: {x: 3.08, y: 0.22}
+  castdistance: 2.4
   JumpingUp: 0
   speed: 5
   distanceabove: 3
   slamdelaytimer: 0.5
   slamspeed: 15
   movingupduration: 5
+  healthbar: {fileID: 0}

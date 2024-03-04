@@ -32,15 +32,16 @@ public class EnemySpawnerScript : MonoBehaviour
         else
         {
             wavecounter += 1;
-            if (wavecounter < numberOfWave)
+            if (wavecounter <= numberOfWave)
             {
+                
                 spawnRandom();
             }
             /*if(wavecounter >= 4 && wavecounter < numberOfWave)
             {
                 spawnRandom();
             }*/
-            if(wavecounter >= numberOfWave)
+            if(wavecounter > numberOfWave)
             {
                 completed = true;
             }
