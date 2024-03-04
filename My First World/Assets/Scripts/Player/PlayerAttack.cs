@@ -6,7 +6,7 @@ public class Attack : MonoBehaviour
 {
     //for attacking
     public GameObject attackAreaRight = default;
-    public GameObject attackAreaLeft = default;
+    //public GameObject attackAreaLeft = default;
     private bool attacking = false;
     public float attackSpeed; // more like attac duration actually
     private float timer;
@@ -18,7 +18,7 @@ public class Attack : MonoBehaviour
         //to set both attack area inactive 
         m_Animator = GetComponentInParent<Animator>();
         attackAreaRight.SetActive(attacking);
-        attackAreaLeft.SetActive(attacking);
+        //attackAreaLeft.SetActive(attacking);
     }
 
     // Update is called once per frame
@@ -49,7 +49,7 @@ public class Attack : MonoBehaviour
             {
                 timer = 0;
                 attacking = false;
-                attackAreaLeft.SetActive(attacking);
+                //attackAreaLeft.SetActive(attacking);
                 attackAreaRight.SetActive(attacking);
                 
             }

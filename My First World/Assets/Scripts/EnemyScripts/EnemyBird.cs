@@ -118,7 +118,7 @@ public class EnemyBird : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collider)
     {
-        if (referencescript.isinv == false)
+        if (referencescript.isinv == false && referencescript.isdead == false)
         {
             if (collider.CompareTag("Player"))
             {

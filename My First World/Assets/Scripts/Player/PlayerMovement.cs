@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public static float movementspeed = 5; // original is 5 put 8 to test faster speed
     public float horizontalmovement;
     public static bool canmove;
+    public bool caninput;
 
     //for checking if character is facing right or left
     public bool isfacingright = true;
@@ -76,6 +77,8 @@ public class PlayerMovement : MonoBehaviour
         isfacingright = true;
         canmove = true;
         animator = GetComponent<Animator>();
+        canmove = true;
+        caninput = true;
         //windEffect = true;
         
     }
@@ -86,7 +89,10 @@ public class PlayerMovement : MonoBehaviour
         
         //for horizontal movement
         animator.SetFloat("IsFalling", body.velocity.y);
+        if (caninput)
+        {
             horizontalmovement = Input.GetAxis("Horizontal");
+        }
         animator.SetBool("GotHit", !canmove);
         if (body.velocity.y < -1)
         {
@@ -115,25 +121,28 @@ public class PlayerMovement : MonoBehaviour
         //Direction character is facing check n flipping player sprite
         if (PlayerHealth.timefreeze == false)
         {
-            if (Input.GetKey(KeyCode.A))
+            if (caninput)
             {
-                if (isfacingright == true)
+                if (Input.GetKey(KeyCode.A))
                 {
+                    if (isfacingright == true)
+                    {
+                        isfacingright = false;
+                        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                    }
                     isfacingright = false;
-                    transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                    //playersprite.flipX = true;
                 }
-                isfacingright = false;
-                //playersprite.flipX = true;
-            }
-            else if(Input.GetKey(KeyCode.D))
-            {
-                if (isfacingright == false)
+                else if (Input.GetKey(KeyCode.D))
                 {
+                    if (isfacingright == false)
+                    {
+                        isfacingright = true;
+                        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                    }
                     isfacingright = true;
-                    transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                    //playersprite.flipX = false;
                 }
-                isfacingright = true;
-                //playersprite.flipX = false;
             }
             /*if (body.velocity.x < 0)
             {
@@ -150,7 +159,7 @@ public class PlayerMovement : MonoBehaviour
 
         //for jumping, controlling when to allow player to jump
         /*isgrounded = isgrounded();*/
-        if (canmove)
+        if (canmove && caninput)
         {
             if (canDoubleJump == false)
             {
@@ -241,7 +250,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (canmove)
+        if (canmove && caninput)
         {
             //wind effect
             animator.SetFloat("Speed", Mathf.Abs(horizontalmovement));

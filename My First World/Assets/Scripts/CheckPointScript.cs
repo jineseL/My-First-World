@@ -21,10 +21,13 @@ public class CheckPointScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerhealthscriptreference.health <= 0)
+        /*if(playerhealthscriptreference.health <= 0)
         {
-            rebornfromcheckpoint();
-        }
+            if (playerhealthscriptreference.checkpointreach == true)
+            {
+                deathanim();
+            }
+        }*/
         
     }
     private void OnTriggerEnter2D(Collider2D collider)
@@ -36,7 +39,14 @@ public class CheckPointScript : MonoBehaviour
             children.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
-    private void rebornfromcheckpoint()
+    /*private void deathanim()
+    {
+        Physics2D.IgnoreLayerCollision(6, 10, true);
+        player.GetComponent<PlayerMovement>().caninput = false;
+        player.GetComponent<Animator>().SetTrigger("Death");
+        
+    }*/
+    public void rebornfromcheckpoint()
     {
         
             Birds = GameObject.FindGameObjectsWithTag("Enemies");
@@ -52,8 +62,7 @@ public class CheckPointScript : MonoBehaviour
             {
             Birdspawner[i].GetComponent<BirdTriggerSpawner>().haspawn = false;
             }
-            if (playerhealthscriptreference.checkpointreach == true)
-            {
+            
                 player.transform.position = new Vector3(transform.position.x, transform.position.y + 2, transform.position.z);
                 playerhealthscriptreference.health = 5;
                 logicscriptreference.heart1.enabled = true;
@@ -61,7 +70,7 @@ public class CheckPointScript : MonoBehaviour
                 logicscriptreference.heart3.enabled = true;
                 logicscriptreference.heart4.enabled = true;
                 logicscriptreference.heart5.enabled = true;
-            }
+            
         
     }
 }

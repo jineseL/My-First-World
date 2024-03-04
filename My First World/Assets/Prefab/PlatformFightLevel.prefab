@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 528588428847748314}
   - component: {fileID: 1189995590240085839}
   - component: {fileID: 1194714847231983838}
-  - component: {fileID: 5809119169253426840}
   - component: {fileID: 1059165085058132784}
+  - component: {fileID: 4269549890790777588}
   m_Layer: 7
-  m_Name: PlatformBossTop2
+  m_Name: PlatformFightLevel
   m_TagString: BossTopPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 47257bad893938641ba86aaf2d3e2ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -119,7 +119,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.015013218, y: 0.052545965}
+  m_Offset: {x: -0.015013218, y: 0.032542408}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -130,21 +130,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.2219458, y: 0.62467134}
+  m_Size: {x: 3.2219458, y: 0.5846642}
   m_EdgeRadius: 0
---- !u!114 &5809119169253426840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4663949908614787666}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08e69ee3be3d2cf438cb650c015fc4f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyedduration: 3
 --- !u!95 &1059165085058132784
 Animator:
   serializedVersion: 5
@@ -166,3 +153,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4269549890790777588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4663949908614787666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acaed2725994b5e4683c0278a5ea62c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IcePlatformscript: {fileID: 0}
+  alive: 0
+  aliveduration: 4
