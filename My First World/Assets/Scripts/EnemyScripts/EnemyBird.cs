@@ -23,12 +23,14 @@ public class EnemyBird : MonoBehaviour
     /*private float speedtimer;
     public float slowspeedduration;*/
 
-    // Start is called before the first frame update
+    private Animator m_animator;
     void Start()
     {
         player = GameObject.Find("Player");
         birdbody = GetComponent<Rigidbody2D>();
         referencescript = player.GetComponent<PlayerHealth>();
+        m_animator = GetComponent<Animator>();
+        //m_animator.SetBool("Flying", true);
     }
 
     // Update is called once per frame
@@ -51,8 +53,10 @@ public class EnemyBird : MonoBehaviour
         //birdbody.AddForce(transform.right);
         if (knockBack == false)
         {
+            m_animator.SetBool("GotHit", false);
             //movement script here
             //float distance = Vector3.Distance(player.transform.position, transform.position);
+            turntowardsPlayer();
             if (transform.position.x > player.transform.position.x)
             {
                 playerleft = true;
@@ -69,13 +73,17 @@ public class EnemyBird : MonoBehaviour
         }
         else
         {
+            m_animator.SetBool("GotHit", true);
+
             if (timer > 0)
             {
+                
                 timer -= Time.deltaTime;
 
             }
             else //if (timer <= 0)
             {
+                
                 timer = knockbacktimer;
                 knockBack = false;
             }
@@ -126,5 +134,25 @@ public class EnemyBird : MonoBehaviour
 
             }
         }
+    }
+    private void turntowardsPlayer()
+    {
+        if (transform.localScale.x < 0)
+        {
+            if (transform.position.x > player.transform.position.x)
+            {
+                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            }
+
+        }
+        else if (transform.localScale.x > 0)
+        {
+            if (transform.position.x < player.transform.position.x)
+            {
+                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+            }
+
+        }
+
     }
 }
