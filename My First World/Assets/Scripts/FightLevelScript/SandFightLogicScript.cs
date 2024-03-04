@@ -4,10 +4,22 @@ using UnityEngine;
 
 public class SandFightLogicScript : MonoBehaviour
 {
-    
-    public GameObject[] platforms;
-    
-    public EnemySpawnerScript referenceenemyspawnerscript;
+
+    public float downspeed;
+    /*public GameObject platforms1;
+    public GameObject platforms2;
+    public GameObject platforms3;
+    public GameObject platforms4;
+    public GameObject platforms5;
+    public GameObject platforms6;
+    public GameObject platforms7;
+    public GameObject platforms8;
+    public GameObject platforms9;*/
+    public GameObject[] Godown;
+    public GameObject GroundPlatform;
+
+
+    public BirdSpawner referenceenemyspawnerscript;
     
     public GameObject MiniBoss;
     public GameObject healthbar;
@@ -15,6 +27,10 @@ public class SandFightLogicScript : MonoBehaviour
     private float breaktimer;
     public float breakduration;
 
+    private float destroytimer;
+    public float timetodestroy;
+
+    
     private GameObject[] Enemies;
     void Start()
     {
@@ -32,9 +48,30 @@ public class SandFightLogicScript : MonoBehaviour
         }
         else if (enemycheck() == true)
         {
+
+            if(destroytimer< timetodestroy)
+            {
+                destroytimer += Time.deltaTime;
+            }
+            else
+            {
+                for (int i = 0; i < Godown.Length; i++)
+                {
+                    Destroy(Godown[i]);
+                }
+            }
             if (breaktimer < breakduration)
             {
                 breaktimer += Time.deltaTime;
+                for(int i =0; i < Godown.Length; i++)
+                {
+                    godown(Godown[i]);
+                }
+                if(GroundPlatform.transform.position.y < -6.06f)
+                {
+                    GroundPlatform.transform.position += Vector3.up * Time.deltaTime * downspeed;
+                }
+
             }
             else
             {
@@ -57,6 +94,10 @@ public class SandFightLogicScript : MonoBehaviour
             }
         }
         return true;
+    }
+    private void godown(GameObject platform)
+    {
+        platform.transform.position += Vector3.down *Time.deltaTime*downspeed;
     }
     
 }
