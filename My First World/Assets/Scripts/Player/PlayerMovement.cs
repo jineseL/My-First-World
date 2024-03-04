@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     public float gravity;
 
     //for double jumping
-    public static bool canDoubleJump=true;
+    public static bool canDoubleJump;
     public bool secondJump = false;
 
     //for wind effect
@@ -98,6 +98,11 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("IsJumping", false);
         }
+        if (isgrounded() == true)
+        {
+            animator.SetBool("Isgrounded", true);
+        }
+        else animator.SetBool("Isgrounded", false);
 
         //for cyotetetime
         if (isgrounded() == true)
@@ -225,7 +230,7 @@ public class PlayerMovement : MonoBehaviour
                     animator.SetBool("IsJumping", false);
                     jumptimer = 0;
                     cyotetetimeCounter = 0f;
-                    body.velocity = new Vector2(body.velocity.x, -0);
+                    body.velocity = new Vector2(body.velocity.x, 2.5f);
                     spacecanbepress = false;
 
                 }
@@ -234,7 +239,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 animator.SetBool("IsJumping", false);
                 jumptimer = 0;
-                body.velocity = new Vector2(body.velocity.x, -0);
+                //body.velocity = new Vector2(body.velocity.x, -0);
+                body.velocity = new Vector2(body.velocity.x, 0.5f);
                 spacecanbepress = false;
             }
         }

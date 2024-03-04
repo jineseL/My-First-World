@@ -174,9 +174,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  InvDuration: 0.5
+  InvDuration: 0.3
   isInv: 0
-  knockbackforce: 30
+  knockbackforce: 40
   enemytype: 3
 --- !u!114 &3956580154260458123
 MonoBehaviour:

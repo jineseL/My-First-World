@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class DialogueManagerScript : MonoBehaviour
 {
-    
 
+    //private GameObject player;
     public Text Dialoguetext;
     private Queue<string> sentences; // first in first out data structure 
     private Queue<Dialogue> dialogues;
@@ -30,6 +30,7 @@ public class DialogueManagerScript : MonoBehaviour
     void Start()
     {
         //dialoguecanvas = GameObject.Find("Dialogue Canvas");
+        //player = GameObject.Find("Player");
         choicenumber = 1;
         sentences = new Queue<string>();
         dialogues = new Queue<Dialogue>();
@@ -123,7 +124,7 @@ public class DialogueManagerScript : MonoBehaviour
         //Dialoguetext.text = sentence;
     }
 
-    /*public void Displaynextsentencefordoublejump()
+/*    public void Displaynextsentenceforicelevel()
     {
 
         if (sentences.Count == 0)
@@ -132,7 +133,7 @@ public class DialogueManagerScript : MonoBehaviour
             EndDialogue();
             return;
         }
-        if (*//*dialogueinsentencetoshow == null ||*//* sentencecounter == 0)
+        if (dialogueinsentencetoshow == null || sentencecounter == 0)
         {
             dialogueinsentencetoshow = dialogues.Dequeue();
             sentencecounter = dialogueinsentencetoshow.sentences.Length;
@@ -237,7 +238,7 @@ public class DialogueManagerScript : MonoBehaviour
     }
 
     //delete after alpha
-    public void stayonthelevel()
+    /*public void stayonthelevel()
     {
         animator.SetBool("Isopen", false);
         dialoguecanvas.SetActive(false);
@@ -245,6 +246,18 @@ public class DialogueManagerScript : MonoBehaviour
         disablebutton();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         
+    }*/
+    public void choiceplus1()
+    {
+        choicenumber += 1;
+    }
+    public void choiceplus2()   
+    {
+        choicenumber += 2;
+    }
+    public void choiceminus2()
+    {
+        choicenumber -= 2;
     }
     public void nothing()
     {

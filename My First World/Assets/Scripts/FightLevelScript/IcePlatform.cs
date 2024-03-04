@@ -78,6 +78,7 @@ public class IcePlatform : MonoBehaviour
         //adding force to player constantly when player is on the platform
         if (topush == true)
         {
+
             if (pushplayerright == true /*&& player.GetComponent<PlayerMovement>().isgrounded() == true*/)
             {
                 if (isgroundedonice == true && player.GetComponent<PlayerMovement>().horizontalmovement > 0)
@@ -85,6 +86,12 @@ public class IcePlatform : MonoBehaviour
                     slideForceRight += 2;
                     slideForceLeft -= 2;
                 }
+                if (isgroundedonice == true && player.GetComponent<PlayerMovement>().horizontalmovement == 0)
+                {
+                    slideForceRight -= 1f;
+                    slideForceLeft -= 1f;
+                }
+
                 player.GetComponent<Rigidbody2D>().AddForce(Vector2.right * slideForceRight);
                 player.GetComponent<Rigidbody2D>().AddForce(Vector2.left * slideForceLeft);
             }
@@ -94,6 +101,11 @@ public class IcePlatform : MonoBehaviour
                 {
                     slideForceRight -= 2;
                     slideForceLeft += 2;
+                }
+                if (isgroundedonice == true && player.GetComponent<PlayerMovement>().horizontalmovement == 0)
+                {
+                    slideForceRight -= 1f;
+                    slideForceLeft -= 1f;
                 }
                 player.GetComponent<Rigidbody2D>().AddForce(Vector2.right * slideForceRight);
                 player.GetComponent<Rigidbody2D>().AddForce(Vector2.left * slideForceLeft);

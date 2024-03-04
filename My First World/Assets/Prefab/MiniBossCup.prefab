@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6116035252871671740}
   - component: {fileID: 6068557447011239749}
   - component: {fileID: 2356791276476176840}
+  - component: {fileID: 4274376325149357862}
   m_Layer: 10
   m_Name: MiniBossCup
   m_TagString: Enemies
@@ -123,7 +124,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3586983968911576772}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -159,7 +160,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9497348, y: 1.4575794}
+  m_Size: {x: 0.7, y: 1.4575794}
   m_EdgeRadius: 0
 --- !u!114 &6116035252871671740
 MonoBehaviour:
@@ -215,7 +216,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   jumpcooldown: 2
-  boxsize: {x: 2.92, y: 0.22}
+  boxsize: {x: 2.2, y: 0.22}
   castdistance: 2.4
   JumpingUp: 0
   speed: 5
@@ -224,3 +225,75 @@ MonoBehaviour:
   slamspeed: 15
   movingupduration: 5
   healthbar: {fileID: 0}
+--- !u!60 &4274376325149357862
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3586983968911576772}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.764, y: 1.936}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.6016453, y: 0.34610805}
+      - {x: 0.5086675, y: 0.4117845}
+      - {x: 0.099654496, y: 0.54373825}
+      - {x: 0.08758859, y: 0.73498815}
+      - {x: -0.06633021, y: 0.7987407}
+      - {x: -0.18220657, y: 0.8749879}
+      - {x: -0.32125172, y: 0.8496032}
+      - {x: -0.3572054, y: 0.7302839}
+      - {x: -0.4266465, y: 0.6358539}
+      - {x: -0.42488366, y: 0.52455777}
+      - {x: -0.32500076, y: 0.42569128}
+      - {x: -0.5011454, y: 0.29025412}
+      - {x: -0.83112043, y: 0.18437743}
+      - {x: -0.7862317, y: 0.16508974}
+      - {x: -0.6559595, y: 0.06524662}
+      - {x: -0.5829644, y: -0.08796313}
+      - {x: -0.49833742, y: -0.37022868}
+      - {x: -0.45560536, y: -0.630981}
+      - {x: -0.29294148, y: -0.78809077}
+      - {x: -0.28426743, y: -0.957876}
+      - {x: 0.4030476, y: -0.96408486}
+      - {x: 0.39694142, y: -0.80526644}
+      - {x: 0.59912694, y: -0.57113945}
+      - {x: 0.6182779, y: -0.3438366}
+      - {x: 0.60383594, y: -0.17516361}
+      - {x: 0.68519837, y: 0.09749363}
+      - {x: 0.843255, y: 0.31126302}
+  m_UseDelaunayMesh: 0

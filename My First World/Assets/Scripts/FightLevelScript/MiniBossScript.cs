@@ -170,10 +170,10 @@ public class MiniBossScript : MonoBehaviour
             return false;
         }
     }
-    public void OnDrawGizmos() // to visualize groundcheck/isgrounded
+    /*public void OnDrawGizmos() // to visualize groundcheck/isgrounded
     {
         Gizmos.DrawWireCube(transform.position - transform.up * castdistance, boxsize);
-    }
+    }*/
 
     private void turntowardsPlayer()
     {

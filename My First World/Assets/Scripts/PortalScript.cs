@@ -8,9 +8,10 @@ public class PortalScript : MonoBehaviour
     public Dialogue[] dialogue;
     public GameObject dialoguecanvas;
     private PlayerHealth playerhealthscriptreference;
+    private GameObject player;
     void Start()
     {
-        
+        player = GameObject.Find("Player");
         playerhealthscriptreference = GameObject.Find("Player").GetComponent<PlayerHealth>();
     }
 
@@ -40,6 +41,7 @@ public class PortalScript : MonoBehaviour
         {
             //SceneManager.LoadScene(("Dialogue"));
             Time.timeScale = 0;
+            player.GetComponent<PlayerMovement>().caninput = false;
             FindObjectOfType<Canvas>().enabled = false;
             //FindObjectOfType<DialogueCanvas>(true).enabled = true;
             dialoguecanvas.SetActive(true);

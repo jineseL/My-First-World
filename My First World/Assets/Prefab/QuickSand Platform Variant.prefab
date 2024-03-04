@@ -34,15 +34,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3973953573932897492, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
       propertyPath: m_Size.y
-      value: 0.7530489
+      value: 0.6039192
       objectReference: {fileID: 0}
     - target: {fileID: 3973953573932897492, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
       propertyPath: m_Offset.x
-      value: -0.011563659
+      value: -0.011563778
       objectReference: {fileID: 0}
     - target: {fileID: 3973953573932897492, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
       propertyPath: m_Offset.y
-      value: 0.015434146
+      value: 0.089999
       objectReference: {fileID: 0}
     - target: {fileID: 3973953573932897492, guid: 1cf9796c9052df443b28e4544b70e5df, type: 3}
       propertyPath: m_IsTrigger
@@ -133,6 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68bec3f8a4b26174896381d020bb2d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallspeed: 0
+  fallspeed: 0.1
   speedReduction: -2
   jumpspeed: 10

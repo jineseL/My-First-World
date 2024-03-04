@@ -10,7 +10,7 @@ public class BaoSpawnerScript : MonoBehaviour
     private GameObject[] Baos = new GameObject[2];
     void Start()
     {
-        
+        Instantiate(Bao, transform.position, transform.rotation);
     }
 
     // Update is called once per frame

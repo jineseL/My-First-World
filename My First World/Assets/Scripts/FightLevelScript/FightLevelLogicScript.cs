@@ -14,13 +14,18 @@ public class FightLevelLogicScript : MonoBehaviour
     public GameObject baospawner2;
     public GameObject MiniBoss;
     public GameObject healthbar;
+    public GameObject tinyboss;
+    public GameObject portal;
 
     private float breaktimer;
     public float breakduration;
 
     private GameObject[] Enemies;
+
+    private bool bossfight;
     void Start()
     {
+        bossfight = true;
         timer = 0;
         breaktimer = 0;
         previous = 7;
@@ -49,12 +54,24 @@ public class FightLevelLogicScript : MonoBehaviour
             }
             else
             {
-                baospawner1.SetActive(true);
-                baospawner2.SetActive(true);
-                healthbar.SetActive(true);
-                MiniBoss.SetActive(true);
-                
+                if (bossfight == true)
+                {
+                    baospawner1.SetActive(true);
+                    baospawner2.SetActive(true);
+                    healthbar.SetActive(true);
+                    MiniBoss.SetActive(true);
+                    bossfight = false;
+                }
             }
+        }
+        if(MiniBoss == null)
+        {
+            baospawner1.SetActive(false);
+            baospawner2.SetActive(false);
+            destroyallenemies();
+            tinyboss.SetActive(true);
+            portal.SetActive(true);
+            healthbar.SetActive(false);
         }
     }
 
@@ -69,6 +86,17 @@ public class FightLevelLogicScript : MonoBehaviour
             }
         }
         return true;
+    }
+    private void destroyallenemies()
+    {
+        Enemies = GameObject.FindGameObjectsWithTag("Enemies");
+        for (int i = 0; i < Enemies.Length; i++)
+        {
+            if (Enemies[i] != null)
+            {
+                Destroy(Enemies[i]);
+            }
+        }
     }
     private int generaterandomnumber(int lower, int higher)
     {

@@ -32,9 +32,14 @@ public class SandFightLogicScript : MonoBehaviour
 
     
     private GameObject[] Enemies;
+
+    public GameObject tinyboss;
+    public GameObject portal;
+
+    private bool bossfight;
     void Start()
     {
-        
+        bossfight = true;
         breaktimer = 0;
         
     }
@@ -63,11 +68,11 @@ public class SandFightLogicScript : MonoBehaviour
             if (breaktimer < breakduration)
             {
                 breaktimer += Time.deltaTime;
-                for(int i =0; i < Godown.Length; i++)
+                for (int i = 0; i < Godown.Length; i++)
                 {
                     godown(Godown[i]);
                 }
-                if(GroundPlatform.transform.position.y < -6.06f)
+                if (GroundPlatform.transform.position.y < -6.06f)
                 {
                     GroundPlatform.transform.position += Vector3.up * Time.deltaTime * downspeed;
                 }
@@ -75,10 +80,20 @@ public class SandFightLogicScript : MonoBehaviour
             }
             else
             {
-                
-                healthbar.SetActive(true);
-                MiniBoss.SetActive(true);
+                if (bossfight == true)
+                {
+                    healthbar.SetActive(true);
 
+                    MiniBoss.SetActive(true);
+                    bossfight = false;
+                }
+            }
+            if (MiniBoss == null)
+            {
+                //destroyallenemies();
+                tinyboss.SetActive(true);
+                portal.SetActive(true);
+                healthbar.SetActive(false);
             }
         }
     }
