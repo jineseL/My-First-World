@@ -215,7 +215,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   jumpcooldown: 2
-  boxsize: {x: 3.08, y: 0.22}
+  boxsize: {x: 2.92, y: 0.22}
   castdistance: 2.4
   JumpingUp: 0
   speed: 5
