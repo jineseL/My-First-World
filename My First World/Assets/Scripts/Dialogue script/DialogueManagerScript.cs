@@ -119,6 +119,7 @@ public class DialogueManagerScript : MonoBehaviour
             sentencecounter -= 1;
             StopAllCoroutines();
             StartCoroutine(TypeSentence(sentence));
+            
         }
 
         //Dialoguetext.text = sentence;
