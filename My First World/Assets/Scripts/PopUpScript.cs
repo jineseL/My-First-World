@@ -6,18 +6,20 @@ using UnityEngine.UI;
 public class PopUpScript : MonoBehaviour
 {
     public GameObject PopupImage;
-    static bool activated;
+    
     private GameObject gamecamera;
     private Color imagecolor;
     public float fadespeed;
     private bool fadeintime;
     private bool fadeouttime;
-    
+    private bool at255;
+    float fadeamount;
+
     // Start is called before the first frame update
     void Start()
     {
         fadeintime = false;
-        
+        fadeamount = 0;
         gamecamera = GameObject.Find("Main Camera");
         imagecolor = PopupImage.GetComponent<SpriteRenderer>().color;
 
@@ -26,15 +28,21 @@ public class PopUpScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PopupImage.GetComponent<SpriteRenderer>().color.a >= 255)
+        {
+            at255 = true;
+        }
+        else at255 = false;
         PopupImage.transform.position = new Vector3(gamecamera.transform.position.x, gamecamera.transform.position.y, transform.position.z);
         if (fadeintime == true)
         {
             Color objectcolor = PopupImage.GetComponent<SpriteRenderer>().color;
-            float fadeamount = objectcolor.a + (fadespeed * Time.deltaTime);
+             fadeamount = objectcolor.a + (fadespeed * Time.deltaTime);
 
-            if (imagecolor.a >= 255)
+            if (imagecolor.a > 255)
             {
                 fadeamount = 255;
+                //fadeintime = false;
             }
             imagecolor = new Color(imagecolor.r, imagecolor.g, imagecolor.b, fadeamount);
             PopupImage.GetComponent<SpriteRenderer>().color = imagecolor;
@@ -42,9 +50,9 @@ public class PopUpScript : MonoBehaviour
         if (fadeouttime == true)
         {
             Color objectcolor = PopupImage.GetComponent<SpriteRenderer>().color;
-            float fadeamount = objectcolor.a - (fadespeed * Time.deltaTime);
+             fadeamount = objectcolor.a - (fadespeed * Time.deltaTime);
 
-            if (imagecolor.a <= 0)
+            if (imagecolor.a < 0)
             {
                 fadeamount = 0;
                 PopupImage.SetActive(false);
@@ -60,9 +68,11 @@ public class PopUpScript : MonoBehaviour
         {
             
             PopupImage.SetActive(true);
-            
-            
-            fadeintime = true;
+
+            if (at255==false)
+            {
+                fadeintime = true;
+            }
             fadeouttime = false;
             
             //collider.gameObject.GetComponent<PlayerMovement>().caninput = false;
@@ -73,7 +83,7 @@ public class PopUpScript : MonoBehaviour
 
         if (collider.CompareTag("Player"))
         {
-            
+            //Debug.Log("exited");
             fadeintime = false;
             fadeouttime = true;
         }

@@ -349,9 +349,9 @@ MonoBehaviour:
     m_Bits: 128
   gravity: 2
   secondJump: 0
-  windforce: 3
-  windforceaddition: 2
-  windforcewhenstandingstill: 1
+  windforce: 2.2
+  windforceaddition: 1.2
+  windforcewhenstandingstill: 0.3
   windDuration: 3
   WindArrowLeft: {fileID: 0}
   WindArrowDown: {fileID: 0}
