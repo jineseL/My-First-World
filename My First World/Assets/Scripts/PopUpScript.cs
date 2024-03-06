@@ -12,8 +12,8 @@ public class PopUpScript : MonoBehaviour
     public float fadespeed;
     private bool fadeintime;
     private bool fadeouttime;
-    private bool at255;
-    float fadeamount;
+    //private bool at255;
+    float fadeamount; // opacity is at 1 not 255 fml
 
     // Start is called before the first frame update
     void Start()
@@ -26,35 +26,41 @@ public class PopUpScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() //if fade in time = true, image will fade in 
     {
-        if (PopupImage.GetComponent<SpriteRenderer>().color.a >= 255)
-        {
-            at255 = true;
-        }
-        else at255 = false;
-        PopupImage.transform.position = new Vector3(gamecamera.transform.position.x, gamecamera.transform.position.y, transform.position.z);
+        
+        //PopupImage.transform.position = new Vector3(gamecamera.transform.position.x, gamecamera.transform.position.y, transform.position.z);
         if (fadeintime == true)
         {
-            Color objectcolor = PopupImage.GetComponent<SpriteRenderer>().color;
-             fadeamount = objectcolor.a + (fadespeed * Time.deltaTime);
 
-            if (imagecolor.a > 255)
+            PopupImage.transform.position = new Vector3(gamecamera.transform.position.x, gamecamera.transform.position.y, transform.position.z);
+            Color objectcolor = PopupImage.GetComponent<SpriteRenderer>().color;
+             //fadeamount = objectcolor.a + (fadespeed * Time.deltaTime);
+
+            if (imagecolor.a < 1)
             {
-                fadeamount = 255;
+                fadeamount = objectcolor.a + (fadespeed * Time.deltaTime);
+                //fadeamount = 255;
                 //fadeintime = false;
             }
             imagecolor = new Color(imagecolor.r, imagecolor.g, imagecolor.b, fadeamount);
             PopupImage.GetComponent<SpriteRenderer>().color = imagecolor;
         }
+
         if (fadeouttime == true)
         {
+            PopupImage.transform.position = new Vector3(gamecamera.transform.position.x, gamecamera.transform.position.y, transform.position.z);
             Color objectcolor = PopupImage.GetComponent<SpriteRenderer>().color;
-             fadeamount = objectcolor.a - (fadespeed * Time.deltaTime);
+             //fadeamount = objectcolor.a - (fadespeed * Time.deltaTime);
 
-            if (imagecolor.a < 0)
+            if (imagecolor.a > 0)
             {
-                fadeamount = 0;
+                fadeamount = objectcolor.a - (fadespeed * Time.deltaTime);
+                //fadeamount = 0;
+                //PopupImage.SetActive(false);
+            }
+            if(imagecolor.a <= 0)
+            {
                 PopupImage.SetActive(false);
             }
             imagecolor = new Color(imagecolor.r, imagecolor.g, imagecolor.b, fadeamount);
@@ -69,10 +75,9 @@ public class PopUpScript : MonoBehaviour
             
             PopupImage.SetActive(true);
 
-            if (at255==false)
-            {
+            
                 fadeintime = true;
-            }
+            
             fadeouttime = false;
             
             //collider.gameObject.GetComponent<PlayerMovement>().caninput = false;
