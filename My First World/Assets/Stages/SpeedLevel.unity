@@ -24289,7 +24289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bird: {fileID: 7382268650915813672, guid: 9f33df0f8d3c7b84b8b2fc8e02df5bbf, type: 3}
   childtransform: {fileID: 38244706}
-  spawnrate: 3
+  spawnrate: 4
   player: {fileID: 1987199482}
 --- !u!4 &1901711936
 Transform:
