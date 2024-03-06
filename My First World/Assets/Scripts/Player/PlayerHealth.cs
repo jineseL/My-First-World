@@ -75,7 +75,11 @@ public class PlayerHealth : MonoBehaviour
         if (isinv == true )
         {
             invTimer();
-            
+            Manim.SetBool("invi", true);
+        }
+        else
+        {
+            Manim.SetBool("invi", false);
         }
         if(PlayerMovement.canmove == false)
         {
@@ -138,8 +142,12 @@ public class PlayerHealth : MonoBehaviour
     }
     public void damagewithoutknockback()
     {
-        logicscriptreference.minushealth();
-        health -= 1;
+        //logicscriptreference.minushealth();
+        if (isinv == false)
+        {
+            logicscriptreference.minushealth();
+            health -= 1;
+        }
         if (health <= 0)
         {
             isdead = true;
@@ -183,15 +191,17 @@ public class PlayerHealth : MonoBehaviour
         
         invtimer += Time.deltaTime;
         Physics2D.IgnoreLayerCollision(6, 10, true);
-        gameObject.transform.GetComponent<SpriteRenderer>().color = Color.red;
+        //gameObject.transform.GetComponent<SpriteRenderer>().color = Color.red;
         
         
         if (invtimer >= invduration)
         {
-            gameObject.transform.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, 255f);
+            //gameObject.transform.GetComponent<SpriteRenderer>().color = new Color(255f, 255f, 255f, 255f);
             invtimer = 0;
             Physics2D.IgnoreLayerCollision(6, 10, false);
             isinv = false;
+            
+           // Manim.SetBool("invi", false);
         }
     }
     private void freezescreen()
