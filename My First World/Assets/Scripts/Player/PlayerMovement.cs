@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     //for checking if character is facing right or left
     public bool isfacingright = true;
+    private Attack attackreferencescript;
     //public static bool canturn=true; if u wan to allow turning while attack 
     //private SpriteRenderer playersprite;
 
@@ -79,8 +80,9 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         canmove = true;
         caninput = true;
+        attackreferencescript = GetComponent<Attack>();
         //windEffect = true;
-        
+
     }
 
     // Update is called once per frame
@@ -128,24 +130,35 @@ public class PlayerMovement : MonoBehaviour
         {
             if (caninput)
             {
+
                 if (Input.GetKey(KeyCode.A))
                 {
-                    if (isfacingright == true)
+                    if (Input.GetKey(KeyCode.D) != true)
                     {
-                        isfacingright = false;
-                        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                        if (isfacingright == true)
+                        {
+                            if (attackreferencescript.attacking == false)
+                            {
+                                isfacingright = false;
+                                transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                            }
+                        }
                     }
-                    isfacingright = false;
+                    //isfacingright = false;
                     //playersprite.flipX = true;
                 }
                 else if (Input.GetKey(KeyCode.D))
                 {
                     if (isfacingright == false)
                     {
-                        isfacingright = true;
-                        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                        //isfacingright = true;
+                        if (attackreferencescript.attacking == false)
+                        {
+                            isfacingright = true;
+                            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
+                        }
                     }
-                    isfacingright = true;
+                    //isfacingright = true;
                     //playersprite.flipX = false;
                 }
             }

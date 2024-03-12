@@ -115,7 +115,7 @@ public class MiniBossScript : MonoBehaviour
             }
             
         }
-        if(transform.position.y >= distanceabove || movinguptimer >= movingupduration)
+        if(transform.position.y >= distanceabove-0.1f || movinguptimer >= movingupduration)
         {
             JumpingUp = false;
             

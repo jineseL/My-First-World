@@ -7,7 +7,7 @@ public class Attack : MonoBehaviour
     //for attacking
     public GameObject attackAreaRight = default;
     //public GameObject attackAreaLeft = default;
-    private bool attacking = false;
+    public bool attacking = false;
     public float attackSpeed; // more like attac duration actually
     private float timer;
     private Animator m_Animator;

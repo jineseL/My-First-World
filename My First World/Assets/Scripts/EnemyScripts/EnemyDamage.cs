@@ -25,13 +25,16 @@ public class EnemyBehaviour : MonoBehaviour
     private EnemyBird referencescript3;
     private EnemySlimePartol referencescript4;
     private MiniBossScript referecescript5;
+    
 
 
     // Start is called before the first frame update
     void Start()
     {
+        
         invTime = InvDuration;
         body = GetComponent<Rigidbody2D>();
+        
         player = GameObject.Find("Player");
 
         if (enemytype == 1)
@@ -71,6 +74,7 @@ public class EnemyBehaviour : MonoBehaviour
         if (isInv == false)
         {
             health -= damageTaken;
+            
             if (health == 0)
             {
                 Destroy(gameObject);
