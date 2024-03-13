@@ -179,6 +179,7 @@ MonoBehaviour:
   isInv: 0
   knockbackforce: 2
   enemytype: 5
+  Impact: {fileID: 6657996108509305603, guid: 7c2943a65e4ae6847be7ff9f230e0406, type: 3}
 --- !u!95 &6068557447011239749
 Animator:
   serializedVersion: 5

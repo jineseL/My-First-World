@@ -25,7 +25,8 @@ public class EnemyBehaviour : MonoBehaviour
     private EnemyBird referencescript3;
     private EnemySlimePartol referencescript4;
     private MiniBossScript referecescript5;
-    
+
+    public GameObject Impact;
 
 
     // Start is called before the first frame update
@@ -74,7 +75,7 @@ public class EnemyBehaviour : MonoBehaviour
         if (isInv == false)
         {
             health -= damageTaken;
-            
+            Instantiate(Impact, transform.position,transform.rotation);
             if (health == 0)
             {
                 Destroy(gameObject);

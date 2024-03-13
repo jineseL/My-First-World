@@ -11,7 +11,7 @@ public class LogicManagerScript : MonoBehaviour
     public Image heart4;
     public Image heart5;
     public GameObject rainspawner;
-    public static bool RainspawnerEnable = false;
+    public static bool RainspawnerEnable;
     
 
 
