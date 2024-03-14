@@ -49,24 +49,31 @@ public class PlayerMovement : MonoBehaviour
     public bool secondJump = false;
 
     //for wind effect
-    public static bool windEffect; //to activate on the dialouge
-    private bool windRight = true; //to switch the wind direction
+    public static bool windEffect=true; //to activate on the dialouge
+    
     private enum windstate
     {
         windRight,
-        windNeutral,
+        windGoingLeft,
         windLeft,
+        windGoingRight,
+        
     }
     private float windTimer = 0;
     public float windforce;
-    public float windforceaddition;
-    public float windforcewhenstandingstill;
+    //public float windforceaddition;
     public float windDuration; // wind duration to blow at 1 direction
-    windstate wind = windstate.windRight;
+    windstate wind = windstate.windGoingRight;
+    /*public int numbersofframestochangewindstate;
+    private float windframes;*/
+    private float windinterpolation;
+    public float windacceleration; // speed of how fast wind switches
+
     //for alpha wind indicator should switch to partical effect after alpha
     public Image WindArrowLeft;
     public Image WindArrowDown;
     public Image WindArrowRight;
+
 
     private Animator animator;
 
@@ -81,6 +88,7 @@ public class PlayerMovement : MonoBehaviour
         canmove = true;
         caninput = true;
         attackreferencescript = GetComponent<Attack>();
+        windinterpolation = 0.5f;
         //windEffect = true;
 
     }
@@ -277,10 +285,77 @@ public class PlayerMovement : MonoBehaviour
             {
                 //animator.SetFloat("Speed", Mathf.Abs(horizontalmovement));
                 body.velocity = new Vector2(horizontalmovement * movementspeed, body.velocity.y);
+                
+                //body.AddForce(-transform.right*testing);
             }
 
-            if (windEffect == true) //windeffect
+            if (windEffect == true)
             {
+                body.velocity = new Vector2(horizontalmovement * movementspeed, body.velocity.y);
+
+                body.AddForce((Vector3.Lerp(-Vector3.right, Vector3.right, windinterpolation))*windforce);
+                if (wind == windstate.windRight)
+                {
+                    if (windTimer < windDuration)
+                    {
+                        windTimer += Time.deltaTime;
+                        
+                    }
+                    else
+                    {
+                        //windRight = true;
+                        wind += 1; //switching state to windgoingleft
+                        windTimer = 0;
+                        
+                    }
+                }
+                else if(wind == windstate.windGoingLeft)
+                {
+                    if(windinterpolation < 1)
+                    {
+                        windinterpolation += Time.deltaTime*windacceleration;
+                        
+                    }
+                    else
+                    {
+                        wind += 1; //switching state to windleft
+                    }
+
+                }
+                else if (wind == windstate.windLeft)
+                {
+                    if (windTimer < windDuration)
+                    {
+                        windTimer += Time.deltaTime;
+                        
+                    }
+                    else
+                    {
+                        //windRight = true;
+                        wind += 1;//switching state to windgoingright
+                        windTimer = 0;
+                    }
+                }
+                else if (wind == windstate.windGoingRight)
+                {
+                    if (windinterpolation > 0)
+                    {
+                        windinterpolation -= Time.deltaTime * windacceleration;
+                        
+                    }
+                    else
+                    {
+                        wind = windstate.windRight; 
+                    }
+                }
+
+
+            }
+
+            /*if (windEffect == true) // old windeffect
+            {
+                //moving 
+                //body.velocity = new Vector2(horizontalmovement * movementspeed, body.velocity.y);
                 if (wind == windstate.windRight)
                 {
                     WindArrowRight.enabled = true;
@@ -294,6 +369,7 @@ public class PlayerMovement : MonoBehaviour
                     else if (horizontalmovement > 0)
                         body.velocity = new Vector2(horizontalmovement * movementspeed - windforce, body.velocity.y);
                     else body.velocity = new Vector2(horizontalmovement * movementspeed - windforceaddition, body.velocity.y);
+
                     if (windTimer < windDuration)
                     {
                         windTimer += Time.deltaTime;
@@ -349,7 +425,7 @@ public class PlayerMovement : MonoBehaviour
                     }
                 }
 
-            }
+            }*/
         }
     }
 
