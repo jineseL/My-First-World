@@ -78,6 +78,7 @@ public class EnemyBehaviour : MonoBehaviour
             Instantiate(Impact, transform.position,transform.rotation);
             if (health == 0)
             {
+
                 Destroy(gameObject);
             }
             isInv = true;

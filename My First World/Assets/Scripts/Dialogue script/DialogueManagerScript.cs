@@ -37,6 +37,7 @@ public class DialogueManagerScript : MonoBehaviour
         choiceschoosen = 0;
     }
 
+
     public void StartDialogue(Dialogue[] dialogue)
     {
 
