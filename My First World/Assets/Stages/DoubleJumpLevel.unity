@@ -4038,6 +4038,107 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3818961858837357260, guid: 8f732591ce68fe446bb58b187dd8cf9f, type: 3}
   m_PrefabInstance: {fileID: 420140827}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &422769356
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1134351574900343331, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_Name
+      value: WindEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4147338336656687919, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: ForceModule.x.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4147338336656687919, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 4147338336656687919, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4147338336656687919, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 4147338336656687919, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 33
+      objectReference: {fileID: 0}
+    - target: {fileID: 5177658565473141701, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014264046071210901, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014264046071210901, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 137.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014264046071210901, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014264046071210901, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014264046071210901, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014264046071210901, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014264046071210901, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014264046071210901, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014264046071210901, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014264046071210901, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694902489055452292, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: ForceModule.x.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694902489055452292, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694902489055452292, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694902489055452292, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694902489055452292, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 33
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
 --- !u!1 &429095370
 GameObject:
   m_ObjectHideFlags: 0
@@ -5149,6 +5250,7 @@ MonoBehaviour:
   heart4: {fileID: 1244637684}
   heart5: {fileID: 1892492506}
   rainspawner: {fileID: 1652328973}
+  windeffect: {fileID: 635878681}
 --- !u!4 &573828033
 Transform:
   m_ObjectHideFlags: 0
@@ -6112,6 +6214,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 411f74c065efb9b43b1e606d158024e6, type: 3}
+--- !u!1 &635878681 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1134351574900343331, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+  m_PrefabInstance: {fileID: 422769356}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &644366854
 GameObject:
   m_ObjectHideFlags: 0
@@ -29836,3 +29943,4 @@ SceneRoots:
   - {fileID: 1789511480}
   - {fileID: 54434038}
   - {fileID: 688738769}
+  - {fileID: 422769356}

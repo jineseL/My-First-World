@@ -12,6 +12,7 @@ public class LogicManagerScript : MonoBehaviour
     public Image heart5;
     public GameObject rainspawner;
     public static bool RainspawnerEnable;
+    public GameObject windeffect;
     
 
 
@@ -25,6 +26,15 @@ public class LogicManagerScript : MonoBehaviour
         {
             rainspawner.SetActive(false);
         }
+        if(PlayerMovement.windEffect == true)
+        {
+            windeffect.SetActive(true);
+        }
+        else
+        {
+            windeffect.SetActive(false);
+        }
+        
     }
 
     void Start()

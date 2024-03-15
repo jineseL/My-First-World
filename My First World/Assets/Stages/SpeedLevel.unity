@@ -3372,7 +3372,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -10149,6 +10149,79 @@ PolygonCollider2D:
       - {x: 1.549185, y: 0.10458608}
       - {x: 1.8949938, y: 0.8535955}
   m_UseDelaunayMesh: 0
+--- !u!1001 &437719804
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 42819836650097959, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -18.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1134351574900343331, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_Name
+      value: WindEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 4147338336656687919, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 116.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014264046071210901, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 73.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014264046071210901, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 14.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014264046071210901, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014264046071210901, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014264046071210901, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014264046071210901, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014264046071210901, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014264046071210901, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014264046071210901, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014264046071210901, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694902489055452292, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: ForceModule.x.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694902489055452292, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 116.7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
 --- !u!1 &439671442
 GameObject:
   m_ObjectHideFlags: 0
@@ -12128,7 +12201,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -18667,7 +18740,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -34530,6 +34603,7 @@ MonoBehaviour:
   heart4: {fileID: 1206961279}
   heart5: {fileID: 284149667}
   rainspawner: {fileID: 540350776}
+  windeffect: {fileID: 1818904882}
 --- !u!1 &1607512546
 GameObject:
   m_ObjectHideFlags: 0
@@ -35809,7 +35883,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -42215,6 +42289,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1818904882 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1134351574900343331, guid: 209cb303aa56d53468d05fadb7c12d65, type: 3}
+  m_PrefabInstance: {fileID: 437719804}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1821338808
 GameObject:
   m_ObjectHideFlags: 0
@@ -46281,4 +46360,5 @@ SceneRoots:
   - {fileID: 2011679904}
   - {fileID: 1630567794}
   - {fileID: 611358002}
+  - {fileID: 437719804}
   - {fileID: 1676339781}

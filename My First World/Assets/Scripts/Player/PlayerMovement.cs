@@ -49,9 +49,9 @@ public class PlayerMovement : MonoBehaviour
     public bool secondJump = false;
 
     //for wind effect
-    public static bool windEffect=true; //to activate on the dialouge
+    public static bool windEffect; //to activate on the dialouge
     
-    private enum windstate
+    public enum windstate
     {
         windRight,
         windGoingLeft,
@@ -63,16 +63,16 @@ public class PlayerMovement : MonoBehaviour
     public float windforce;
     //public float windforceaddition;
     public float windDuration; // wind duration to blow at 1 direction
-    windstate wind = windstate.windGoingRight;
+    public windstate wind = windstate.windGoingRight;
     /*public int numbersofframestochangewindstate;
     private float windframes;*/
     private float windinterpolation;
     public float windacceleration; // speed of how fast wind switches
 
     //for alpha wind indicator should switch to partical effect after alpha
-    public Image WindArrowLeft;
+    /*public Image WindArrowLeft;
     public Image WindArrowDown;
-    public Image WindArrowRight;
+    public Image WindArrowRight;*/
 
 
     private Animator animator;
@@ -294,7 +294,8 @@ public class PlayerMovement : MonoBehaviour
                 body.velocity = new Vector2(horizontalmovement * movementspeed, body.velocity.y);
 
                 body.AddForce((Vector3.Lerp(-Vector3.right, Vector3.right, windinterpolation))*windforce);
-                if (wind == windstate.windRight)
+
+                if (wind == windstate.windRight) //WIND RIGHT
                 {
                     if (windTimer < windDuration)
                     {
@@ -309,7 +310,7 @@ public class PlayerMovement : MonoBehaviour
                         
                     }
                 }
-                else if(wind == windstate.windGoingLeft)
+                else if(wind == windstate.windGoingLeft) // WIND GOING LEFT
                 {
                     if(windinterpolation < 1)
                     {
@@ -322,7 +323,7 @@ public class PlayerMovement : MonoBehaviour
                     }
 
                 }
-                else if (wind == windstate.windLeft)
+                else if (wind == windstate.windLeft) //WIND LEFT
                 {
                     if (windTimer < windDuration)
                     {
@@ -336,7 +337,7 @@ public class PlayerMovement : MonoBehaviour
                         windTimer = 0;
                     }
                 }
-                else if (wind == windstate.windGoingRight)
+                else if (wind == windstate.windGoingRight) // WIND GOING RIGHT
                 {
                     if (windinterpolation > 0)
                     {
@@ -345,87 +346,10 @@ public class PlayerMovement : MonoBehaviour
                     }
                     else
                     {
-                        wind = windstate.windRight; 
+                        wind = windstate.windRight; //returning wind state to wind right
                     }
                 }
-
-
             }
-
-            /*if (windEffect == true) // old windeffect
-            {
-                //moving 
-                //body.velocity = new Vector2(horizontalmovement * movementspeed, body.velocity.y);
-                if (wind == windstate.windRight)
-                {
-                    WindArrowRight.enabled = true;
-                    WindArrowLeft.enabled = false;
-                    WindArrowDown.enabled = false;
-
-                    if (horizontalmovement == 0)
-                    {
-                        body.velocity = new Vector2(-windforcewhenstandingstill, body.velocity.y);
-                    }
-                    else if (horizontalmovement > 0)
-                        body.velocity = new Vector2(horizontalmovement * movementspeed - windforce, body.velocity.y);
-                    else body.velocity = new Vector2(horizontalmovement * movementspeed - windforceaddition, body.velocity.y);
-
-                    if (windTimer < windDuration)
-                    {
-                        windTimer += Time.deltaTime;
-                    }
-                    else
-                    {
-                        windRight = true;
-                        wind += 1;
-                        windTimer = 0;
-                    }
-                }
-                else if (wind == windstate.windLeft)
-                {
-                    WindArrowRight.enabled = false;
-                    WindArrowLeft.enabled = true;
-                    WindArrowDown.enabled = false;
-
-                    if (horizontalmovement == 0)
-                    {
-                        body.velocity = new Vector2(windforcewhenstandingstill, body.velocity.y);
-                    }
-                    else if
-                        (horizontalmovement > 0) body.velocity = new Vector2(horizontalmovement * movementspeed + windforceaddition, body.velocity.y);
-                    else body.velocity = new Vector2(horizontalmovement * movementspeed + windforce, body.velocity.y);
-                    if (windTimer < windDuration)
-                    {
-                        windTimer += Time.deltaTime;
-                    }
-                    else
-                    {
-                        windRight = false;
-                        wind -= 1;
-                        windTimer = 0;
-                    }
-                }
-                else
-                {
-                    WindArrowRight.enabled = false;
-                    WindArrowLeft.enabled = false;
-                    WindArrowDown.enabled = true;
-
-                    body.velocity = new Vector2(horizontalmovement * movementspeed, body.velocity.y);
-                    if (windTimer < windDuration)
-                    {
-                        windTimer += Time.deltaTime;
-                    }
-                    else
-                    {
-                        if (windRight == true)
-                            wind += 1;
-                        else wind -= 1;
-                        windTimer = 0;
-                    }
-                }
-
-            }*/
         }
     }
 
