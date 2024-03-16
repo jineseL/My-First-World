@@ -22165,6 +22165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 796607406}
   - component: {fileID: 796607405}
+  - component: {fileID: 796607407}
   m_Layer: 0
   m_Name: Dialogue Manager
   m_TagString: Untagged
@@ -22196,6 +22197,8 @@ MonoBehaviour:
   option2: {fileID: 1012464871}
   option3: {fileID: 1876626835}
   option4: {fileID: 2015379320}
+  continuebutton: {fileID: 1922643402}
+  redarrow: {fileID: 1922643401}
   animator: {fileID: 847672902}
 --- !u!4 &796607406
 Transform:
@@ -22212,6 +22215,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &796607407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796607404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60251efc994cb474dab2e279fe9daca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redbutton: {fileID: 1922643401}
+  redbuttonrange: 230
 --- !u!1 &804079425
 GameObject:
   m_ObjectHideFlags: 0
@@ -39608,6 +39625,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+--- !u!1 &1922643401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 579116723975599666, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_PrefabInstance: {fileID: 1922643400}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1922643402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5506791416583563503, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_PrefabInstance: {fileID: 1922643400}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1924961002
 GameObject:
   m_ObjectHideFlags: 0

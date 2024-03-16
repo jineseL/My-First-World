@@ -1279,6 +1279,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &617023748 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 579116723975599666, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_PrefabInstance: {fileID: 228039532}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &617023749 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5506791416583563503, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_PrefabInstance: {fileID: 228039532}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &651677808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1608,6 +1618,7 @@ GameObject:
   m_Component:
   - component: {fileID: 773454028}
   - component: {fileID: 773454027}
+  - component: {fileID: 773454029}
   m_Layer: 0
   m_Name: Dialogue Manager
   m_TagString: Untagged
@@ -1639,6 +1650,8 @@ MonoBehaviour:
   option2: {fileID: 228039539}
   option3: {fileID: 228039541}
   option4: {fileID: 228039538}
+  continuebutton: {fileID: 617023749}
+  redarrow: {fileID: 617023748}
   animator: {fileID: 228039540}
 --- !u!4 &773454028
 Transform:
@@ -1655,6 +1668,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &773454029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773454026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60251efc994cb474dab2e279fe9daca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redbutton: {fileID: 617023748}
+  redbuttonrange: 230
 --- !u!1 &776337232
 GameObject:
   m_ObjectHideFlags: 0

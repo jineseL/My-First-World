@@ -22,6 +22,8 @@ public class DialogueManagerScript : MonoBehaviour
     public GameObject option2;
     public GameObject option3;
     public GameObject option4;
+    public GameObject continuebutton;
+    public GameObject redarrow;
     private int choicenumber;
     private int choiceschoosen = 0;
 
@@ -81,6 +83,7 @@ public class DialogueManagerScript : MonoBehaviour
         }
         if (dialogueinsentencetoshow.options == true)
         {
+            continuebutton.SetActive(false);
             if (choiceschoosen == 0)
             {
                 
@@ -97,6 +100,8 @@ public class DialogueManagerScript : MonoBehaviour
         }
         else
         {
+            redarrow.SetActive(false);
+            continuebutton.SetActive(true);
             if (dialogueinsentencetoshow.name == "Jing")
             {
                 McLighten.GetComponent<Image>().enabled = true;
