@@ -13,6 +13,8 @@ public class LogicManagerScript : MonoBehaviour
     public GameObject rainspawner;
     public static bool RainspawnerEnable;
     public GameObject windeffect;
+    //tutorial effects
+    public static bool wind, rain, doublejump, speed, ice, sand;
     
 
 

@@ -7,6 +7,7 @@ public class PopUpScript : MonoBehaviour
 {
     public GameObject PopupImage;
     
+    
     private GameObject gamecamera;
     private Color imagecolor;
     public float fadespeed;
