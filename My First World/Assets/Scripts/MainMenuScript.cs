@@ -12,7 +12,6 @@ public class MainMenuScript : MonoBehaviour
     }
     public void playgame()
     {
-        Debug.Log("checkk");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void playsettings()
