@@ -28,6 +28,9 @@ public class EnemyBehaviour : MonoBehaviour
 
     public GameObject Impact;
 
+    public GameObject DeathBurst;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -78,7 +81,7 @@ public class EnemyBehaviour : MonoBehaviour
             Instantiate(Impact, transform.position,transform.rotation);
             if (health == 0)
             {
-
+                Instantiate(DeathBurst, transform.position, transform.rotation);
                 Destroy(gameObject);
             }
             isInv = true;

@@ -213,6 +213,7 @@ MonoBehaviour:
   knockbackforce: 2
   enemytype: 2
   Impact: {fileID: 6657996108509305603, guid: 7c2943a65e4ae6847be7ff9f230e0406, type: 3}
+  DeathBurst: {fileID: 6119653170097519702, guid: 64d92c91699af124788c22ddb137b351, type: 3}
 --- !u!114 &1962811123543429685
 MonoBehaviour:
   m_ObjectHideFlags: 0

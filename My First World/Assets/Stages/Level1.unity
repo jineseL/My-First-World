@@ -5643,7 +5643,7 @@ GameObject:
   m_Component:
   - component: {fileID: 91057219}
   - component: {fileID: 91057220}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tutorial_m_platform_4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12434,6 +12434,22 @@ PrefabInstance:
     - target: {fileID: 1436433734458548079, guid: 411f74c065efb9b43b1e606d158024e6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5904549164408395600, guid: 411f74c065efb9b43b1e606d158024e6, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5904549164408395600, guid: 411f74c065efb9b43b1e606d158024e6, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5904549164408395600, guid: 411f74c065efb9b43b1e606d158024e6, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5904549164408395600, guid: 411f74c065efb9b43b1e606d158024e6, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8001034834451044874, guid: 411f74c065efb9b43b1e606d158024e6, type: 3}
       propertyPath: m_Name
@@ -23196,7 +23212,7 @@ GameObject:
   - component: {fileID: 918439355}
   - component: {fileID: 918439357}
   - component: {fileID: 918439356}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tutorial_m_platform_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23473,7 +23489,7 @@ GameObject:
   - component: {fileID: 939362998}
   - component: {fileID: 939363000}
   - component: {fileID: 939362999}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tutorial_m_platform_3 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32106,15 +32122,15 @@ PrefabInstance:
     - target: {fileID: 7081254596731776048, guid: 346bdc17d18dd304da16b2f0eedc893d, type: 3}
       propertyPath: WindArrowDown
       value: 
-      objectReference: {fileID: 1500904074}
+      objectReference: {fileID: 0}
     - target: {fileID: 7081254596731776048, guid: 346bdc17d18dd304da16b2f0eedc893d, type: 3}
       propertyPath: WindArrowLeft
       value: 
-      objectReference: {fileID: 1500904073}
+      objectReference: {fileID: 0}
     - target: {fileID: 7081254596731776048, guid: 346bdc17d18dd304da16b2f0eedc893d, type: 3}
       propertyPath: WindArrowRight
       value: 
-      objectReference: {fileID: 1500904072}
+      objectReference: {fileID: 0}
     - target: {fileID: 8646081810086667607, guid: 346bdc17d18dd304da16b2f0eedc893d, type: 3}
       propertyPath: m_Name
       value: Player
@@ -34352,39 +34368,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7236cbf44462390459f108941898e184, type: 3}
---- !u!114 &1500904072 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7181257743822080509, guid: 7236cbf44462390459f108941898e184, type: 3}
-  m_PrefabInstance: {fileID: 1500904071}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1500904073 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 937814794139950645, guid: 7236cbf44462390459f108941898e184, type: 3}
-  m_PrefabInstance: {fileID: 1500904071}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1500904074 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2734495173884775940, guid: 7236cbf44462390459f108941898e184, type: 3}
-  m_PrefabInstance: {fileID: 1500904071}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1506794046
 GameObject:
   m_ObjectHideFlags: 0
@@ -39141,7 +39124,7 @@ GameObject:
   - component: {fileID: 1893018079}
   - component: {fileID: 1893018081}
   - component: {fileID: 1893018080}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tutorial_m_platform_3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39776,7 +39759,7 @@ GameObject:
   - component: {fileID: 1925997663}
   - component: {fileID: 1925997662}
   - component: {fileID: 1925997661}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tutorial_m_platform_3 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39968,7 +39951,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1931451344}
   - component: {fileID: 1931451343}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tutorial_m_platform_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
