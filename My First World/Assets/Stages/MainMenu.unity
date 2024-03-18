@@ -831,7 +831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowIndex: 0
-  animationSpeed: 500
+  animationSpeed: 1200
   arrow: {fileID: 855743300}
   animating: 0
 --- !u!1 &1023575648

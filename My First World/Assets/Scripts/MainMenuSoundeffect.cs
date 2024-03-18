@@ -22,4 +22,5 @@ public class SoundEffectPlayer : MonoBehaviour
             audioSource.Play();
         }
     }
+
 }
