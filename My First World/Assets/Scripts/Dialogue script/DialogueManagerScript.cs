@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class DialogueManagerScript : MonoBehaviour
 {
 
+    //public static DialogueManagerScript instance;
+
     //private GameObject player;
     public Text Dialoguetext;
     private Queue<string> sentences; // first in first out data structure 
@@ -29,6 +31,21 @@ public class DialogueManagerScript : MonoBehaviour
 
 
     public Animator animator;
+    /*private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+
+    }*/
+
     void Start()
     {
         //dialoguecanvas = GameObject.Find("Dialogue Canvas");

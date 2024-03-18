@@ -37,6 +37,8 @@ public class SandFightLogicScript : MonoBehaviour
     public GameObject portal;
 
     private bool bossfight;
+
+    public float riselevel;
     void Start()
     {
         bossfight = true;
@@ -72,7 +74,7 @@ public class SandFightLogicScript : MonoBehaviour
                 {
                     godown(Godown[i]);
                 }
-                if (GroundPlatform.transform.position.y < -6.06f)
+                if (GroundPlatform.transform.position.y < riselevel)
                 {
                     GroundPlatform.transform.position += Vector3.up * Time.deltaTime * downspeed;
                 }

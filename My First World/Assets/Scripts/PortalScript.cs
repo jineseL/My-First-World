@@ -49,6 +49,8 @@ public class PortalScript : MonoBehaviour
             //playerhealthscriptreference.isinv = false;
 
             FindObjectOfType<DialogueManagerScript>().StartDialogue(dialogue);
+            //DialogueManagerScript.instance.StartDialogue(dialogue);
+
         }
     }
 }
