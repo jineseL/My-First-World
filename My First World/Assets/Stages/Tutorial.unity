@@ -1706,10 +1706,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2814157528926927923, guid: c7b893cec1a5438488dcf04244e71b7e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5064113506651858206, guid: c7b893cec1a5438488dcf04244e71b7e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 999456275}
   m_SourcePrefab: {fileID: 100100000, guid: c7b893cec1a5438488dcf04244e71b7e, type: 3}
 --- !u!1 &652070074 stripped
 GameObject:
@@ -2165,6 +2169,14 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5064113506651858206, guid: c7b893cec1a5438488dcf04244e71b7e, type: 3}
   m_PrefabInstance: {fileID: 642339568}
   m_PrefabAsset: {fileID: 0}
+--- !u!81 &999456275
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999456271}
+  m_Enabled: 1
 --- !u!1 &1010921048
 GameObject:
   m_ObjectHideFlags: 0
@@ -6315,6 +6327,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &721581541370666073
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 209066441957803651, guid: 5cf6de40aee19414b84679070ccaac82, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17.464529
+      objectReference: {fileID: 0}
+    - target: {fileID: 209066441957803651, guid: 5cf6de40aee19414b84679070ccaac82, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.991869
+      objectReference: {fileID: 0}
+    - target: {fileID: 209066441957803651, guid: 5cf6de40aee19414b84679070ccaac82, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.1195576
+      objectReference: {fileID: 0}
+    - target: {fileID: 209066441957803651, guid: 5cf6de40aee19414b84679070ccaac82, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 209066441957803651, guid: 5cf6de40aee19414b84679070ccaac82, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209066441957803651, guid: 5cf6de40aee19414b84679070ccaac82, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209066441957803651, guid: 5cf6de40aee19414b84679070ccaac82, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209066441957803651, guid: 5cf6de40aee19414b84679070ccaac82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209066441957803651, guid: 5cf6de40aee19414b84679070ccaac82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 209066441957803651, guid: 5cf6de40aee19414b84679070ccaac82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7032274233265190906, guid: 5cf6de40aee19414b84679070ccaac82, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5cf6de40aee19414b84679070ccaac82, type: 3}
 --- !u!1001 &2234263902348330789
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6435,6 +6504,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 796607405}
+    - target: {fileID: 9069964901358720957, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c4b7b102af4c7184883545a4d2fc6017, type: 3}
     - target: {fileID: 9090467103248504528, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
       propertyPath: m_Name
       value: Dialogue Canvas
@@ -6728,6 +6801,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 721581541370666073}
   - {fileID: 642339568}
   - {fileID: 8025454996396958116}
   - {fileID: 1436856576}
