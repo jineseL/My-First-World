@@ -36,7 +36,8 @@ public class CheckPointScript : MonoBehaviour
         {
             playerhealthscriptreference.checkpointreach = true;
             //GetComponent<SpriteRenderer>().enabled = false;
-            children.GetComponent<SpriteRenderer>().enabled = true;
+            //children.GetComponent<SpriteRenderer>().enabled = true;
+            children.SetActive(true);
         }
     }
     /*private void deathanim()

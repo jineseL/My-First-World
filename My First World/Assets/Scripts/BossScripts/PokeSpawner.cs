@@ -10,15 +10,54 @@ public class PokeSpawner : MonoBehaviour
     //timer
     private float timer;
     public float spawnrate;
-    
+
+    public float spawndelay;
+    public bool todelay;
+    private float delaytimer=0;
+    private bool firstpsawn;
+
+    public BossScript bossref;
+
     void Start()
     {
-        spawnpoke();
+        
+        if (todelay == false)
+        {
+            spawnpoke();
+        }
+        else 
+        { 
+            
+            timer -= spawndelay; 
+        }
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(bossref.phase2 == true)
+        {
+            spawnrate = 3.5f;
+        }
+        if (bossref.phase3 == true)
+        {
+            spawnrate = 3f;
+        }
+        if (todelay == true)
+        {
+            if (delaytimer < spawndelay)
+            {
+                delaytimer += Time.deltaTime;
+            }
+            else if (firstpsawn == false)
+            {
+                firstpsawn = true;
+                spawnpoke();
+            }
+        }
+
         if (timer < spawnrate)
         {
             timer += Time.deltaTime;
