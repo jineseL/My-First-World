@@ -14,6 +14,12 @@ public class MainMenuScript : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    public void playsettings()
+    {
+        Debug.Log("settings");
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     public void quitgame()
     {
         Application.Quit();
