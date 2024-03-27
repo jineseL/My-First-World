@@ -9,6 +9,7 @@ public class PortalScript : MonoBehaviour
     public GameObject dialoguecanvas;
     private PlayerHealth playerhealthscriptreference;
     private GameObject player;
+    
     void Start()
     {
         player = GameObject.Find("Player");
@@ -37,7 +38,7 @@ public class PortalScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.CompareTag("Player"))
+        if (collider.CompareTag("Player") && dialoguecanvas.activeSelf==false)
         {
             //SceneManager.LoadScene(("Dialogue"));
             Time.timeScale = 0;
@@ -50,7 +51,7 @@ public class PortalScript : MonoBehaviour
 
             FindObjectOfType<DialogueManagerScript>().StartDialogue(dialogue);
             //DialogueManagerScript.instance.StartDialogue(dialogue);
-
+            GetComponent<PortalScript>().enabled = false;
         }
     }
 }
