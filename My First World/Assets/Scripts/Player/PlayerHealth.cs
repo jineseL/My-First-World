@@ -102,7 +102,7 @@ public class PlayerHealth : MonoBehaviour
             //Debug.Log("hi");
             if (collider.gameObject.CompareTag("Enemies"))
             {
-                /*Debug.Log("hi");*/
+                
                 damage(collider.transform.position);
             }
         }
@@ -133,12 +133,9 @@ public class PlayerHealth : MonoBehaviour
             direction.x = -1;
         }
         Vector2 knockback = direction * knockbackforce;
-
-        
         PlayerMovement.canmove = false;
         PlayerBody.AddForce(knockback,ForceMode2D.Impulse);
         //PlayerMovement.canmove = true;
-
     }
     public void damagewithoutknockback()
     {

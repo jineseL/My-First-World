@@ -8,7 +8,7 @@ public class QuickSand : MonoBehaviour//quicksand platform
     private PlayerMovement playerMovementscript;
     private Rigidbody2D body;
     public float fallspeed;
-    /*public float speedReduction;*/
+    /*public float speedReduction;*/    
     public float jumpspeed;
     private bool canjump;
     // Start is called before the first frame update
