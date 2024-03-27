@@ -137,7 +137,6 @@ public class MiniBossScript : MonoBehaviour
             {
                 m_Animator.SetBool("GoingDown", false);
                 slamdown = false;
-
             }
         }
     }

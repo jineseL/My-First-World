@@ -19,7 +19,7 @@ TagManager:
   - UI
   - Player
   - PlatformNormal
-  - 
+  - DamageCollider
   - PlatformQuickSand
   - enemy
   - Boss
