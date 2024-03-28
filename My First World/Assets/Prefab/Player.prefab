@@ -877,7 +877,7 @@ MonoBehaviour:
     m_Bits: 128
   gravity: 2
   secondJump: 0
-  windforce: 75
+  windforce: 50
   windDuration: 4
   wind: 3
   windacceleration: 0.25

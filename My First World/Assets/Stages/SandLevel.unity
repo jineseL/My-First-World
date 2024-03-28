@@ -1107,16 +1107,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9090467103248504528, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
   m_PrefabInstance: {fileID: 228039532}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &228039534 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4640041231101591778, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+--- !u!114 &228039534 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6422802905685617258, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
   m_PrefabInstance: {fileID: 228039532}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &228039535 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7884331772440589454, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &228039535 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 707784675800839684, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
   m_PrefabInstance: {fileID: 228039532}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &228039536 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2881808575777717761, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
@@ -1150,16 +1162,6 @@ GameObject:
 --- !u!1 &228039542 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6310410506492936799, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
-  m_PrefabInstance: {fileID: 228039532}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &228039543 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2913657100754484015, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
-  m_PrefabInstance: {fileID: 228039532}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &228039544 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6418201993347947341, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
   m_PrefabInstance: {fileID: 228039532}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &228039545 stripped
@@ -2195,18 +2197,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialoguetext: {fileID: 228039545}
   dialoguecanvas: {fileID: 228039533}
-  McDarken: {fileID: 228039544}
-  BossDarken: {fileID: 228039543}
   McName: {fileID: 228039537}
   BossName: {fileID: 228039536}
-  McLighten: {fileID: 228039535}
-  BossLighten: {fileID: 228039534}
   option1: {fileID: 228039542}
   option2: {fileID: 228039539}
   option3: {fileID: 228039541}
   option4: {fileID: 228039538}
   continuebutton: {fileID: 617023749}
   redarrow: {fileID: 617023748}
+  McNeutral: {fileID: 21300000, guid: c3e599234a88f494aa1ab7eb0bb7ed93, type: 3}
+  McAngry: {fileID: 21300000, guid: 0306bce2d385941419445c87e150a712, type: 3}
+  McConfuse: {fileID: 21300000, guid: 073ec7ffab2aa5441b28f1d8475f847f, type: 3}
+  McEmotion4: {fileID: 21300000, guid: 506deb1c29917b24eaa63813086e693d, type: 3}
+  BossNeutral: {fileID: 21300000, guid: 4a536903729db0b49934db7201931e6e, type: 3}
+  BossConfuse: {fileID: 21300000, guid: 40bf0d1b70aa3344d997ecdd633a8c78, type: 3}
+  BossEmotion4: {fileID: 21300000, guid: 96daa74112452a04fbfe89a2dc4a6dad, type: 3}
+  McNeutralDark: {fileID: 21300000, guid: 4873f73e2bf51074293df02f765bb063, type: 3}
+  McAngryDark: {fileID: 21300000, guid: badf0760293815149b24a172fec0204f, type: 3}
+  McConfuseDark: {fileID: 21300000, guid: ea3f59dae5d2da54183beaddfb9502f3, type: 3}
+  McEmotion4Dark: {fileID: 21300000, guid: 6832559fceb105b4691a9c3773893ace, type: 3}
+  BossNeutralDark: {fileID: 21300000, guid: d097dbc501da98d4b95a9dc90bd5a2c7, type: 3}
+  BossConfuseDark: {fileID: 21300000, guid: 0db6c91e2b1ace6409aeb66f966c9beb, type: 3}
+  BossEmotion4Dark: {fileID: 21300000, guid: 70ae0b5620b15a64cbf5cd84ec19ab46, type: 3}
+  McLighten: {fileID: 228039535}
+  BossLighten: {fileID: 228039534}
+  McDarken: {fileID: 1050528690}
+  BossDarken: {fileID: 1050528689}
   animator: {fileID: 228039540}
 --- !u!4 &773454028
 Transform:
@@ -7553,6 +7569,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1044271940}
+--- !u!114 &1050528689 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 446065193453332641, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_PrefabInstance: {fileID: 228039532}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1050528690 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1756098318956144381, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_PrefabInstance: {fileID: 228039532}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1092724561
 GameObject:
   m_ObjectHideFlags: 0
@@ -8008,14 +8046,17 @@ MonoBehaviour:
   - name: Shiz
     sentences:
     - wow no way you defeated my tea cup
+    emotions: 
     options: 0
   - name: Jing
     sentences:
     - That was easy, now its time for you to die
+    emotions: 
     options: 0
   - name: Shiz
     sentences:
     - Oh no im about to die
+    emotions: 
     options: 1
   dialoguecanvas: {fileID: 228039533}
 --- !u!58 &1528039679

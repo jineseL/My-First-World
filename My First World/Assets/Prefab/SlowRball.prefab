@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rainaccleration: 0.05
-  rainballspeed: 0.35
+  rainballspeed: 0.25
 --- !u!114 &5520904813809281418
 MonoBehaviour:
   m_ObjectHideFlags: 0

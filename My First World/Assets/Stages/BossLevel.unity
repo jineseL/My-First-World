@@ -245,6 +245,7 @@ MonoBehaviour:
     - Press R to restart to tutorial stage and Press T to restart the Level
     - Left click to attack
     - This are the elements you can choose for the next stage
+    emotions: 
     options: 0
   - name: Shiz
     sentences:
@@ -252,6 +253,7 @@ MonoBehaviour:
     - I am the boss
     - We still do not have a story yet but it will be implemented after Alpha
     - This is just a place holder
+    emotions: 
     options: 1
   - name: Jing
     sentences:
@@ -259,6 +261,7 @@ MonoBehaviour:
     - I work quite hard on it
     - Thank you, good luck and have fun
     - Remeber to press R to try the different elements :)
+    emotions: 
     options: 0
   dialoguecanvas: {fileID: 1074069545}
 --- !u!58 &34914453
@@ -1430,6 +1433,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7b893cec1a5438488dcf04244e71b7e, type: 3}
+--- !u!95 &410283760 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6805490724706037237, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_PrefabInstance: {fileID: 1838269681}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &415199835
 GameObject:
   m_ObjectHideFlags: 0
@@ -4280,6 +4288,101 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+--- !u!1 &1838269682 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 579116723975599666, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_PrefabInstance: {fileID: 1838269681}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1838269683 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6422802905685617258, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_PrefabInstance: {fileID: 1838269681}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1838269684 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 707784675800839684, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_PrefabInstance: {fileID: 1838269681}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1838269685 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2881808575777717761, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_PrefabInstance: {fileID: 1838269681}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1838269686 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 34709217245368952, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_PrefabInstance: {fileID: 1838269681}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1838269687 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6430708301128615872, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_PrefabInstance: {fileID: 1838269681}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1838269688 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4984456584820200839, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_PrefabInstance: {fileID: 1838269681}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1838269689 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6310410506492936799, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_PrefabInstance: {fileID: 1838269681}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1838269690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2194405667384666208, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_PrefabInstance: {fileID: 1838269681}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1838269691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5506791416583563503, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_PrefabInstance: {fileID: 1838269681}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1838269692 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4538931104982523203, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_PrefabInstance: {fileID: 1838269681}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1838269693 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1756098318956144381, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_PrefabInstance: {fileID: 1838269681}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1838269694 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 446065193453332641, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_PrefabInstance: {fileID: 1838269681}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1856054261
 GameObject:
   m_ObjectHideFlags: 0
@@ -4499,6 +4602,94 @@ Transform:
   - {fileID: 1744934784}
   - {fileID: 999880008}
   - {fileID: 1594358422}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1923776873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1923776876}
+  - component: {fileID: 1923776875}
+  - component: {fileID: 1923776874}
+  m_Layer: 0
+  m_Name: Dialogue Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1923776874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923776873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60251efc994cb474dab2e279fe9daca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redbutton: {fileID: 0}
+  redbuttonrange: 230
+--- !u!114 &1923776875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923776873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b22798b4025354a846639cdc54967d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialoguetext: {fileID: 1838269692}
+  dialoguecanvas: {fileID: 1074069545}
+  McName: {fileID: 1838269685}
+  BossName: {fileID: 1838269686}
+  option1: {fileID: 1838269689}
+  option2: {fileID: 1838269688}
+  option3: {fileID: 1838269690}
+  option4: {fileID: 1838269687}
+  continuebutton: {fileID: 1838269691}
+  redarrow: {fileID: 1838269682}
+  McNeutral: {fileID: 21300000, guid: c3e599234a88f494aa1ab7eb0bb7ed93, type: 3}
+  McAngry: {fileID: 21300000, guid: 0306bce2d385941419445c87e150a712, type: 3}
+  McConfuse: {fileID: 21300000, guid: 073ec7ffab2aa5441b28f1d8475f847f, type: 3}
+  McEmotion4: {fileID: 21300000, guid: 506deb1c29917b24eaa63813086e693d, type: 3}
+  BossNeutral: {fileID: 21300000, guid: 4a536903729db0b49934db7201931e6e, type: 3}
+  BossConfuse: {fileID: 21300000, guid: 40bf0d1b70aa3344d997ecdd633a8c78, type: 3}
+  BossEmotion4: {fileID: 21300000, guid: 96daa74112452a04fbfe89a2dc4a6dad, type: 3}
+  McNeutralDark: {fileID: 21300000, guid: 4873f73e2bf51074293df02f765bb063, type: 3}
+  McAngryDark: {fileID: 21300000, guid: badf0760293815149b24a172fec0204f, type: 3}
+  McConfuseDark: {fileID: 21300000, guid: ea3f59dae5d2da54183beaddfb9502f3, type: 3}
+  McEmotion4Dark: {fileID: 21300000, guid: 6832559fceb105b4691a9c3773893ace, type: 3}
+  BossNeutralDark: {fileID: 21300000, guid: d097dbc501da98d4b95a9dc90bd5a2c7, type: 3}
+  BossConfuseDark: {fileID: 21300000, guid: 0db6c91e2b1ace6409aeb66f966c9beb, type: 3}
+  BossEmotion4Dark: {fileID: 21300000, guid: 70ae0b5620b15a64cbf5cd84ec19ab46, type: 3}
+  McLighten: {fileID: 1838269684}
+  BossLighten: {fileID: 1838269683}
+  McDarken: {fileID: 1838269693}
+  BossDarken: {fileID: 1838269694}
+  animator: {fileID: 410283760}
+--- !u!4 &1923776876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923776873}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1008.5112, y: 259.99057, z: -14.316126}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1983507054
@@ -5078,6 +5269,7 @@ SceneRoots:
   - {fileID: 2093267646}
   - {fileID: 1695388808}
   - {fileID: 34914454}
+  - {fileID: 1923776876}
   - {fileID: 1838269681}
   - {fileID: 904490215}
   - {fileID: 647512062}

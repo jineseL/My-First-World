@@ -15,6 +15,7 @@ public class LogicManagerScript : MonoBehaviour
     public GameObject windeffect;
     //tutorial effects
     public static bool wind, rain, doublejump, speed, ice, sand;
+    //public GameObject pausemenu;
     
 
 
