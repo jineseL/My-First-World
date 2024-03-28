@@ -20,6 +20,7 @@ public class LogicManagerScript : MonoBehaviour
 
     private void Awake()
     {
+        
         if (RainspawnerEnable == true)
         {
             rainspawner.SetActive(true);
