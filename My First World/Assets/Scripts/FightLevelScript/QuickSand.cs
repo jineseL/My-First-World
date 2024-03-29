@@ -8,7 +8,7 @@ public class QuickSand : MonoBehaviour//quicksand platform
     private PlayerMovement playerMovementscript;
     private Rigidbody2D body;
     public float fallspeed;
-    public float speedReduction;
+    /*public float speedReduction;*/    
     public float jumpspeed;
     private bool canjump;
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class QuickSand : MonoBehaviour//quicksand platform
         //to check if player is pressing space
         if(canjump == true)
         {
-            if (Input.GetButtonDown("Jump") == true)
+            if (Input.GetButton("Jump") == true)
             {
                 jump();
             }
@@ -39,7 +39,7 @@ public class QuickSand : MonoBehaviour//quicksand platform
         {
             //playerMovementscript.gravity = 0.1f;
             
-            body.velocity = new Vector2(body.velocity.x-speedReduction, fallspeed);
+            body.velocity = new Vector2(body.velocity.x/*-speedReduction*/, fallspeed);
 
             canjump = true;
 

@@ -259,100 +259,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1658780860}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &34914451
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 34914454}
-  - component: {fileID: 34914453}
-  - component: {fileID: 34914452}
-  m_Layer: 0
-  m_Name: Portal
-  m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &34914452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 34914451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cc64b0d515999649ad5f3e9268ef59e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-  - name: Shiz
-    sentences:
-    - wow no way you defeated my tea cup
-    options: 0
-  - name: Jing
-    sentences:
-    - That was easy, now its time for you to die
-    options: 0
-  - name: Shiz
-    sentences:
-    - Oh no im about to die
-    options: 1
-  dialoguecanvas: {fileID: 1074069545}
---- !u!58 &34914453
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 34914451}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!4 &34914454
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 34914451}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.41, z: 4.4650474}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &149413115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1133,6 +1039,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1658780860}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &771123034 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 446065193453332641, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_PrefabInstance: {fileID: 1838269681}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &771123035 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1756098318956144381, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_PrefabInstance: {fileID: 1838269681}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &785273824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1509,6 +1437,126 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1004615283
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1004615286}
+  - component: {fileID: 1004615285}
+  - component: {fileID: 1004615284}
+  m_Layer: 0
+  m_Name: Portal
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1004615284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004615283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc64b0d515999649ad5f3e9268ef59e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - name: Jing
+    sentences:
+    - Wow!  Beautif-
+    emotions: 03000000
+    options: 0
+  - name: MC
+    sentences:
+    - 'AHA!  WHOSE  CUTTING  OFF  WHO
+
+      NOW!'
+    - "I\u2019m  done  being  dragged  around  as\nyou  please."
+    - It's  time  for  you  to  go  down!
+    emotions: 000000000100000001000000
+    options: 0
+  - name: Jing
+    sentences:
+    - you  really  think  you  have  what  it takes?
+    emotions: 02000000
+    options: 0
+  - name: MC
+    sentences:
+    - (Do  you  have  what  it  takes?)
+    emotions: 00000000
+    options: 0
+  - name: MC
+    sentences:
+    - 'Come  at  me  you  wannabe  amateur
+
+      director!'
+    emotions: 00000000
+    options: 1
+  - name: Jing
+    sentences:
+    - '!!!'
+    - ...ha
+    - HAHAHAHAHHAAHAH
+    emotions: 020000000200000003000000
+    options: 0
+  dialoguecanvas: {fileID: 1074069545}
+--- !u!58 &1004615285
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004615283}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!4 &1004615286
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004615283}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.95, z: 4.4650474}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1009758552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1564,6 +1612,10 @@ PrefabInstance:
     - target: {fileID: 1194714847231983838, guid: 28223853e8af5974ba193087b6e74230, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269549890790777588, guid: 28223853e8af5974ba193087b6e74230, type: 3}
+      propertyPath: aliveduration
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4269549890790777588, guid: 28223853e8af5974ba193087b6e74230, type: 3}
       propertyPath: IcePlatformscript
@@ -1816,18 +1868,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialoguetext: {fileID: 1838269693}
   dialoguecanvas: {fileID: 1074069545}
-  McDarken: {fileID: 1838269692}
-  BossDarken: {fileID: 1838269691}
   McName: {fileID: 1838269685}
   BossName: {fileID: 1838269684}
-  McLighten: {fileID: 1838269683}
-  BossLighten: {fileID: 1838269682}
   option1: {fileID: 1838269690}
   option2: {fileID: 1838269687}
   option3: {fileID: 1838269689}
   option4: {fileID: 1838269686}
   continuebutton: {fileID: 1674930949}
   redarrow: {fileID: 1913239014}
+  McNeutral: {fileID: 21300000, guid: 7cd3be4bec5a02a40b77361975411aab, type: 3}
+  McAngry: {fileID: 21300000, guid: 0306bce2d385941419445c87e150a712, type: 3}
+  McConfuse: {fileID: 21300000, guid: 073ec7ffab2aa5441b28f1d8475f847f, type: 3}
+  McEmotion4: {fileID: 21300000, guid: 506deb1c29917b24eaa63813086e693d, type: 3}
+  BossNeutral: {fileID: 21300000, guid: 4a536903729db0b49934db7201931e6e, type: 3}
+  BossConfuse: {fileID: 21300000, guid: 40bf0d1b70aa3344d997ecdd633a8c78, type: 3}
+  BossEmotion4: {fileID: 21300000, guid: 96daa74112452a04fbfe89a2dc4a6dad, type: 3}
+  McNeutralDark: {fileID: 21300000, guid: 4873f73e2bf51074293df02f765bb063, type: 3}
+  McAngryDark: {fileID: 21300000, guid: badf0760293815149b24a172fec0204f, type: 3}
+  McConfuseDark: {fileID: 21300000, guid: ea3f59dae5d2da54183beaddfb9502f3, type: 3}
+  McEmotion4Dark: {fileID: 21300000, guid: 6832559fceb105b4691a9c3773893ace, type: 3}
+  BossNeutralDark: {fileID: 21300000, guid: d097dbc501da98d4b95a9dc90bd5a2c7, type: 3}
+  BossConfuseDark: {fileID: 21300000, guid: 0db6c91e2b1ace6409aeb66f966c9beb, type: 3}
+  BossEmotion4Dark: {fileID: 21300000, guid: 70ae0b5620b15a64cbf5cd84ec19ab46, type: 3}
+  McLighten: {fileID: 1838269683}
+  BossLighten: {fileID: 1838269682}
+  McDarken: {fileID: 771123035}
+  BossDarken: {fileID: 771123034}
   animator: {fileID: 1838269688}
 --- !u!4 &1102675849
 Transform:
@@ -2497,8 +2563,8 @@ MonoBehaviour:
   MiniBoss: {fileID: 1851721373}
   healthbar: {fileID: 1870814344}
   tinyboss: {fileID: 727713236}
-  portal: {fileID: 34914451}
-  breakduration: 1
+  portal: {fileID: 1004615283}
+  breakduration: 2.6
 --- !u!4 &1457050438
 Transform:
   m_ObjectHideFlags: 0
@@ -2593,7 +2659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2649564006712172334, guid: 727098b6a8fd84d478d5bf10dea569da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.7217708
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2649564006712172334, guid: 727098b6a8fd84d478d5bf10dea569da, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3436,11 +3502,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2231717088515818193, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
       propertyPath: m_Text
-      value: TIME TO DIE
+      value: YES
       objectReference: {fileID: 0}
     - target: {fileID: 5794775640060441437, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
       propertyPath: m_Text
-      value: DoNt ClIck Me
+      value: YES
       objectReference: {fileID: 0}
     - target: {fileID: 5875532087311972918, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
       propertyPath: m_Pivot.x
@@ -3524,7 +3590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7194472839033066357, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7194472839033066357, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -3579,16 +3645,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
---- !u!1 &1838269682 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4640041231101591778, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+--- !u!114 &1838269682 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6422802905685617258, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
   m_PrefabInstance: {fileID: 1838269681}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1838269683 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7884331772440589454, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1838269683 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 707784675800839684, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
   m_PrefabInstance: {fileID: 1838269681}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1838269684 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2881808575777717761, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
@@ -3622,16 +3700,6 @@ GameObject:
 --- !u!1 &1838269690 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6310410506492936799, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
-  m_PrefabInstance: {fileID: 1838269681}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1838269691 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2913657100754484015, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
-  m_PrefabInstance: {fileID: 1838269681}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1838269692 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6418201993347947341, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
   m_PrefabInstance: {fileID: 1838269681}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1838269693 stripped
@@ -3898,6 +3966,10 @@ PrefabInstance:
     - target: {fileID: 1194714847231983838, guid: 28223853e8af5974ba193087b6e74230, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269549890790777588, guid: 28223853e8af5974ba193087b6e74230, type: 3}
+      propertyPath: aliveduration
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4269549890790777588, guid: 28223853e8af5974ba193087b6e74230, type: 3}
       propertyPath: IcePlatformscript
@@ -4190,6 +4262,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4269549890790777588, guid: 28223853e8af5974ba193087b6e74230, type: 3}
+      propertyPath: aliveduration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4269549890790777588, guid: 28223853e8af5974ba193087b6e74230, type: 3}
       propertyPath: IcePlatformscript
       value: 
       objectReference: {fileID: 339853890}
@@ -4413,7 +4489,6 @@ SceneRoots:
   - {fileID: 2093267646}
   - {fileID: 1102675849}
   - {fileID: 1695388808}
-  - {fileID: 34914454}
   - {fileID: 1838269681}
   - {fileID: 1196541826}
   - {fileID: 1507371564}
@@ -4436,3 +4511,4 @@ SceneRoots:
   - {fileID: 1195561602}
   - {fileID: 1729330044}
   - {fileID: 1074715439}
+  - {fileID: 1004615286}

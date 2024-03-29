@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bird: {fileID: 7382268650915813672, guid: 9f33df0f8d3c7b84b8b2fc8e02df5bbf, type: 3}
+  haspawn: 0
   childtransform: {fileID: 979416779538602496}
 --- !u!1 &5816123962495660492
 GameObject:

@@ -1473,11 +1473,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!1 &565694258 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2913657100754484015, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+--- !u!114 &565694260 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 446065193453332641, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
   m_PrefabInstance: {fileID: 2234263902348330789}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &569932996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1966,18 +1972,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialoguetext: {fileID: 421504524}
   dialoguecanvas: {fileID: 207513757}
-  McDarken: {fileID: 1151773744}
-  BossDarken: {fileID: 565694258}
   McName: {fileID: 902104018}
   BossName: {fileID: 22845970}
-  McLighten: {fileID: 976818448}
-  BossLighten: {fileID: 854719446}
   option1: {fileID: 1981472098}
   option2: {fileID: 1523835796}
   option3: {fileID: 652070074}
   option4: {fileID: 807043842}
   continuebutton: {fileID: 798691861}
   redarrow: {fileID: 979290521}
+  McNeutral: {fileID: 21300000, guid: 7cd3be4bec5a02a40b77361975411aab, type: 3}
+  McAngry: {fileID: 21300000, guid: 0306bce2d385941419445c87e150a712, type: 3}
+  McConfuse: {fileID: 21300000, guid: 073ec7ffab2aa5441b28f1d8475f847f, type: 3}
+  McEmotion4: {fileID: 21300000, guid: 506deb1c29917b24eaa63813086e693d, type: 3}
+  BossNeutral: {fileID: 21300000, guid: 4a536903729db0b49934db7201931e6e, type: 3}
+  BossConfuse: {fileID: 21300000, guid: 40bf0d1b70aa3344d997ecdd633a8c78, type: 3}
+  BossEmotion4: {fileID: 21300000, guid: 96daa74112452a04fbfe89a2dc4a6dad, type: 3}
+  McNeutralDark: {fileID: 21300000, guid: 4873f73e2bf51074293df02f765bb063, type: 3}
+  McAngryDark: {fileID: 21300000, guid: badf0760293815149b24a172fec0204f, type: 3}
+  McConfuseDark: {fileID: 21300000, guid: ea3f59dae5d2da54183beaddfb9502f3, type: 3}
+  McEmotion4Dark: {fileID: 21300000, guid: 6832559fceb105b4691a9c3773893ace, type: 3}
+  BossNeutralDark: {fileID: 21300000, guid: d097dbc501da98d4b95a9dc90bd5a2c7, type: 3}
+  BossConfuseDark: {fileID: 21300000, guid: 0db6c91e2b1ace6409aeb66f966c9beb, type: 3}
+  BossEmotion4Dark: {fileID: 21300000, guid: 70ae0b5620b15a64cbf5cd84ec19ab46, type: 3}
+  McLighten: {fileID: 976818450}
+  BossLighten: {fileID: 854719448}
+  McDarken: {fileID: 1151773746}
+  BossDarken: {fileID: 565694260}
   animator: {fileID: 1165762147}
 --- !u!4 &796607406
 Transform:
@@ -2029,11 +2049,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &854719446 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4640041231101591778, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+--- !u!114 &854719448 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6422802905685617258, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
   m_PrefabInstance: {fileID: 2234263902348330789}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &897203813
 GameObject:
   m_ObjectHideFlags: 0
@@ -2154,11 +2180,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 34709217245368952, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
   m_PrefabInstance: {fileID: 2234263902348330789}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &976818448 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7884331772440589454, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+--- !u!114 &976818450 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 707784675800839684, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
   m_PrefabInstance: {fileID: 2234263902348330789}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &979290521 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 579116723975599666, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
@@ -2902,11 +2934,17 @@ PolygonCollider2D:
       - {x: 6.4005275, y: -0.6413576}
       - {x: 6.364369, y: -0.6451988}
   m_UseDelaunayMesh: 0
---- !u!1 &1151773744 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6418201993347947341, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+--- !u!114 &1151773746 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1756098318956144381, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
   m_PrefabInstance: {fileID: 2234263902348330789}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &1165762147 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6805490724706037237, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
@@ -3634,29 +3672,80 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
+  - name: Shizi
+    sentences:
+    - ...
+    - What  is  this  place?
+    emotions: 0000000002000000
+    options: 0
   - name: Jing
     sentences:
-    - Welcome to my playtest. My name is Shizi
-    - 'Press R to restart to tutorial stage, Press T to
-
-      restart the Level
-      and press L to attack'
-    - 'This are the elements you can choose for the
-
-      next stage'
+    - THE  MAIN  ACTOR  HAS  ARRIVED!!!!!
+    emotions: 03000000
     options: 0
-  - name: Shiz
+  - name: MC
     sentences:
-    - Hi my name is Jing
-    - I am the boss
-    - Story is still in progress
+    - Err  what?
+    emotions: 00000000
+    options: 0
+  - name: Jing
+    sentences:
+    - 'Little  lion!  You  are  the  cast  in  my
+
+      world!'
+    emotions: 00000000
+    options: 0
+  - name: MC
+    sentences:
+    - ????
+    emotions: 02000000
+    options: 0
+  - name: Jing
+    sentences:
+    - 'You  will  be  tasked  to  venture
+
+      through  tough  obstacles!'
+    - Unleash  your  truest  potential!
+    - BECOME  A  HERO!
+    emotions: 000000000300000003000000
+    options: 0
+  - name: MC
+    sentences:
+    - (Is  she  even  listening?)
+    emotions: 01000000
+    options: 0
+  - name: Jing
+    sentences:
+    - 'Now!  The  first  act  shall
+
+      commence!'
+    - Choose your suffering!
+    emotions: 0000000000000000
+    options: 0
+  - name: MC
+    sentences:
+    - (Choose  your  suffering)
+    emotions: 00000000
+    options: 0
+  - name: Jing
+    sentences:
+    - Excellent  Choice!
+    emotions: 00000000
     options: 1
   - name: Jing
     sentences:
-    - I hope you enjoy our game
-    - We work quite hard on it
-    - Thank you, good luck and have fun
-    - Remeber to press R to try the different elements :)
+    - "NOW!  LET\u2019S  SEE  IF  YOU  SURVIVE!"
+    emotions: 03000000
+    options: 0
+  - name: MC
+    sentences:
+    - "\u2026"
+    emotions: 02000000
+    options: 0
+  - name: MC
+    sentences:
+    - What  was  that  all  about?
+    emotions: 03000000
     options: 0
   dialoguecanvas: {fileID: 207513757}
 --- !u!58 &1436856575
@@ -3781,7 +3870,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 143f4144b13d44147ab844514de096d6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6496,10 +6585,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6418201993347947341, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7194472839033066357, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 796607405}
+    - target: {fileID: 7884331772440589454, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8103749752070347695, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

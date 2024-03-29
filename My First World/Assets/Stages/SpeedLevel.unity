@@ -9019,7 +9019,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.90222096, y: -0.04716772}
+  m_Offset: {x: -0.015623093, y: -0.04716772}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9030,7 +9030,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 11.765558, y: 1.2556645}
+  m_Size: {x: 13.5387535, y: 1.2556645}
   m_EdgeRadius: 0
 --- !u!212 &333205931
 SpriteRenderer:
@@ -18019,7 +18019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6930218022152363255, guid: 8f732591ce68fe446bb58b187dd8cf9f, type: 3}
       propertyPath: spawnrate
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8216698781887321565, guid: 8f732591ce68fe446bb58b187dd8cf9f, type: 3}
       propertyPath: m_Name
@@ -25350,18 +25350,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dialoguetext: {fileID: 1354004298}
   dialoguecanvas: {fileID: 1354004299}
-  McDarken: {fileID: 1354004297}
-  BossDarken: {fileID: 1354004296}
   McName: {fileID: 1354004295}
   BossName: {fileID: 1354004294}
-  McLighten: {fileID: 1354004293}
-  BossLighten: {fileID: 1354004292}
   option1: {fileID: 1354004291}
   option2: {fileID: 1354004290}
   option3: {fileID: 1354004289}
   option4: {fileID: 1354004288}
   continuebutton: {fileID: 65200599}
   redarrow: {fileID: 65200598}
+  McNeutral: {fileID: 21300000, guid: 7cd3be4bec5a02a40b77361975411aab, type: 3}
+  McAngry: {fileID: 21300000, guid: 0306bce2d385941419445c87e150a712, type: 3}
+  McConfuse: {fileID: 21300000, guid: 073ec7ffab2aa5441b28f1d8475f847f, type: 3}
+  McEmotion4: {fileID: 21300000, guid: 506deb1c29917b24eaa63813086e693d, type: 3}
+  BossNeutral: {fileID: 21300000, guid: 4a536903729db0b49934db7201931e6e, type: 3}
+  BossConfuse: {fileID: 21300000, guid: 40bf0d1b70aa3344d997ecdd633a8c78, type: 3}
+  BossEmotion4: {fileID: 21300000, guid: 96daa74112452a04fbfe89a2dc4a6dad, type: 3}
+  McNeutralDark: {fileID: 21300000, guid: 4873f73e2bf51074293df02f765bb063, type: 3}
+  McAngryDark: {fileID: 21300000, guid: badf0760293815149b24a172fec0204f, type: 3}
+  McConfuseDark: {fileID: 21300000, guid: ea3f59dae5d2da54183beaddfb9502f3, type: 3}
+  McEmotion4Dark: {fileID: 21300000, guid: 6832559fceb105b4691a9c3773893ace, type: 3}
+  BossNeutralDark: {fileID: 21300000, guid: d097dbc501da98d4b95a9dc90bd5a2c7, type: 3}
+  BossConfuseDark: {fileID: 21300000, guid: 0db6c91e2b1ace6409aeb66f966c9beb, type: 3}
+  BossEmotion4Dark: {fileID: 21300000, guid: 70ae0b5620b15a64cbf5cd84ec19ab46, type: 3}
+  McLighten: {fileID: 1354004293}
+  BossLighten: {fileID: 1354004292}
+  McDarken: {fileID: 1354004296}
+  BossDarken: {fileID: 1354004297}
   animator: {fileID: 258301035}
 --- !u!4 &854728889
 Transform:
@@ -27407,15 +27421,45 @@ MonoBehaviour:
   dialogue:
   - name: Jing
     sentences:
-    - the Final stage we have is the boss fight
+    - HOHO!  As  expected  of  the  hero.
+    - "Your  moves  are  what  they  call\n\u2018graceful\u2019."
+    emotions: 0300000003000000
     options: 0
-  - name: Shiz
+  - name: MC
     sentences:
-    - 'But lucky for you, its in my theatre, so the wind
+    - 'This  is  getting  boring.  SEND  ME
 
-      and rain won''t affect
-      you'
-    - You can't possibly hope to defeat me :Evil face
+      BACK!'
+    emotions: 03000000
+    options: 0
+  - name: Jing
+    sentences:
+    - Are  you  not  having  fun?
+    emotions: 02000000
+    options: 0
+  - name: MC
+    sentences:
+    - NO!
+    emotions: 03000000
+    options: 0
+  - name: Jing
+    sentences:
+    - 'I  guess  it  is  time  for  a  change  in
+
+      atmosphere.'
+    - Let's  move  this  INDOOR!
+    - Have  your  pick,  little  lion.
+    emotions: 020000000300000000000000
+    options: 0
+  - name: MC
+    sentences:
+    - (Choose  the  indoor  setting)
+    emotions: 00000000
+    options: 0
+  - name: Jing
+    sentences:
+    - Watch  your  step!
+    emotions: 03000000
     options: 1
   dialoguecanvas: {fileID: 1354004299}
 --- !u!58 &949888540
@@ -32388,16 +32432,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6310410506492936799, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
   m_PrefabInstance: {fileID: 1354004287}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1354004292 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4640041231101591778, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+--- !u!114 &1354004292 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6422802905685617258, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
   m_PrefabInstance: {fileID: 1354004287}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1354004293 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7884331772440589454, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1354004293 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 707784675800839684, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
   m_PrefabInstance: {fileID: 1354004287}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1354004294 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2881808575777717761, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
@@ -32408,16 +32464,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 34709217245368952, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
   m_PrefabInstance: {fileID: 1354004287}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1354004296 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2913657100754484015, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+--- !u!114 &1354004296 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1756098318956144381, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
   m_PrefabInstance: {fileID: 1354004287}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1354004297 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6418201993347947341, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1354004297 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 446065193453332641, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
   m_PrefabInstance: {fileID: 1354004287}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1354004298 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4538931104982523203, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}

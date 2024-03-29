@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 513702376776849298}
   - component: {fileID: 3956580154260458123}
   - component: {fileID: 2846388435368962474}
+  - component: {fileID: 4876847779602268405}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Enemies
@@ -123,7 +124,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7382268650915813672}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -217,3 +218,61 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!60 &4876847779602268405
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7382268650915813672}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.5484848, y: 1.7454545}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.63635254, y: -0.15973186}
+      - {x: 0.6079135, y: 0.34391642}
+      - {x: 0.075380325, y: 0.15097308}
+      - {x: -0.21078062, y: 0.52574396}
+      - {x: -0.4812355, y: 0.23678446}
+      - {x: -0.23967212, y: 0.10350588}
+      - {x: -0.60443306, y: 0.04547572}
+      - {x: -0.7424457, y: -0.15961027}
+      - {x: -0.5877852, y: -0.40853417}
+      - {x: -0.17736506, y: -0.27426434}
+      - {x: -0.03687954, y: -0.46665812}
+      - {x: 0.25580585, y: -0.30314374}
+      - {x: 0.18170714, y: -0.15469986}
+  m_UseDelaunayMesh: 0

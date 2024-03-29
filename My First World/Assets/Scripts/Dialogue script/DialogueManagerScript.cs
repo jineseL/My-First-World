@@ -12,14 +12,15 @@ public class DialogueManagerScript : MonoBehaviour
     //private GameObject player;
     public Text Dialoguetext;
     private Queue<string> sentences; // first in first out data structure 
+    private Queue<Dialogue.emotionstate> emotions;
     private Queue<Dialogue> dialogues;
     public GameObject dialoguecanvas;
-    public GameObject McDarken;
-    public GameObject BossDarken;
+    //public GameObject McDarken;
+    //public GameObject BossDarken;
     public GameObject McName;
     public GameObject BossName;
-    public GameObject McLighten;
-    public GameObject BossLighten;
+    //public GameObject McLighten;
+    //public GameObject BossLighten;
     public GameObject option1;
     public GameObject option2;
     public GameObject option3;
@@ -28,6 +29,14 @@ public class DialogueManagerScript : MonoBehaviour
     public GameObject redarrow;
     private int choicenumber;
     private int choiceschoosen = 0;
+
+    public Sprite McNeutral, McAngry, McConfuse, McEmotion4, BossNeutral, BossConfuse, BossEmotion4;
+    public Sprite McNeutralDark, McAngryDark, McConfuseDark, McEmotion4Dark, BossNeutralDark, BossConfuseDark, BossEmotion4Dark;
+    //emotions stuff
+    public Image McLighten;
+    public Image BossLighten;
+    public Image McDarken;
+    public Image BossDarken;
 
 
     public Animator animator;
@@ -52,6 +61,7 @@ public class DialogueManagerScript : MonoBehaviour
         //player = GameObject.Find("Player");
         choicenumber = 1;
         sentences = new Queue<string>();
+        emotions = new Queue<Dialogue.emotionstate>();
         dialogues = new Queue<Dialogue>();
         choiceschoosen = 0;
     }
@@ -69,6 +79,11 @@ public class DialogueManagerScript : MonoBehaviour
             foreach (string sentence in dialogue[i].sentences)
             {
                 sentences.Enqueue(sentence);
+            }
+
+            foreach (Dialogue.emotionstate emotion in dialogue[i].emotions)
+            {
+                emotions.Enqueue(emotion);
             }
 
             //Displaynextsentence();
@@ -96,6 +111,7 @@ public class DialogueManagerScript : MonoBehaviour
         if (/*dialogueinsentencetoshow == null ||*/ sentencecounter == 0)
         {
             dialogueinsentencetoshow = dialogues.Dequeue();
+
             sentencecounter= dialogueinsentencetoshow.sentences.Length;
         }
         if (dialogueinsentencetoshow.options == true)
@@ -119,24 +135,74 @@ public class DialogueManagerScript : MonoBehaviour
         {
             redarrow.SetActive(false);
             continuebutton.SetActive(true);
+            Dialogue.emotionstate currentemotion = emotions.Dequeue();
             if (dialogueinsentencetoshow.name == "Jing")
             {
-                McLighten.GetComponent<Image>().enabled = true;
+               /* McLighten.GetComponent<Image>().enabled = true;
                 McName.GetComponent<Image>().enabled = true;
                 BossDarken.GetComponent<Image>().enabled = true;
                 McDarken.GetComponent<Image>().enabled = false;
                 BossLighten.GetComponent<Image>().enabled = false;
-                BossName.GetComponent<Image>().enabled = false;
+                BossName.GetComponent<Image>().enabled = false;*/
 
+                McLighten/*.GetComponent<Image>()*/.enabled = false;
+                McName.GetComponent<Image>().enabled = false;
+                BossDarken/*.GetComponent<Image>()*/.enabled = false;
+                McDarken/*.GetComponent<Image>()*/.enabled = true;
+                BossLighten/*.GetComponent<Image>()*/.enabled = true;
+                BossName.GetComponent<Image>().enabled = true;
+
+                switch (currentemotion)
+                {
+                    case Dialogue.emotionstate.Neutral:
+                        BossLighten.sprite = BossNeutral;
+                        BossDarken.sprite = BossNeutralDark;
+                        break;
+                    case Dialogue.emotionstate.Confuse:
+                        BossLighten.sprite = BossConfuse;
+                        BossDarken.sprite = BossConfuseDark;
+                        break;
+                    case Dialogue.emotionstate.Emotion4:
+                        BossLighten.sprite = BossEmotion4;
+                        BossDarken.sprite = BossEmotion4Dark;
+                        break;
+                }
             }
             else
             {
-                McLighten.GetComponent<Image>().enabled = false;
+                McLighten/*.GetComponent<Image>()*/.enabled = true;
+                McName.GetComponent<Image>().enabled = true;
+                BossDarken/*.GetComponent<Image>()*/.enabled = true;
+                McDarken/*.GetComponent<Image>()*/.enabled = false;
+                BossLighten/*.GetComponent<Image>()*/.enabled = false;
+                BossName.GetComponent<Image>().enabled = false;
+
+                switch (currentemotion)
+                {
+                    case Dialogue.emotionstate.Neutral:
+                        McLighten.sprite = McNeutral;
+                        McDarken.sprite = McNeutralDark;
+                        break;
+                    case Dialogue.emotionstate.Confuse:
+                        McLighten.sprite = McConfuse;
+                        McDarken.sprite = McConfuseDark;
+                        break;
+                    case Dialogue.emotionstate.Angry:
+                        McLighten.sprite = McAngry;
+                        McDarken.sprite = McAngryDark;
+                        break;
+                    case Dialogue.emotionstate.Emotion4:
+                        McLighten.sprite = McEmotion4;
+                        McDarken.sprite = McEmotion4Dark;
+                        break;
+                }
+
+                /*McLighten.GetComponent<Image>().enabled = false;
                 McName.GetComponent<Image>().enabled = false;
                 BossDarken.GetComponent<Image>().enabled = false;
                 McDarken.GetComponent<Image>().enabled = true;
                 BossLighten.GetComponent<Image>().enabled = true;
-                BossName.GetComponent<Image>().enabled = true;
+                BossName.GetComponent<Image>().enabled = true;*/
             }
             string sentence = sentences.Dequeue();
             sentencecounter -= 1;
@@ -147,67 +213,6 @@ public class DialogueManagerScript : MonoBehaviour
 
         //Dialoguetext.text = sentence;
     }
-
-/*    public void Displaynextsentenceforicelevel()
-    {
-
-        if (sentences.Count == 0)
-        {
-            choicenumber += 1;
-            EndDialogue();
-            return;
-        }
-        if (dialogueinsentencetoshow == null || sentencecounter == 0)
-        {
-            dialogueinsentencetoshow = dialogues.Dequeue();
-            sentencecounter = dialogueinsentencetoshow.sentences.Length;
-        }
-        if (dialogueinsentencetoshow.options == true)
-        {
-            if (choiceschoosen == 0)
-            {
-
-                option1.SetActive(true);
-                option2.SetActive(true);
-            }
-
-            if (choiceschoosen == 1)
-            {
-                option3.SetActive(true);
-                option4.SetActive(true);
-            }
-            //choiceschoosen++;
-        }
-        else
-        {
-            if (dialogueinsentencetoshow.name == "Jing")
-            {
-                McLighten.GetComponent<Image>().enabled = true;
-                McName.GetComponent<Image>().enabled = true;
-                BossDarken.GetComponent<Image>().enabled = true;
-                McDarken.GetComponent<Image>().enabled = false;
-                BossLighten.GetComponent<Image>().enabled = false;
-                BossName.GetComponent<Image>().enabled = false;
-
-            }
-            else
-            {
-                McLighten.GetComponent<Image>().enabled = false;
-                McName.GetComponent<Image>().enabled = false;
-                BossDarken.GetComponent<Image>().enabled = false;
-                McDarken.GetComponent<Image>().enabled = true;
-                BossLighten.GetComponent<Image>().enabled = true;
-                BossName.GetComponent<Image>().enabled = true;
-            }
-            string sentence = sentences.Dequeue();
-            sentencecounter -= 1;
-            StopAllCoroutines();
-            StartCoroutine(TypeSentence(sentence));
-        }
-
-        //Dialoguetext.text = sentence;
-    }*/
-
 
 
     IEnumerator TypeSentence(string sentence)

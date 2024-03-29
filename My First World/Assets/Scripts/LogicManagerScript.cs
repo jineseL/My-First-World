@@ -15,11 +15,13 @@ public class LogicManagerScript : MonoBehaviour
     public GameObject windeffect;
     //tutorial effects
     public static bool wind, rain, doublejump, speed, ice, sand;
+    //public GameObject pausemenu;
     
 
 
     private void Awake()
     {
+        
         if (RainspawnerEnable == true)
         {
             rainspawner.SetActive(true);
@@ -47,7 +49,10 @@ public class LogicManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            //todo pause menus
+        }
     }
     public void minushealth()
     {

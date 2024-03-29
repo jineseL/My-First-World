@@ -8,10 +8,11 @@ public class AttackArea : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerStay2D(Collider2D collider)
     {
-        if (collider.CompareTag("Enemies"))
+        if (collider.CompareTag("Enemies") )
         {
             //hit(collider, attackdamage);
             collider.GetComponent<EnemyBehaviour>().damage(attackDamage);
+            
         }
         if (collider.CompareTag("Boss"))
         {

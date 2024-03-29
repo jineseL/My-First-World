@@ -40,6 +40,8 @@ public class PlayerHealth : MonoBehaviour
     public bool isdead;
 
     private bool dying;
+
+    private PolygonCollider2D childcollider;
     void Start()
     {
         Manim = GetComponent<Animator>();
@@ -53,20 +55,24 @@ public class PlayerHealth : MonoBehaviour
         PlayerBody = GetComponent<Rigidbody2D>();
         this.fixedDeltaTime = Time.fixedDeltaTime;
         logicscriptreference = GameObject.Find("LogicManager").GetComponent<LogicManagerScript>();
+
+        //childcollider = GetComponentInChildren<PolygonCollider2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isdead == true)
+        Physics2D.IgnoreLayerCollision(6, 10, true);
+        /*if (isdead == true)
         {
             Physics2D.IgnoreLayerCollision(6, 10, true);
-        }
-        else Physics2D.IgnoreLayerCollision(6, 10, false);
+        }*/
+        //else Physics2D.IgnoreLayerCollision(6, 10, false);
 
         if(dying == true)
         {
             PlayerBody.velocity = new Vector2(0, 0);
+
         }
         if (timefreeze == true)
         {
@@ -93,8 +99,9 @@ public class PlayerHealth : MonoBehaviour
                 PlayerMovement.canmove = true;
             }
         }
+        
     }
-    private void OnCollisionEnter2D(Collision2D collider)
+/*    private void OnCollisionEnter2D(Collision2D collider)
     {
         
         if (isinv == false)
@@ -102,11 +109,11 @@ public class PlayerHealth : MonoBehaviour
             //Debug.Log("hi");
             if (collider.gameObject.CompareTag("Enemies"))
             {
-                /*Debug.Log("hi");*/
+                
                 damage(collider.transform.position);
             }
         }
-    }
+    }*/
     
     public void damage(Vector3 position)
     {
@@ -122,7 +129,7 @@ public class PlayerHealth : MonoBehaviour
         
         timefreeze = true;
         isinv = true;
-        Vector2 direction = (gameObject.transform.position - position).normalized;
+        Vector2 direction = (gameObject.transform.position - position);
         direction.y = 0;
         if (direction.x > 0)
         {
@@ -132,13 +139,11 @@ public class PlayerHealth : MonoBehaviour
         {
             direction.x = -1;
         }
-        Vector2 knockback = direction * knockbackforce;
-
-        
+        Vector2 knockback = direction.normalized * knockbackforce;
         PlayerMovement.canmove = false;
+        PlayerBody.velocity = new Vector2(0, 0);
         PlayerBody.AddForce(knockback,ForceMode2D.Impulse);
         //PlayerMovement.canmove = true;
-
     }
     public void damagewithoutknockback()
     {

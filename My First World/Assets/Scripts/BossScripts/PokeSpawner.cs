@@ -43,7 +43,7 @@ public class PokeSpawner : MonoBehaviour
         }
         if (bossref.phase3 == true)
         {
-            spawnrate = 3f;
+            spawnrate = 3.5f;
         }
         if (todelay == true)
         {

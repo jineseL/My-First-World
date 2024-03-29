@@ -69,19 +69,11 @@ public class MiniBossScript : MonoBehaviour
         slamdown = false;
         healthbar.SetMaxHealth(gameObject.GetComponent<EnemyBehaviour>().health);
         //Groundcheck = GetComponentInChildren<Transform>();
+
+        InitializeGravity();
     }
     private void Update()
     {
-        //starting gravity to make fking cup drop
-        if (starttimer < startupgravity)
-        {
-            starttimer += Time.deltaTime;
-            cupBody.gravityScale = 1;
-        }
-        else
-        {
-            cupBody.gravityScale = 0;
-        }
         if ( isgroundedatthecentre() == true)
         {
             m_Animator.SetBool("Landed", true);
@@ -141,15 +133,25 @@ public class MiniBossScript : MonoBehaviour
                 m_Animator.SetBool("GoingDown", true);
                 cupBody.velocity = -transform.up * slamspeed;
             }
-            if(isgroundedatthecentre() == true)
+            else//if(isgroundedatthecentre() == true)
             {
-
                 m_Animator.SetBool("GoingDown", false);
                 slamdown = false;
-
             }
         }
     }
+
+    private void InitializeGravity()
+    {
+        //starting gravity to make fking cup drop
+        while (starttimer < startupgravity)
+        {
+            starttimer += Time.fixedDeltaTime;
+            cupBody.gravityScale = 1;
+        }
+        cupBody.gravityScale = 0;
+    }
+
     private void jump()
     {
         JumpingUp = true;
