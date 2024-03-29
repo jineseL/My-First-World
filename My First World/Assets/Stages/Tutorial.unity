@@ -1980,7 +1980,7 @@ MonoBehaviour:
   option4: {fileID: 807043842}
   continuebutton: {fileID: 798691861}
   redarrow: {fileID: 979290521}
-  McNeutral: {fileID: 21300000, guid: c3e599234a88f494aa1ab7eb0bb7ed93, type: 3}
+  McNeutral: {fileID: 21300000, guid: 7cd3be4bec5a02a40b77361975411aab, type: 3}
   McAngry: {fileID: 21300000, guid: 0306bce2d385941419445c87e150a712, type: 3}
   McConfuse: {fileID: 21300000, guid: 073ec7ffab2aa5441b28f1d8475f847f, type: 3}
   McEmotion4: {fileID: 21300000, guid: 506deb1c29917b24eaa63813086e693d, type: 3}
@@ -3675,68 +3675,66 @@ MonoBehaviour:
   - name: Shizi
     sentences:
     - ...
-    - What is this place?
+    - What  is  this  place?
     emotions: 0000000002000000
     options: 0
   - name: Jing
     sentences:
-    - THE MAIN ACTOR HAS ARRIVED!!!!!
+    - THE  MAIN  ACTOR  HAS  ARRIVED!!!!!
     emotions: 03000000
     options: 0
   - name: MC
     sentences:
-    - Err what?
+    - Err  what?
     emotions: 00000000
     options: 0
   - name: Jing
     sentences:
-    - 'Little lion! You are the cast in my
+    - 'Little  lion!  You  are  the  cast  in  my
 
       world!'
     emotions: 00000000
     options: 0
   - name: MC
     sentences:
-    - ???????????????
+    - ????
     emotions: 02000000
     options: 0
   - name: Jing
     sentences:
-    - 'You will be tasked to venture through
+    - 'You  will  be  tasked  to  venture
 
-      tough obstacles! Unleash your
-      truest
-
-      potential! BECOME A HERO!'
-    emotions: 03000000
+      through  tough  obstacles!'
+    - Unleash  your  truest  potential!
+    - BECOME  A  HERO!
+    emotions: 000000000300000003000000
     options: 0
   - name: MC
     sentences:
-    - (is she even listening?)
+    - (Is  she  even  listening?)
     emotions: 01000000
     options: 0
   - name: Jing
     sentences:
-    - 'Now! The first act shall commence!
+    - 'Now!  The  first  act  shall
 
-      Choose your suffering!'
-    emotions: 00000000
+      commence!'
+    - Choose your suffering!
+    emotions: 0000000000000000
     options: 0
   - name: MC
     sentences:
-    - (Choose your suffering)
+    - (Choose  your  suffering)
     emotions: 00000000
     options: 0
   - name: Jing
     sentences:
-    - 'Impressive Impressive. Excellent
-
-      Choice!'
+    - Excellent  Choice!
     emotions: 00000000
     options: 1
   - name: Jing
     sentences:
-    - "NOW! LET\u2019S SEE IF YOU SURVIVE!!!"
+    - "NOW!  LET\u2019S  SEE  IF  YOU  SURVIVE!"
     emotions: 03000000
     options: 0
   - name: MC
@@ -3746,7 +3744,7 @@ MonoBehaviour:
     options: 0
   - name: MC
     sentences:
-    - What was that all about?
+    - What  was  that  all  about?
     emotions: 03000000
     options: 0
   dialoguecanvas: {fileID: 207513757}

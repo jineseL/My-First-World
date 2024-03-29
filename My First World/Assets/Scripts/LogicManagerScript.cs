@@ -49,7 +49,10 @@ public class LogicManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            //todo pause menus
+        }
     }
     public void minushealth()
     {

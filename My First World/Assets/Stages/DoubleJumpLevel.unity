@@ -8887,7 +8887,7 @@ MonoBehaviour:
   option4: {fileID: 2015379320}
   continuebutton: {fileID: 1922643403}
   redarrow: {fileID: 1922643402}
-  McNeutral: {fileID: 21300000, guid: c3e599234a88f494aa1ab7eb0bb7ed93, type: 3}
+  McNeutral: {fileID: 21300000, guid: 7cd3be4bec5a02a40b77361975411aab, type: 3}
   McAngry: {fileID: 21300000, guid: 0306bce2d385941419445c87e150a712, type: 3}
   McConfuse: {fileID: 21300000, guid: 073ec7ffab2aa5441b28f1d8475f847f, type: 3}
   McEmotion4: {fileID: 21300000, guid: 506deb1c29917b24eaa63813086e693d, type: 3}
@@ -11206,102 +11206,6 @@ Transform:
   - {fileID: 1615618792}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.661}
---- !u!1 &1207182367
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1207182370}
-  - component: {fileID: 1207182369}
-  - component: {fileID: 1207182368}
-  m_Layer: 0
-  m_Name: Portal
-  m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1207182368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1207182367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cc64b0d515999649ad5f3e9268ef59e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-  - name: Jing
-    sentences:
-    - the Final stage we have is the boss fight
-    emotions: 
-    options: 0
-  - name: Shiz
-    sentences:
-    - 'But lucky for you, its in my theatre, so the wind
-
-      and rain won''t affect
-      you'
-    - You can't possibly hope to defeat me :Evil face
-    emotions: 
-    options: 1
-  dialoguecanvas: {fileID: 1292557545}
---- !u!58 &1207182369
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1207182367}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!4 &1207182370
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1207182367}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.023, y: 97.84, z: 4.4650474}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1209574339
 GameObject:
   m_ObjectHideFlags: 0
@@ -29216,6 +29120,130 @@ Transform:
   - {fileID: 1234818731}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2048817484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2048817487}
+  - component: {fileID: 2048817486}
+  - component: {fileID: 2048817485}
+  m_Layer: 0
+  m_Name: Portal
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2048817485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048817484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc64b0d515999649ad5f3e9268ef59e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - name: Jing
+    sentences:
+    - HOHO!  As  expected  of  the  hero.
+    - "Your  moves  are  what  they  call\n\u2018graceful\u2019."
+    emotions: 0300000003000000
+    options: 0
+  - name: MC
+    sentences:
+    - 'This  is  getting  boring.  SEND  ME
+
+      BACK!'
+    emotions: 03000000
+    options: 0
+  - name: Jing
+    sentences:
+    - Are  you  not  having  fun?
+    emotions: 02000000
+    options: 0
+  - name: MC
+    sentences:
+    - NO!
+    emotions: 03000000
+    options: 0
+  - name: Jing
+    sentences:
+    - 'I  guess  it  is  time  for  a  change  in
+
+      atmosphere.'
+    - Let's  move  this  INDOOR!
+    - Have  your  pick,  little  lion.
+    emotions: 020000000300000000000000
+    options: 0
+  - name: MC
+    sentences:
+    - (Choose  the  indoor  setting)
+    emotions: 00000000
+    options: 0
+  - name: Jing
+    sentences:
+    - Watch  your  step!
+    emotions: 03000000
+    options: 1
+  dialoguecanvas: {fileID: 1292557545}
+--- !u!58 &2048817486
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048817484}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!4 &2048817487
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048817484}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.05, y: 97.82, z: 4.4650474}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2062869855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30264,6 +30292,7 @@ SceneRoots:
   - {fileID: 1336424599}
   - {fileID: 1649203924}
   - {fileID: 1500904071}
+  - {fileID: 2048817487}
   - {fileID: 1933673126}
   - {fileID: 1652328974}
   - {fileID: 1888320516}
@@ -30272,7 +30301,6 @@ SceneRoots:
   - {fileID: 30971843}
   - {fileID: 697211685}
   - {fileID: 1429895600}
-  - {fileID: 1207182370}
   - {fileID: 354277684}
   - {fileID: 573828033}
   - {fileID: 1922643400}

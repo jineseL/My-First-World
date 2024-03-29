@@ -47,7 +47,7 @@ public class Attack : MonoBehaviour
         }
         if (attacking)
         {
-            Physics2D.IgnoreLayerCollision(6, 10, false);
+            //Physics2D.IgnoreLayerCollision(6, 10, false);
             timer += Time.deltaTime;
             if(timer>= attackSpeed)
             {

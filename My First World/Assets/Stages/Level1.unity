@@ -23213,7 +23213,7 @@ MonoBehaviour:
   option4: {fileID: 2015379320}
   continuebutton: {fileID: 1922643402}
   redarrow: {fileID: 1922643401}
-  McNeutral: {fileID: 21300000, guid: c3e599234a88f494aa1ab7eb0bb7ed93, type: 3}
+  McNeutral: {fileID: 21300000, guid: 7cd3be4bec5a02a40b77361975411aab, type: 3}
   McAngry: {fileID: 21300000, guid: 0306bce2d385941419445c87e150a712, type: 3}
   McConfuse: {fileID: 21300000, guid: 073ec7ffab2aa5441b28f1d8475f847f, type: 3}
   McEmotion4: {fileID: 21300000, guid: 506deb1c29917b24eaa63813086e693d, type: 3}
@@ -34728,20 +34728,78 @@ MonoBehaviour:
   dialogue:
   - name: Jing
     sentences:
-    - Congratulation
-    - 'The next stage will be two different and unique
+    - Amazing!  The  struggle!  The  turmoil!
+    - THE  DRAMA!
+    - 'This  is  how  a  performance  should
 
-      levels for you to try
-      depending on your next
-
-      choice'
-    - Will you choose between faster speed or double jump
-    emotions: 
+      be!'
+    emotions: 030000000300000003000000
     options: 0
-  - name: Shiz
+  - name: mc
     sentences:
-    - Good Luck
-    emotions: 
+    - 'Can  you  quit  yapping  for  a  second
+
+      and  liste-'
+    emotions: 03000000
+    options: 0
+  - name: Jing
+    sentences:
+    - IS  WHAT  A  FOOL  WOULD  SAY!!
+    - 'Only  amateurs  will  see  this  as  a
+
+      perfect  script.'
+    - 'No  one  will  watch  a  performance  if
+
+      the  hero  remains  pathetic.'
+    emotions: 000000000000000000000000
+    options: 0
+  - name: MC
+    sentences:
+    - (Did  she  just  call  me  pathetic?)
+    emotions: 01000000
+    options: 0
+  - name: Jing
+    sentences:
+    - 'SO  I  shall  bless  you  with  more
+
+      power!'
+    emotions: 03000000
+    options: 0
+  - name: MC
+    sentences:
+    - "Or\u2026  you  could  send  me  back  home?"
+    emotions: 01000000
+    options: 0
+  - name: Jing
+    sentences:
+    - NONSENSE!
+    - 'How  can  the  show  continue
+
+      without  the  star?'
+    - 'A  great  sense  of  humour  indeed.
+
+      As  expected  from  the  star!'
+    emotions: 000000000200000003000000
+    options: 0
+  - name: MC
+    sentences:
+    - (...someone...send  help...)
+    emotions: 03000000
+    options: 0
+  - name: Jing
+    sentences:
+    - Now  select  your  blessing.
+    emotions: 00000000
+    options: 0
+  - name: MC
+    sentences:
+    - (Choose  your  blessing)
+    emotions: 00000000
+    options: 0
+  - name: Jing
+    sentences:
+    - "Let\u2019s  see  how  you  overcome  this!"
+    emotions: 03000000
     options: 1
   dialoguecanvas: {fileID: 1292557545}
 --- !u!58 &1436856575

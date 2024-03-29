@@ -25,7 +25,6 @@ public class PlayerenemyColliderScript : MonoBehaviour
                 //Debug.Log("hi");
                 if (collider.CompareTag("Enemies"))
                 {
-
                     GetComponentInParent<PlayerHealth>().damage(collider.transform.position);
                 }
             }

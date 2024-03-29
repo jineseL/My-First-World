@@ -959,11 +959,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2231717088515818193, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
       propertyPath: m_Text
-      value: TIME TO DIE
+      value: YES
       objectReference: {fileID: 0}
     - target: {fileID: 5794775640060441437, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
       propertyPath: m_Text
-      value: DoNt ClIck Me
+      value: YES
       objectReference: {fileID: 0}
     - target: {fileID: 5875532087311972918, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
       propertyPath: m_Pivot.x
@@ -1047,7 +1047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7194472839033066357, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7194472839033066357, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -1067,7 +1067,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7194472839033066357, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: choiceminus2
+      value: nothing
       objectReference: {fileID: 0}
     - target: {fileID: 7194472839033066357, guid: 65c8e54a6e2faf14fa9797eed2c859c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -2205,7 +2205,7 @@ MonoBehaviour:
   option4: {fileID: 228039538}
   continuebutton: {fileID: 617023749}
   redarrow: {fileID: 617023748}
-  McNeutral: {fileID: 21300000, guid: c3e599234a88f494aa1ab7eb0bb7ed93, type: 3}
+  McNeutral: {fileID: 21300000, guid: 7cd3be4bec5a02a40b77361975411aab, type: 3}
   McAngry: {fileID: 21300000, guid: 0306bce2d385941419445c87e150a712, type: 3}
   McConfuse: {fileID: 21300000, guid: 073ec7ffab2aa5441b28f1d8475f847f, type: 3}
   McEmotion4: {fileID: 21300000, guid: 506deb1c29917b24eaa63813086e693d, type: 3}
@@ -8043,21 +8043,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - name: Shiz
+  - name: Jing
     sentences:
-    - wow no way you defeated my tea cup
-    emotions: 
+    - Wow!  Beautif-
+    emotions: 03000000
+    options: 0
+  - name: MC
+    sentences:
+    - 'AHA!  WHOSE  CUTTING  OFF  WHO
+
+      NOW!'
+    - "I\u2019m  done  being  dragged  around  as\nyou  please."
+    - It's  time  for  you  to  go  down!
+    emotions: 000000000100000001000000
     options: 0
   - name: Jing
     sentences:
-    - That was easy, now its time for you to die
-    emotions: 
+    - you  really  think  you  have  what  it takes?
+    emotions: 02000000
     options: 0
-  - name: Shiz
+  - name: MC
     sentences:
-    - Oh no im about to die
-    emotions: 
+    - (Do  you  have  what  it  takes?)
+    emotions: 00000000
+    options: 0
+  - name: MC
+    sentences:
+    - 'Come  at  me  you  wannabe  amateur
+
+      director!'
+    emotions: 00000000
     options: 1
+  - name: Jing
+    sentences:
+    - '!!!'
+    - ...ha
+    - HAHAHAHAHHAAHAH
+    emotions: 020000000200000003000000
+    options: 0
   dialoguecanvas: {fileID: 228039533}
 --- !u!58 &1528039679
 CircleCollider2D:
