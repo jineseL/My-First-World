@@ -12,14 +12,19 @@ public class MainMenuScript : MonoBehaviour
     }
     public void playgame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
     public void playsettings()
     {
-        Debug.Log("settings");
+        //Debug.Log("settings");
+        SceneManager.LoadScene("SettingsMenu");
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-
+    public void playmainmenu()
+    {
+        Debug.Log("nain menu");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
     public void quitgame()
     {
         Application.Quit();

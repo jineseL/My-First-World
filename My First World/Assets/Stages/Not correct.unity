@@ -277,6 +277,8 @@ MonoBehaviour:
   heart3: {fileID: 0}
   heart4: {fileID: 0}
   heart5: {fileID: 0}
+  rainspawner: {fileID: 0}
+  windeffect: {fileID: 0}
 --- !u!4 &573828033
 Transform:
   m_ObjectHideFlags: 0
