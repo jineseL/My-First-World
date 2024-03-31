@@ -38,6 +38,7 @@ public class DialogueManagerScript : MonoBehaviour
     public Image McDarken;
     public Image BossDarken;
 
+    public GameObject blackscreen;
 
     public Animator animator;
     /*private void Awake()
@@ -105,7 +106,14 @@ public class DialogueManagerScript : MonoBehaviour
 
         if (sentences.Count == 0)
         {
-            EndDialogue();
+            if (SceneManager.GetActiveScene().name == ("BossLevel"))
+            {
+                EndGame();
+            }
+            else
+            {
+                EndDialogue();
+            }
             return;
         }
         if (/*dialogueinsentencetoshow == null ||*/ sentencecounter == 0)
@@ -231,7 +239,13 @@ public class DialogueManagerScript : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + choicenumber);
     }
-
+    public void EndGame()
+    {
+        //dialoguecanvas.SetActive(false);
+        Time.timeScale = 1;
+        blackscreen.GetComponent<Animator>().SetTrigger("Fade");
+        
+    }
     //buttons coding
     public void enablewind()
     {

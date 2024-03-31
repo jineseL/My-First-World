@@ -36,6 +36,8 @@ public class BossScript : MonoBehaviour
     public GameObject explosions1, explosions2, explosions3, explosions4, explosions5, explosions6, explosions7;
     public bool bossdead;
 
+    public GameObject gamecamera;
+
 
     // Start is called before the first frame update
     void Start()
@@ -103,7 +105,9 @@ public class BossScript : MonoBehaviour
         //retarded way of doing explosions timer
         if (bossdefeated == true)
         {
+            gamecamera.GetComponent<Animator>().SetBool("SideToSide", true);
             explosiontimer += Time.deltaTime;
+
             /*if(explosiontimer > 4.3f)
             {
                 tinyboss.SetActive(true);
@@ -130,6 +134,7 @@ public class BossScript : MonoBehaviour
                 Instantiate(maskbreak, explosions7.transform.position, transform.rotation);
                 bossdefeated = false;
                 bossdead = true;
+                gamecamera.GetComponent<Animator>().SetBool("SideToSide", false);
                 Destroy(gameObject);
             }
             else if (explosiontimer > 3.7f && explosiontimer < 3.8f)
@@ -177,6 +182,7 @@ public class BossScript : MonoBehaviour
                 Instantiate(maskbreak, explosions3.transform.position, transform.rotation);
             }
         }
+        
     }
     public void damage(int damagetaken)
     {

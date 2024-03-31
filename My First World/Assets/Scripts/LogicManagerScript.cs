@@ -16,7 +16,9 @@ public class LogicManagerScript : MonoBehaviour
     //tutorial effects
     public static bool wind, rain, doublejump, speed, ice, sand;
     //public GameObject pausemenu;
-    
+    public GameObject pausemenu;
+    private bool pausemenuactive = false;
+    public GameObject dialoguecanvas;
 
 
     private void Awake()
@@ -51,8 +53,30 @@ public class LogicManagerScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            //todo pause menus
+            if (pausemenuactive == false && dialoguecanvas.activeSelf==false)
+            {
+                Time.timeScale = 0;
+                pausemenu.SetActive(true);
+                pausemenuactive = true;
+            }
+            else if(pausemenuactive == true && dialoguecanvas.activeSelf == false)
+            {
+                resume();
+                /*Time.timeScale = 1;
+                pausemenu.SetActive(false);
+                pausemenuactive = false;*/
+            }
         }
+    }
+    public void resume()
+    {
+        Time.timeScale = 1;
+        pausemenu.SetActive(false);
+        pausemenuactive = false;
+    }
+    public void quitgame()
+    {
+        Application.Quit();
     }
     public void minushealth()
     {

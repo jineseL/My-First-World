@@ -28,11 +28,8 @@ public class ButtonScript : MonoBehaviour
             {
                 selectedbtn = 0;
             }
-            
             firstbutton = btn[0];
             numberofbuttons = btn.Length;
-
-
             //Highlight the selected button
             for (int i =0; i < btn.Length; i++)
             {
@@ -54,7 +51,6 @@ public class ButtonScript : MonoBehaviour
                     }*/
                 }
             }
-
             //get position of selected button
             Vector3 btn_position = btn[selectedbtn].GetComponent<RectTransform>().position;
 
@@ -72,10 +68,8 @@ public class ButtonScript : MonoBehaviour
                     vert_dif[i] = btn_position.y - but_pos2.y;
                 }
             }
-
             float new_vert = 9999;
             float new_hort = 9999;
-
             if((Input.GetKeyDown(KeyCode.DownArrow)|| Input.GetKeyDown(KeyCode.S) && !buttonpressed))
             {
                 buttonpressed = true;

@@ -19,7 +19,7 @@ public class PortalScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        /*if (Input.GetKeyDown(KeyCode.R))
         {
             Time.timeScale = 1;
             PlayerMovement.windEffect = false;
@@ -34,7 +34,7 @@ public class PortalScript : MonoBehaviour
             Time.timeScale = 1;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             return;
-        }
+        }*/
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {

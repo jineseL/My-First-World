@@ -1,14 +1,17 @@
 using UnityEngine.Audio;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManagerScript : MonoBehaviour
 {
     public Sound[] sounds;
+    public bool destroy;
 
     public static AudioManagerScript instance;
     void Awake()
     {
+        
         if (instance == null)
         {
             instance = this;
@@ -18,7 +21,10 @@ public class AudioManagerScript : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        DontDestroyOnLoad(gameObject);
+        
+            DontDestroyOnLoad(gameObject);
+        
+       // SceneManager.sceneLoaded += OnSceneLoaded;
 
         foreach (Sound s in sounds)
         {
@@ -32,9 +38,18 @@ public class AudioManagerScript : MonoBehaviour
     }
     private void Start()
     {
+        /*if(SceneManager.GetActiveScene().name == "")*/
         Play("Music");
-    }
 
+    }
+    /*private void Update()
+    {
+        
+    }*/
+    /*void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+
+    }*/
 
     public void Play(string name)
     {

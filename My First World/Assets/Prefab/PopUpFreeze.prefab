@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4656ea3c58d10e1458b9b6f0635d79ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorialduration: 4
+  tutorialduration: 3
   levelno: 1
   toshow: {fileID: 0}
   PopupImage2: {fileID: 0}
