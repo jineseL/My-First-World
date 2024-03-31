@@ -18,10 +18,11 @@ public class CreditScript : MonoBehaviour
         {
             
             reset();
-            SceneManager.LoadScene("MainMenu");
+            
         }
     }
-    static void reset()
+
+    public void reset()
     {
         LogicManagerScript.wind = false;
         LogicManagerScript.rain = false;
@@ -33,5 +34,6 @@ public class CreditScript : MonoBehaviour
         PlayerMovement.canDoubleJump = false;
         PlayerMovement.windEffect = false;
         PlayerMovement.movementspeed = 5f;
+        SceneManager.LoadScene("MainMenu");
     }
 }

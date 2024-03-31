@@ -9,6 +9,7 @@ public class BossFightManager : MonoBehaviour
     public BossScript bscript;
     private float timer;
     private float bossappear=3f;
+    public GameObject audio2;
     
     // Start is called before the first frame update
     void Start()
@@ -27,8 +28,10 @@ public class BossFightManager : MonoBehaviour
             }
             else
             {
+
                 bosstiny.SetActive(true);
                 portal.SetActive(true);
+                audio2.SetActive(true);
             }
         }
     }

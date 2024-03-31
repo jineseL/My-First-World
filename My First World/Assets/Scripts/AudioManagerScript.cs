@@ -7,6 +7,7 @@ public class AudioManagerScript : MonoBehaviour
 {
     public Sound[] sounds;
     public bool destroy;
+    
 
     public static AudioManagerScript instance;
     void Awake()
@@ -42,10 +43,15 @@ public class AudioManagerScript : MonoBehaviour
         Play("Music");
 
     }
-    /*private void Update()
+    private void Update()
     {
         
-    }*/
+        if (SceneManager.GetActiveScene().name == "SandLevel" || SceneManager.GetActiveScene().name == "IceLevel")
+        {
+                Destroy(gameObject);
+        }
+        
+    }
     /*void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
 
