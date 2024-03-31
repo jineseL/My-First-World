@@ -346,7 +346,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 448, y: 154}
+  m_AnchoredPosition: {x: 618, y: 154}
   m_SizeDelta: {x: 158.2614, y: 112.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &279898854
@@ -702,7 +702,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 448, y: -65}
+  m_AnchoredPosition: {x: 618, y: -65}
   m_SizeDelta: {x: 124.9072, y: 144.7338}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1164131508
@@ -1153,28 +1153,28 @@ MonoBehaviour:
 
     Chong  Chee  Yuen  Justin
 
-    
+
 
 
     CHUA  Qi  Yun  Daphnne
 
-    
+
 
 
     TANG 
     Xian  Hui
 
-    
+
 
 
     NUAR  Jia  Wen  Kelly
 
-    
+
 
 
     LIM  Jia  Ying  Lera
 
-    
+
 
 
     Digipen
@@ -1293,7 +1293,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 461, y: -284}
+  m_AnchoredPosition: {x: 631, y: -284}
   m_SizeDelta: {x: 164.4997, y: 112.6656}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1755374849
