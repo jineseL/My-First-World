@@ -1103,7 +1103,7 @@ MonoBehaviour:
   - name: Music
     clip: {fileID: 8300000, guid: 4b2b378250f785b4ca800c322ed1ac7b, type: 3}
     pitch: 1
-    volume: 0.06
+    volume: 0.5
     loop: 1
     source: {fileID: 0}
   destroy: 0
