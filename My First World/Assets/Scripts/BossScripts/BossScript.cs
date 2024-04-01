@@ -139,6 +139,7 @@ public class BossScript : MonoBehaviour
             }
             else if (explosiontimer > 3.7f && explosiontimer < 3.8f)
             {
+                bossdead = true;
                 Instantiate(maskbreak, explosions4.transform.position, transform.rotation);
                 Instantiate(maskbreak, explosions6.transform.position, transform.rotation);
                 Instantiate(maskbreak, explosions3.transform.position, transform.rotation);

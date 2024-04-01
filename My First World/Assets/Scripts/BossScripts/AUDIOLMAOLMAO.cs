@@ -26,7 +26,7 @@ public class AUDIOLMAOLMAO : MonoBehaviour
     private void Update()
     {
         
-        if (bscript.bossdead == true)
+        if (bscript.bossdead == true || SceneManager.GetActiveScene().name != "BossLevel" ) 
         {
             Destroy(gameObject);
         }
