@@ -156,8 +156,8 @@ MonoBehaviour:
   - {fileID: 8001034834451044874, guid: 411f74c065efb9b43b1e606d158024e6, type: 3}
   - {fileID: 5501969546679986424, guid: 44f775feab498534c9fec25c0b0efcc9, type: 3}
   - {fileID: 7382268650915813672, guid: 9f33df0f8d3c7b84b8b2fc8e02df5bbf, type: 3}
-  spawnrate: 3
-  numberOfWave: 6
+  spawnrate: 1
+  numberOfWave: 2
   wavecounter: 0
   completed: 0
 --- !u!4 &22911324
@@ -1785,9 +1785,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bird: {fileID: 7382268650915813672, guid: 9f33df0f8d3c7b84b8b2fc8e02df5bbf, type: 3}
   offset: 4.5
-  spawnrate: 3
+  spawnrate: 1
   currentwave: 0
-  totalwave: 4
+  totalwave: 1
   completed: 0
 --- !u!1001 &837555998
 PrefabInstance:
@@ -2363,7 +2363,14 @@ MonoBehaviour:
   heart3: {fileID: 1210424857}
   heart4: {fileID: 554632974}
   heart5: {fileID: 2026329058}
+<<<<<<< Updated upstream
   rainspawner: {fileID: 1695388806}
+=======
+  rainspawner: {fileID: 0}
+  windeffect: {fileID: 2073065319}
+  pausemenu: {fileID: 427788789}
+  dialoguecanvas: {fileID: 228039533}
+>>>>>>> Stashed changes
 --- !u!4 &1368550412
 Transform:
   m_ObjectHideFlags: 0
@@ -2502,9 +2509,8 @@ MonoBehaviour:
   enemytospawn:
   - {fileID: 8001034834451044874, guid: 411f74c065efb9b43b1e606d158024e6, type: 3}
   - {fileID: 5501969546679986424, guid: 44f775feab498534c9fec25c0b0efcc9, type: 3}
-  - {fileID: 7382268650915813672, guid: 9f33df0f8d3c7b84b8b2fc8e02df5bbf, type: 3}
-  spawnrate: 3
-  numberOfWave: 6
+  spawnrate: 1
+  numberOfWave: 2
   wavecounter: 0
   completed: 0
 --- !u!1 &1526392814
@@ -2553,9 +2559,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bird: {fileID: 7382268650915813672, guid: 9f33df0f8d3c7b84b8b2fc8e02df5bbf, type: 3}
   offset: 4.5
-  spawnrate: 4
+  spawnrate: 1
   currentwave: 0
-  totalwave: 3
+  totalwave: 1
   completed: 0
 --- !u!1 &1528039677
 GameObject:
@@ -3161,54 +3167,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1658780860}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1695388806
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1695388808}
-  - component: {fileID: 1695388807}
-  m_Layer: 10
-  m_Name: RainBallSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1695388807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1695388806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b2c883fb2d7a364fbc683aaeab4edae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rainyball: {fileID: 1717867940519017467, guid: 539c1245188e75d4f8c7528674c8665a, type: 3}
-  offset: 5
-  abovecameradistance: 5
-  spawnrate: 1
---- !u!4 &1695388808
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1695388806}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.29, y: 2.71, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1724855627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3643,7 +3601,6 @@ SceneRoots:
   - {fileID: 1658780860}
   - {fileID: 1368550412}
   - {fileID: 2093267646}
-  - {fileID: 1695388808}
   - {fileID: 1507371564}
   - {fileID: 22911324}
   - {fileID: 785273826}
